@@ -21,12 +21,11 @@ const cards = [
   },
 ];
 
-const StarIcon = ({ className }: { className?: string }) => (
+const StarIcon = () => (
   <svg
     viewBox="0 0 19 20"
-    width={19}
-    height={20}
-    className={className}
+    className="block size-full"
+    preserveAspectRatio="xMidYMid meet"
     aria-hidden="true"
   >
     <path
@@ -39,7 +38,7 @@ const StarIcon = ({ className }: { className?: string }) => (
 const Problem = () => {
   return (
     <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-10 items-start w-[900px] max-w-full">
+      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
         <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
           {`Great Content Doesn't Fail. `}
           <span className="text-[#780AC1]">Distribution Does.</span>
@@ -55,11 +54,13 @@ const Problem = () => {
         {cards.map((card) => (
           <div
             key={card.title}
-            className="group flex flex-col gap-8 items-start px-5 pt-6 pb-6 min-w-0 flex-1 h-[354px] rounded-3xl bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1]"
+            className="group flex flex-col gap-8 items-start min-w-0 flex-1 min-h-[354px] rounded-3xl px-5 py-6 overflow-hidden bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1]"
           >
-            <StarIcon className="text-[#780AC1] transition-colors duration-300 group-hover:text-white" />
-            <div className="flex flex-col gap-3 items-start">
-              <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[20px] leading-[1.4] text-black transition-colors duration-300 group-hover:text-white">
+            <div className="shrink-0 w-[19px] h-5 text-[#780AC1] transition-colors duration-300 group-hover:text-white">
+              <StarIcon />
+            </div>
+            <div className="flex flex-col gap-3 items-start capitalize">
+              <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black transition-colors duration-300 group-hover:text-white">
                 {card.title}
               </p>
               <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] transition-colors duration-300 group-hover:text-white">

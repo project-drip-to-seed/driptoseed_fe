@@ -28,14 +28,14 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-20 h-20">
 
       {/* Logo */}
-      <div className="flex items-center gap-[10px]">
+      <a href="/" className="flex items-center gap-[10px]">
         <Image
           src="/general_assets/drip_logo.svg"
           alt="Logo"
           width={77.7}
           height={40}
         />
-      </div>
+      </a>
 
       {/* Nav Items */}
       <div className="flex items-center gap-8">

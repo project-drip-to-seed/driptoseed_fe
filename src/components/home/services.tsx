@@ -5,7 +5,7 @@ const TagPill = ({ label }: { label: string }) => (
 );
 
 const ArrowButton = () => (
-  <div className="shrink-0 w-[74px] h-[74px] flex items-center justify-center">
+  <div className="absolute right-[8px] bottom-[8px] w-[74px] h-[74px] flex items-center justify-center">
     <img
       alt=""
       src="/hero_section/arrow_button.svg"
@@ -47,7 +47,7 @@ const Services = () => {
 
       <div className="flex gap-5 items-stretch w-full mt-10">
         {/* Card 1 - distribution */}
-        <div className="flex flex-col flex-[3] min-w-0 bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+        <div className="relative flex flex-col flex-[3] min-w-0 bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
           <img
             alt=""
             src="/hero_section/power_1.svg"
@@ -81,24 +81,21 @@ const Services = () => {
 
             <div className="flex flex-col gap-5">
               <Divider />
-
-              <div className="flex items-center justify-between">
-                <StatBlock value="300+" label="Distribution Partners" />
-                <ArrowButton />
-              </div>
+              <StatBlock value="300+" label="Distribution Partners" />
             </div>
           </div>
+          <ArrowButton />
         </div>
 
         {/* Cards 2 & 3 - stacked right column */}
         <div className="flex flex-col gap-5 flex-[4] min-w-0">
-          <div className="flex bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+          <div className="relative flex h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
             <img
               alt=""
               src="/hero_section/power_2.svg"
-              className="w-[240px] self-stretch object-cover shrink-0 block"
+              className="w-[240px] h-[300px] object-cover shrink-0 block"
             />
-            <div className="flex flex-col gap-5 px-5 py-5 flex-1">
+            <div className="flex flex-col gap-5 pt-5 px-5 pb-4 flex-1 min-w-0">
               <div className="flex flex-col gap-3 items-start">
                 <p className="font-[family-name:var(--font-inter)] font-medium capitalize leading-[1.4] text-[20px] text-black">
                   One Video Can Create Weeks of Content.
@@ -119,21 +116,18 @@ const Services = () => {
               </div>
 
               <Divider />
-
-              <div className="flex items-center justify-between">
-                <StatBlock value="15x" label="Clips Per Upload" />
-                <ArrowButton />
-              </div>
+              <StatBlock value="15x" label="Clips Per Upload" />
             </div>
+            <ArrowButton />
           </div>
 
-          <div className="flex bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+          <div className="relative flex h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
             <img
               alt=""
               src="/hero_section/power_3.svg"
-              className="w-[240px] self-stretch object-cover shrink-0 block"
+              className="w-[240px] h-[300px] object-cover shrink-0 block"
             />
-            <div className="flex flex-col gap-5 px-5 py-5 flex-1">
+            <div className="flex flex-col gap-5 pt-5 px-5 pb-4 flex-1 min-w-0">
               <div className="flex flex-col gap-3 items-start">
                 <p className="font-[family-name:var(--font-inter)] font-medium capitalize leading-[1.4] text-[20px] text-black">
                   A Customized Growth Strategy for Creators
@@ -152,12 +146,9 @@ const Services = () => {
               </div>
 
               <Divider />
-
-              <div className="flex items-center justify-between">
-                <StatBlock value="4" label="Growth Signals Tracked" />
-                <ArrowButton />
-              </div>
+              <StatBlock value="4" label="Growth Signals Tracked" />
             </div>
+            <ArrowButton />
           </div>
         </div>
       </div>

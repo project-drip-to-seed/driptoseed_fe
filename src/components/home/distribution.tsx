@@ -1,13 +1,13 @@
 const Distribution = () => {
   return (
     <section
-      className="relative w-full h-[600px] overflow-hidden"
+      className="relative w-full min-h-[600px] overflow-hidden flex items-center gap-10 px-20 py-20"
       style={{
         backgroundImage:
           "linear-gradient(117.56922283215188deg, #D59EFB 20%, #780AC1 100%)",
       }}
     >
-      <div className="absolute left-20 top-20 w-[540px] max-w-[calc(100%-160px)] flex flex-col gap-1 items-start">
+      <div className="flex flex-col gap-1 items-start flex-1 min-w-0 max-w-[540px]">
         <div className="font-kugile capitalize leading-[1.6] text-[36px] w-full">
           <p className="text-black">Your Content.</p>
           <p className="text-[#780AC1]">Everywhere It Matters.</p>
@@ -34,7 +34,7 @@ const Distribution = () => {
         </div>
       </div>
 
-      <div className="absolute right-20 top-[53px] w-[668px] h-[475px] max-w-[calc(100%-160px)] bg-white flex items-center justify-center overflow-hidden">
+      <div className="flex-1 min-w-0 max-w-[668px] h-[475px] bg-white flex items-center justify-center overflow-hidden">
         <p className="font-kugile capitalize leading-[1.6] text-[96px] text-red-600 whitespace-nowrap">
           Graphic
         </p>
