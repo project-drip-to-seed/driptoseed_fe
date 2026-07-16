@@ -1,0 +1,76 @@
+const cards = [
+  {
+    title: "Limited to Your Existing Followers",
+    description:
+      "Most social platforms initially show your content to people who already know you. If it doesn't perform immediately, its reach slows down, making it difficult to consistently reach new viewers.",
+  },
+  {
+    title: "Great Videos Fade Too Quickly",
+    description:
+      "A video you've spent hours creating often receives the majority of its views within the first few days. After that, even valuable content is pushed aside by newer posts, regardless of its quality.",
+  },
+  {
+    title: "One Video Holds More Potential Than One Upload",
+    description:
+      "Every podcast, vlog, interview, or long-form video contains multiple moments worth sharing. But identifying, editing, captioning, and publishing those clips consistently requires significant time and resources.",
+  },
+  {
+    title: "Creating Isn't the Same as Growing",
+    description:
+      "Publishing consistently is important, but growth requires distribution. Without a strategy to place your content in front of new audiences, even the best creators struggle to expand beyond their existing community.",
+  },
+];
+
+const StarIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 19 20"
+    width={19}
+    height={20}
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M7.64112 20L7.96664 12.6736L1.86745 16.6493L0 13.3507L6.47611 10L0 6.6493L1.86745 3.35069L7.96664 7.32639L7.64112 0H11.3589L11.0334 7.32639L17.1326 3.35069L19 6.6493L12.5239 10L19 13.3507L17.1326 16.6493L11.0334 12.6736L11.3589 20H7.64112Z"
+    />
+  </svg>
+);
+
+const Problem = () => {
+  return (
+    <section className="w-full py-20 px-20 bg-white">
+      <div className="flex flex-col gap-10 items-start w-[900px] max-w-full">
+        <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+          {`Great Content Doesn't Fail. `}
+          <span className="text-[#780AC1]">Distribution Does.</span>
+        </p>
+        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
+          Creators spend hours planning, filming, and editing videos only for
+          most of them to disappear after a single upload. Algorithms are
+          unpredictable, and relying on one platform limits your reach.
+        </p>
+      </div>
+
+      <div className="flex gap-5 items-stretch w-full mt-10">
+        {cards.map((card) => (
+          <div
+            key={card.title}
+            className="group flex flex-col gap-8 items-start px-5 pt-6 pb-6 min-w-0 flex-1 h-[354px] rounded-3xl bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1]"
+          >
+            <StarIcon className="text-[#780AC1] transition-colors duration-300 group-hover:text-white" />
+            <div className="flex flex-col gap-3 items-start">
+              <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[20px] leading-[1.4] text-black transition-colors duration-300 group-hover:text-white">
+                {card.title}
+              </p>
+              <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] transition-colors duration-300 group-hover:text-white">
+                {card.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Problem;
