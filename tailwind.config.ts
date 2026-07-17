@@ -26,11 +26,16 @@ const config: Config = {
           "99.9%": { backgroundPosition: "300% 0, 0 0" },
           "100%": { backgroundPosition: "-60% 0, 0 0" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
       },
       animation: {
         marquee: "marquee 30s linear infinite",
         "stat-pulse": "stat-pulse 9s ease-in-out infinite",
         "arrow-flow": "arrow-flow 6s linear infinite",
+        float: "float 5s ease-in-out infinite",
       },
     },
   },
