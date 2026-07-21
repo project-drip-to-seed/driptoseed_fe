@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const navItems = [
   {
@@ -28,26 +29,26 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-20 h-20">
 
       {/* Logo */}
-      <a href="/" className="flex items-center gap-[10px]">
+      <Link href="/" className="flex items-center gap-[10px]">
         <Image
           src="/general_assets/drip_logo.svg"
-          alt="Logo"
+          alt="Drip"
           width={77.7}
           height={40}
         />
-      </a>
+      </Link>
 
       {/* Nav Items */}
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="font-[family-name:var(--font-inter)] text-white text-base font-normal leading-[1.2] capitalize whitespace-nowrap"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 

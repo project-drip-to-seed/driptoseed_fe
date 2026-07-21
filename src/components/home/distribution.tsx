@@ -8,10 +8,11 @@ const Distribution = () => {
       }}
     >
       <div className="flex flex-col gap-1 items-start flex-1 min-w-0 max-w-[540px]">
-        <div className="font-kugile capitalize leading-[1.6] text-[36px] w-full">
-          <p className="text-black">Your Content.</p>
-          <p className="text-[#780AC1]">Everywhere It Matters.</p>
-        </div>
+        <h2 className="font-kugile capitalize leading-[1.6] text-[36px] w-full">
+          <span className="text-black">Your Content.</span>
+          <br />
+          <span className="text-[#780AC1]">Everywhere It Matters.</span>
+        </h2>
 
         <div className="flex flex-col gap-4 font-[family-name:var(--font-inter)] font-normal capitalize leading-[1.6] text-[16px] text-white w-full">
           <p>

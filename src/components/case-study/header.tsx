@@ -35,10 +35,10 @@ const CaseStudyHeader = ({
             CASE STUDY • CREATOR GROWTH
           </span>
           <div className="flex flex-col items-center gap-2 text-center capitalize">
-            <p className="font-kugile text-[36px] leading-[1.4] text-black w-full">
+            <h1 className="font-kugile text-[36px] leading-[1.4] text-black w-full">
               {head}
               {tail && <span className="text-[#780AC1]">{tail}</span>}
-            </p>
+            </h1>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] w-full">
               {creator} — every day, creators dedicate hours to researching
               ideas, writing scripts, recording videos, editing footage, and
@@ -51,10 +51,10 @@ const CaseStudyHeader = ({
 
         {/* Stats */}
         <div className="flex flex-col items-center gap-6 w-full">
-          <p className="font-kugile capitalize text-[28px] leading-[1.4] text-center">
+          <h2 className="font-kugile capitalize text-[28px] leading-[1.4] text-center">
             <span className="text-black">Built to </span>
             <span className="text-[#780AC1]">Amplify Creator Growth</span>
-          </p>
+          </h2>
           <div className="flex items-center justify-center gap-10 flex-wrap">
             {stats.map((stat, index) => (
               <div key={stat.label} className="flex items-center gap-10">

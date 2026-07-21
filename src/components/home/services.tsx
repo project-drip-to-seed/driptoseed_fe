@@ -31,12 +31,11 @@ const Services = () => {
   return (
     <section className="w-full py-20 px-20 bg-[#EED7FF66]">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
-          One Content Engine.
-        </p>
-        <p className="font-kugile capitalize text-[36px] leading-[1.6] text-[#780AC1]">
-          Three Powerful Growth Services.
-        </p>
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.6]">
+          <span className="text-black">One Content Engine.</span>
+          <br />
+          <span className="text-[#780AC1]">Three Powerful Growth Services.</span>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[868px] max-w-full">
           Creating great content is only the beginning. Our Creator Growth
           Engine combines strategic clipping, seeding, and distribution to

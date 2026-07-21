@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  robots: { index: false, follow: true },
+};
+
 const NotFound = () => {
   return (
     <main
@@ -27,13 +34,13 @@ const NotFound = () => {
       </div>
 
       <div className="relative flex flex-col items-center gap-5 text-center max-w-[620px]">
-        <p className="font-kugile leading-[1.1] text-[160px] text-white">
+        <h2 className="font-kugile leading-[1.1] text-[160px] text-white">
           404
-        </p>
+        </h2>
         <div className="flex flex-col gap-1 items-center capitalize">
-          <p className="font-kugile leading-[1.4] text-[36px] text-white">
+          <h1 className="font-kugile leading-[1.4] text-[36px] text-white">
             This Page Didn&apos;t Make The Cut.
-          </p>
+          </h1>
           <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] text-white/80">
             The page you&apos;re looking for got lost in distribution. Let&apos;s
             get you back to content that performs.

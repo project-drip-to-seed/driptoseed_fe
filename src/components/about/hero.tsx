@@ -23,11 +23,11 @@ const AboutHero = () => {
 
       {/* Headline + copy */}
       <div className="absolute left-1/2 -translate-x-1/2 top-[160px] w-[900px] max-w-full px-5 flex flex-col items-center gap-1 text-center text-white capitalize">
-        <p className="font-kugile leading-[1.4] text-[57px]">
+        <h1 className="font-kugile leading-[1.4] text-[57px]">
           Building the Future of
           <br />
           Creator Growth.
-        </p>
+        </h1>
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px]">
           We&apos;re building a creator growth ecosystem that helps creators
           extend the life of every piece of content through strategic

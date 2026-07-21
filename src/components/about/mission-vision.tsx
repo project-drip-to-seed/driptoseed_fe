@@ -18,10 +18,10 @@ const MissionVision = () => {
   return (
     <section className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
           {`Our `}
           <span className="text-[#780AC1]">Mission &amp; Vision</span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
           Every day, creators invest countless hours researching ideas,
           writing scripts, filming videos, editing content, and publishing

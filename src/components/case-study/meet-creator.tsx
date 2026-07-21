@@ -3,10 +3,10 @@ const CaseStudyMeetCreator = () => {
     <section className="w-full py-20 px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex gap-10 items-start justify-between">
         <div className="flex flex-col gap-[14px] items-start max-w-[760px]">
-          <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
             {`Meet the `}
             <span className="text-[#780AC1]">creator</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
             Our client is a business educator creating practical content around
             entrepreneurship, startups, productivity, and personal finance.

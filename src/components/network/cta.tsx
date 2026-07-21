@@ -43,12 +43,12 @@ const NetworkCta = () => {
         {/* Content */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-5 items-center">
           <div className="flex flex-col gap-1 items-center text-center capitalize">
-            <p className="font-kugile text-[36px] leading-[1.4] text-black">
+            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
               {`Every Creator Needs `}
               <span className="text-[#780AC1]">
                 a System, Not Just Content.
               </span>
-            </p>
+            </h2>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
               Creating great content is only the beginning. Sustainable growth
               comes from having a structured system that ensures every upload

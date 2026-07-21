@@ -123,10 +123,10 @@ const NetworkComparison = () => {
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
         {/* Heading */}
         <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-          <p className="font-kugile text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
             A System Built
             <span className="text-[#780AC1]">{` for Long-Term Growth.`}</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
             Traditional creator workflows focus on publishing content and hoping
             it performs. Our framework is built around continuous optimization,

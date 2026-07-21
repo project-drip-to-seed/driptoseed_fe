@@ -11,10 +11,10 @@ const ResourcesCaseStudies = () => {
         {/* Heading + tabs */}
         <div className="flex flex-col gap-5 items-start w-full">
           <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-            <p className="font-kugile text-[36px] leading-[1.4] text-black">
+            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
               {`Explore Real `}
               <span className="text-[#780AC1]">Creator Transformations.</span>
-            </p>
+            </h2>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
               Every day, creators dedicate hours to researching ideas, writing
               scripts, recording videos, editing footage, and publishing

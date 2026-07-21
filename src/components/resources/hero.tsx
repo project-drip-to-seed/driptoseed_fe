@@ -13,9 +13,9 @@ const ResourcesHero = () => {
     >
       {/* Headline + copy */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-20 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-1 text-center text-white capitalize">
-        <p className="font-kugile leading-[1.4] text-[57px] w-full">
+        <h1 className="font-kugile leading-[1.4] text-[57px] w-full">
           Real Creators. Real Growth. Real Results.
-        </p>
+        </h1>
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] w-full">
           Every creator&apos;s journey is unique, but sustainable growth follows
           a proven system. Explore how our Creator Growth Framework has helped

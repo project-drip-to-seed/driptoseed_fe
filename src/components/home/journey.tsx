@@ -6,7 +6,6 @@ type Step = {
   num: string;
   title: string;
   description: string;
-  variant: "primary" | "light";
 };
 
 const steps: Step[] = [
@@ -15,42 +14,36 @@ const steps: Step[] = [
     title: "Share Your Content",
     description:
       "Every journey begins with your content. Simply submit your long-form video, podcast, interview, vlog, or existing social content. We review every asset to understand its potential and identify the strongest opportunities for growth.",
-    variant: "primary",
   },
   {
     num: "02",
     title: "Strategy & Planning",
     description:
       "No two creators are alike. Before distributing anything, we develop a customized growth strategy based on your niche, audience, content themes, and business goals. This ensures every piece of content is positioned to reach the right audience through the right channels.",
-    variant: "light",
   },
   {
     num: "03",
     title: "Clip Creation",
     description:
       "Our editing team transforms one long-form video into multiple short-form assets designed for today's most engaging platforms. Instead of relying on one upload, you'll have a library of content ready to be distributed throughout the month.",
-    variant: "light",
   },
   {
     num: "04",
     title: "Performance Reporting",
     description:
       "Growth is measured, not guessed. Every campaign includes transparent reporting that shows how your content performs across the distribution ecosystem. We continuously use these insights to improve future content and distribution strategies.",
-    variant: "light",
   },
   {
     num: "05",
     title: "Strategic Distribution",
     description:
       "Instead of waiting for algorithms to discover your content, we actively place it across our growing distribution ecosystem. Your content is shared through relevant communities and partner networks where your ideal audience is already engaged.",
-    variant: "light",
   },
   {
     num: "06",
     title: "Content Optimization",
     description:
       "Every clip is optimized to maximize discoverability and audience retention before distribution. Our team refines every detail to improve performance across platforms.",
-    variant: "light",
   },
 ];
 
@@ -102,11 +95,10 @@ const StepCard = ({
   >
     <div className="flex gap-3 items-center w-full">
       <div
-        className={
-          step.variant === "primary"
-            ? "flex items-center justify-center rounded-full shrink-0 size-9 bg-[#780AC1] text-white"
-            : "flex items-center justify-center rounded-full shrink-0 size-9 bg-[#EED7FF] text-black"
-        }
+        className="flex items-center justify-center rounded-full shrink-0 size-9 animate-num-pulse"
+        style={{
+          animationDelay: `${order * ARROW_SLOT_SECONDS - ARROW_CYCLE_SECONDS}s`,
+        }}
       >
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.2] text-[16px]">
           {step.num}
@@ -161,10 +153,10 @@ const Journey = () => {
   return (
     <section ref={sectionRef} className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.6] whitespace-nowrap">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.6] whitespace-nowrap">
           <span className="text-black">From One Upload to </span>
           <span className="text-[#780AC1]">Thousands of New Viewers.</span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[900px] max-w-full">
           Growing as a creator shouldn&apos;t depend on chance. Our
           structured workflow transforms every upload into a long-term growth

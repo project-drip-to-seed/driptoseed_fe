@@ -31,10 +31,10 @@ const NetworkGrowthStages = () => {
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
         {/* Heading */}
         <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-          <p className="font-kugile text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
             {`One Framework. `}
             <span className="text-[#780AC1]">Six Growth Stages.</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
             Our Creator Growth Framework is a continuous system where every
             stage builds upon the previous one. Together, these six stages

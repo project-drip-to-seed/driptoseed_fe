@@ -24,9 +24,9 @@ const Hero = () => {
       {/* Headline, copy, CTAs */}
       <div className="absolute left-20 top-[141px] w-[734px] flex flex-col gap-8 items-start">
         <div className="flex flex-col gap-1 items-start text-white w-full capitalize">
-          <p className="font-kugile leading-[1.4] text-[57px] w-full">
+          <h1 className="font-kugile leading-[1.4] text-[57px] w-full">
             Great Content Deserves More Than Just Your Followers.
-          </p>
+          </h1>
           <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] w-[654px]">
             We help creators grow beyond algorithms through strategic content
             seeding, clipping, and distribution. Every piece of content gets

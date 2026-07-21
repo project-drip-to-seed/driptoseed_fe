@@ -88,10 +88,10 @@ const Faq = () => {
     <section className="w-full py-20 px-20 bg-white">
       <div className="flex gap-10 items-start w-full">
         <div className="sticky top-10 flex flex-col gap-1 items-start flex-1 min-w-0 max-w-[620px]">
-          <p className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
+          <h2 className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
             {`Frequently `}
             <span className="text-[#780AC1]">asked questions</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
             Every long-form video is packed with moments that deserve their
             own audience. Whether it&apos;s a podcast, interview, vlog,

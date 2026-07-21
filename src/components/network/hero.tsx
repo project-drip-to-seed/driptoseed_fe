@@ -13,9 +13,9 @@ const NetworkHero = () => {
     >
       {/* Headline + copy */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-20 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-1 text-center text-white capitalize">
-        <p className="font-kugile leading-[1.4] text-[57px] w-full">
+        <h1 className="font-kugile leading-[1.4] text-[57px] w-full">
           The Framework Behind Sustainable Creator Growth
-        </p>
+        </h1>
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] w-full">
           We don&apos;t rely on luck or algorithms. Our proprietary Creator
           Growth Framework transforms every piece of content into a scalable

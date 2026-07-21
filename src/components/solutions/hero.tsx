@@ -65,9 +65,9 @@ const SolutionsHero = () => {
 
       {/* Headline + copy */}
       <div className="absolute left-1/2 -translate-x-1/2 top-[180px] w-[900px] max-w-full flex flex-col items-center gap-1 text-center text-white capitalize">
-        <p className="font-kugile leading-[1.4] text-[57px] w-full whitespace-nowrap">
+        <h1 className="font-kugile leading-[1.4] text-[57px] w-full whitespace-nowrap">
           Grow Beyond Your Followers.
-        </p>
+        </h1>
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] w-full">
           Creating exceptional content is no longer enough. In today&apos;s
           creator economy, sustainable growth comes from consistently

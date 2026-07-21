@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/home/hero";
 import Milestone from "@/components/home/milestone";
 import Problem from "@/components/home/problem";
@@ -11,6 +12,13 @@ import Comparison from "@/components/home/comparison";
 import Testimonials from "@/components/home/testimonials";
 import Faq from "@/components/home/faq";
 import Reveal from "@/components/shared/reveal";
+
+export const metadata: Metadata = {
+  title: "Drip - Grow Beyond Algorithms",
+  description:
+    "We help creators grow beyond algorithms through strategic content seeding, clipping, and distribution. Every piece of content gets multiple opportunities to be discovered by the right audience.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

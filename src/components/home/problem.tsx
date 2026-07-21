@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const cards = [
   {
     title: "Limited to Your Existing Followers",
@@ -36,13 +40,34 @@ const StarIcon = () => (
 );
 
 const Problem = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full py-20 px-20 bg-white">
+    <section ref={sectionRef} className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
           {`Great Content Doesn't Fail. `}
           <span className="text-[#780AC1]">Distribution Does.</span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
           Creators spend hours planning, filming, and editing videos only for
           most of them to disappear after a single upload. Algorithms are
@@ -51,10 +76,13 @@ const Problem = () => {
       </div>
 
       <div className="flex gap-5 items-stretch w-full mt-10">
-        {cards.map((card) => (
+        {cards.map((card, i) => (
           <div
             key={card.title}
-            className="group flex flex-col gap-8 items-start min-w-0 flex-1 min-h-[354px] rounded-3xl px-5 py-6 overflow-hidden bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1]"
+            className={`group flex flex-col gap-8 items-start min-w-0 flex-1 min-h-[354px] rounded-3xl px-5 py-6 overflow-hidden bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1] ${
+              visible ? "animotion-blur-reveal" : "opacity-0"
+            }`}
+            style={visible ? { animationDelay: `${i * 120}ms` } : undefined}
           >
             <div className="shrink-0 w-[19px] h-5 text-[#780AC1] transition-colors duration-300 group-hover:text-white">
               <StarIcon />

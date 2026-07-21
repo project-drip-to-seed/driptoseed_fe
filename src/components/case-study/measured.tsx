@@ -8,10 +8,10 @@ const CaseStudyMeasured = () => {
 
         {/* Heading */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-1 items-center text-center capitalize">
-          <p className="font-kugile text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
             {`Every Placement. `}
             <span className="text-[#780AC1]">Every Result. Fully Measured.</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
             Every day, creators invest countless hours researching ideas,
             writing scripts, filming videos, editing content, and publishing

@@ -39,10 +39,10 @@ const Comparison = () => {
   return (
     <section className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
           {`We're Not an Agency. `}
           <span className="text-[#780AC1]">{`We're Infrastructure.`}</span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
           Every long-form video is packed with moments that deserve their own
           audience. Whether it&apos;s a podcast, interview, vlog, webinar, or

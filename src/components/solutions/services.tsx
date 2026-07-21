@@ -19,7 +19,7 @@ const cards = [
     description:
       "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
     image: "/hero_section/power_2.svg",
-    imageClassName: "inset-[6%_26%] w-[48%] h-[88%] object-contain",
+    imageClassName: "inset-0 w-full h-full object-cover",
     badge: "18 clips / upload",
     tags: ["Auto re-cutting", "Platform-native edits", "Hook optimization"],
     elevated: true,
@@ -29,7 +29,7 @@ const cards = [
     description:
       "A structured publishing plan that sequences every clip across the right channels, at the right cadence.",
     image: "/hero_section/power_3.svg",
-    imageClassName: "inset-[6%_26%] w-[48%] h-[88%] object-contain",
+    imageClassName: "inset-0 w-full h-full object-cover",
     badge: "6 channels live",
     tags: ["Channel sequencing", "Audience mapping", "Performance loops"],
   },
@@ -39,12 +39,12 @@ const SolutionsServices = () => {
   return (
     <section className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
           {`One Engine. `}
           <span className="text-[#780AC1]">
             Three Powerful Growth Services.
           </span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
           Seeding, clipping, and distribution working together as a single,
           integrated growth system.

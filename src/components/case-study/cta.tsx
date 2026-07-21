@@ -3,10 +3,10 @@ const CaseStudyCta = () => {
     <section className="w-full py-[60px] px-20 bg-[#F2E7F9]">
       <div className="max-w-[900px] mx-auto flex flex-col items-center gap-[38px]">
         <div className="flex flex-col items-center gap-1 text-center capitalize">
-          <p className="font-kugile text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
             {`Don't Let Great Content `}
             <span className="text-[#780AC1]">Stop at One Upload.</span>
-          </p>
+          </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
             Creator Seeding ensures every upload has the opportunity to reach new
             communities, earn greater visibility, and create lasting impact

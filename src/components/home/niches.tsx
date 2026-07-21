@@ -57,10 +57,10 @@ const Niches = () => {
   return (
     <section className="w-full py-20 px-20 bg-white">
       <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <p className="font-kugile capitalize text-[36px] leading-[1.6] whitespace-nowrap">
+        <h2 className="font-kugile capitalize text-[36px] leading-[1.6] whitespace-nowrap">
           <span className="text-black">Built for Every </span>
           <span className="text-[#780AC1]">Creator Niche.</span>
-        </p>
+        </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[900px] max-w-full">
           Every niche has a different audience, content style, and
           distribution strategy. That&apos;s why we don&apos;t use a
