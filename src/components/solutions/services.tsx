@@ -9,8 +9,8 @@ const cards = [
     title: "Creator Seeding",
     description:
       "We place your profile directly inside the niche communities and micro-networks where your next audience already lives.",
-    image: "/general_assets/about_grow_network.png",
-    imageClassName: "inset-[12%_10%] w-[80%] h-[76%] object-contain",
+    image: "/solutions/our_engine_1.svg",
+    imageClassName: "inset-0 w-full h-full object-cover",
     badge: "412 communities",
     tags: ["Community placement", "Niche targeting", "Organic trust"],
   },
@@ -18,7 +18,7 @@ const cards = [
     title: "Creator Clipping",
     description:
       "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
-    image: "/hero_section/power_2.svg",
+    image: "/solutions/our_engine_2.svg",
     imageClassName: "inset-0 w-full h-full object-cover",
     badge: "18 clips / upload",
     tags: ["Auto re-cutting", "Platform-native edits", "Hook optimization"],
@@ -28,7 +28,7 @@ const cards = [
     title: "Distribution Strategy",
     description:
       "A structured publishing plan that sequences every clip across the right channels, at the right cadence.",
-    image: "/hero_section/power_3.svg",
+    image: "/solutions/our_engine_3.svg",
     imageClassName: "inset-0 w-full h-full object-cover",
     badge: "6 channels live",
     tags: ["Channel sequencing", "Audience mapping", "Performance loops"],
@@ -60,7 +60,7 @@ const SolutionsServices = () => {
             }`}
           >
             <div
-              className="relative w-full h-60 shrink-0"
+              className="relative w-full h-60 shrink-0 overflow-hidden"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",
@@ -71,9 +71,6 @@ const SolutionsServices = () => {
                 src={card.image}
                 className={`absolute ${card.imageClassName}`}
               />
-              <span className="absolute bottom-[10px] right-[10px] bg-[rgba(120,10,193,0.08)] text-[#780AC1] font-[family-name:var(--font-inter)] font-normal capitalize text-[10px] leading-[1.2] px-2 py-1 rounded-full whitespace-nowrap">
-                {card.badge}
-              </span>
             </div>
 
             <div className="flex flex-col gap-5 p-5 flex-1">

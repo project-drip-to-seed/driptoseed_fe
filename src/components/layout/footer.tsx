@@ -1,17 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import {
+  solutionLinks,
+  solutionsLink,
+  type NavigationLink,
+} from "@/lib/navigation";
 
-const platformLinks = [
-  "Solutions",
-  "Creator Seeding",
-  "Creator Clipping",
-  "Distribution Strategy",
+const platformLinks: NavigationLink[] = [solutionsLink, ...solutionLinks];
+
+const companyLinks: NavigationLink[] = [
+  { name: "About", href: "/about" },
+  { name: "Our Framework", href: "/network" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" },
 ];
 
-const companyLinks = ["About", "Our Framework", "Careers", "Contact"];
-
-const getStartedLinks = ["Apply as Creator", "Become an Editor", "Book a Call"];
+const getStartedLinks: NavigationLink[] = [
+  { name: "Apply as Creator", href: "/become-creator" },
+  { name: "Become an Editor", href: "/become-editor" },
+  { name: "Book a Call", href: "/contact" },
+];
 
 const legalLinks = ["Privacy Policy", "Terms & Condition", "FAQs"];
 
@@ -20,7 +30,7 @@ const FooterColumn = ({
   links,
 }: {
   title: string;
-  links: string[];
+  links: NavigationLink[];
 }) => (
   <div className="flex flex-col gap-5 items-start w-[157px] shrink-0">
     <p className="font-[family-name:var(--font-inter)] font-medium uppercase text-[20px] leading-[1.2] text-white whitespace-nowrap">
@@ -28,12 +38,13 @@ const FooterColumn = ({
     </p>
     <div className="flex flex-col gap-5 items-start">
       {links.map((link) => (
-        <p
-          key={link}
-          className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.2] text-white whitespace-nowrap"
+        <Link
+          key={link.href}
+          href={link.href}
+          className="whitespace-nowrap font-[family-name:var(--font-inter)] text-[16px] font-normal capitalize leading-[1.2] text-white transition-opacity hover:opacity-75"
         >
-          {link}
-        </p>
+          {link.name}
+        </Link>
       ))}
     </div>
   </div>

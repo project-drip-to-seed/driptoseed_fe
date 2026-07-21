@@ -1,7 +1,7 @@
 const CaseStudyCta = () => {
   return (
-    <section className="w-full py-[60px] px-20 bg-[#F2E7F9]">
-      <div className="max-w-[900px] mx-auto flex flex-col items-center gap-[38px]">
+    <section className="w-full bg-[#F9F9F9] px-20 py-[60px]">
+      <div className="mx-auto flex max-w-[900px] flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-1 text-center capitalize">
           <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
             {`Don't Let Great Content `}
@@ -20,7 +20,7 @@ const CaseStudyCta = () => {
           className="flex items-center justify-center rounded-full px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-white capitalize whitespace-nowrap"
           style={{
             backgroundImage:
-              "linear-gradient(123.47deg, #D59EFB 0%, #780AC1 65.556%)",
+              "linear-gradient(129.274deg, #D59EFB 0%, #780AC1 65.556%)",
           }}
         >
           Start Seeding Your Content
