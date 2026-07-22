@@ -63,7 +63,7 @@ const FaqCard = ({
       aria-expanded={open}
       className="flex items-center justify-between gap-4 w-full px-5 py-5 text-left"
     >
-      <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[24px] leading-[1.2] text-black">
+      <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[18px] sm:text-[24px] leading-[1.2] text-black">
         {question}
       </p>
       <PlusIcon open={open} />
@@ -85,10 +85,10 @@ const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex gap-10 items-start w-full">
-        <div className="sticky top-10 flex flex-col gap-1 items-start flex-1 min-w-0 max-w-[620px]">
-          <h2 className="font-kugile capitalize text-[36px] leading-[1.6] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-10 items-start w-full lg:flex-row">
+        <div className="lg:sticky lg:top-10 flex flex-col gap-1 items-start w-full flex-1 min-w-0 lg:max-w-[620px]">
+          <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.6] text-black">
             {`Frequently `}
             <span className="text-[#780AC1]">asked questions</span>
           </h2>
@@ -100,7 +100,7 @@ const Faq = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 items-start flex-1 min-w-0 max-w-[620px]">
+        <div className="flex flex-col gap-3 items-start w-full flex-1 min-w-0 lg:max-w-[620px]">
           {faqs.map((faq, index) => (
             <FaqCard
               key={index}

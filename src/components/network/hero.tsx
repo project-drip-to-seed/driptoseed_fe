@@ -1,7 +1,7 @@
 const NetworkHero = () => {
   return (
-    <section className="relative w-full h-[456px] overflow-hidden bg-[#F2E7F9]">
-      <div className="absolute left-[-234px] top-[-243px] size-[851px]">
+    <section className="relative w-full h-auto min-h-[380px] py-16 overflow-hidden bg-[#F2E7F9] sm:min-h-[420px] lg:h-[456px] lg:py-0">
+      <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img
             alt=""
@@ -10,7 +10,7 @@ const NetworkHero = () => {
           />
         </div>
       </div>
-      <div className="absolute right-[-387px] top-[-525px] size-[1080px]">
+      <div className="absolute right-[-387px] top-[-525px] size-[500px] sm:size-[760px] lg:size-[1080px]">
         <div className="absolute inset-[-70.37%]">
           <img
             alt=""
@@ -21,8 +21,8 @@ const NetworkHero = () => {
       </div>
 
       {/* Headline + copy */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-20 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-1 text-center text-white capitalize">
-        <h1 className="font-kugile leading-[1.4] text-[57px] w-full">
+      <div className="absolute left-1/2 bottom-10 -translate-x-1/2 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-3 text-center text-white capitalize lg:bottom-20 lg:gap-1">
+        <h1 className="font-kugile leading-[1.3] text-[30px] sm:text-[40px] lg:text-[57px] lg:leading-[1.4] w-full">
           The Framework Behind Sustainable Creator Growth
         </h1>
         <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.6] text-[16px] w-full">

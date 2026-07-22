@@ -15,16 +15,16 @@ const stats: Stat[] = [
 
 const StatsBar = () => {
   return (
-    <section className="w-full bg-[#F2E7F9] py-20 px-10">
-      <div className="mx-auto flex max-w-[1363px] items-center justify-center gap-16">
-        <p className="font-kugile text-[36px] leading-[1.4] capitalize whitespace-nowrap shrink-0">
+    <section className="w-full bg-[#F2E7F9] py-12 px-5 sm:px-8 md:px-10 lg:py-20">
+      <div className="mx-auto flex max-w-[1363px] flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16">
+        <p className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.4] capitalize whitespace-nowrap shrink-0 text-center lg:text-left">
           <span className="text-black">{`Built to `}</span>
           <span className="text-[#780AC1]">Amplify</span>
           <br />
           <span className="text-[#780AC1]">Creator Growth</span>
         </p>
 
-        <div className="flex items-center gap-10 min-w-0 overflow-x-auto">
+        <div className="flex w-full items-center gap-10 min-w-0 overflow-x-auto">
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center gap-10">
               {i > 0 && <div className="h-[120px] w-px shrink-0 bg-[#780AC1]/30" />}

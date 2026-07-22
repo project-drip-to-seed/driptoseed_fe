@@ -96,11 +96,11 @@ const GetInTouch = () => {
   };
 
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-10">
-        <div className="flex w-[620px] max-w-full flex-col gap-10 items-start">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-stretch justify-between gap-10 lg:flex-row lg:items-center">
+        <div className="flex w-full flex-col gap-10 items-start lg:w-[620px] lg:max-w-full">
           <div className="flex flex-col gap-1 items-start capitalize">
-            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+            <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
               Get in
               <span className="text-[#780AC1]">{` touch`}</span>
             </h2>
@@ -111,7 +111,7 @@ const GetInTouch = () => {
             </p>
           </div>
 
-          <div className="flex w-[405px] max-w-full flex-col gap-10 items-start">
+          <div className="flex w-full max-w-full flex-col gap-10 items-start lg:w-[405px]">
             <div className="flex flex-col gap-4 items-start w-full">
               <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-black capitalize">
                 Contact us at:
@@ -151,7 +151,7 @@ const GetInTouch = () => {
         </div>
 
         <div
-          className="w-[640px] max-w-full shrink-0 rounded-[24px] p-5"
+          className="w-full shrink-0 rounded-[24px] p-5 lg:w-[640px] lg:max-w-full"
           style={{
             background:
               "linear-gradient(180deg, rgba(213, 158, 251, 0.12) 11%, rgba(120, 10, 193, 0.12) 142.75%)",
@@ -175,7 +175,7 @@ const GetInTouch = () => {
                 value={form.fullName}
                 onChange={(v) => setForm((f) => ({ ...f, fullName: v }))}
               />
-              <div className="flex items-start justify-between gap-10 w-full">
+              <div className="flex flex-col items-start justify-between gap-6 w-full sm:flex-row sm:gap-10">
                 <FormField
                   label="Email"
                   required

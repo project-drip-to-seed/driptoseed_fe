@@ -1,7 +1,7 @@
 const ContactHero = () => {
   return (
-    <section className="relative h-[402px] w-full overflow-hidden bg-[#F2E7F9]">
-      <div className="absolute left-[-234px] top-[-243px] size-[851px]">
+    <section className="relative h-auto min-h-[320px] w-full overflow-hidden bg-[#F2E7F9] py-16 sm:min-h-[360px] lg:h-[402px] lg:py-0">
+      <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img
             alt=""
@@ -12,7 +12,7 @@ const ContactHero = () => {
         </div>
       </div>
 
-      <div className="absolute right-[-387px] top-[-525px] size-[1080px]">
+      <div className="absolute right-[-387px] top-[-525px] size-[500px] sm:size-[760px] lg:size-[1080px]">
         <div className="absolute inset-[-70.37%]">
           <img
             alt=""

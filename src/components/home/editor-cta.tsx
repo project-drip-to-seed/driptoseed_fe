@@ -14,12 +14,12 @@ const TagPill = ({ label }: { label: string }) => (
 
 const EditorCta = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex items-center justify-between gap-10 p-10 w-full rounded-3xl border border-[#D59EFB] bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col items-stretch justify-between gap-10 p-6 sm:p-10 w-full rounded-3xl border border-[#D59EFB] bg-white lg:flex-row lg:items-center">
         {/* Left content */}
-        <div className="flex flex-col gap-5 flex-1 min-w-0 max-w-[622px]">
+        <div className="flex flex-col gap-5 w-full flex-1 min-w-0 lg:max-w-[622px]">
           <div className="flex items-baseline gap-3 flex-wrap">
-            <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.2] text-[88px] text-[#780AC1]">
+            <p className="font-[family-name:var(--font-inter)] font-normal leading-[1.2] text-[56px] sm:text-[72px] lg:text-[88px] text-[#780AC1]">
               ₹175
             </p>
             <p className="font-[family-name:var(--font-inter)] font-medium capitalize leading-[1.4] text-[20px] text-[#780AC1]">
@@ -54,7 +54,7 @@ const EditorCta = () => {
 
         {/* Right panel */}
         <div
-          className="relative shrink-0 w-[540px] max-w-full h-[335px] rounded-3xl overflow-hidden"
+          className="relative shrink-0 w-full lg:w-[540px] max-w-full h-[280px] sm:h-[335px] rounded-3xl overflow-hidden"
           style={{
             background:
               "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",

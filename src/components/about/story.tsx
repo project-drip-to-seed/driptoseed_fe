@@ -136,13 +136,47 @@ const StoryCardItem = ({
   );
 };
 
+const MobileStoryCard = ({ card }: { card: StoryCard }) => (
+  <div className="relative w-full overflow-hidden rounded-3xl border border-[#D59EFB] bg-white">
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(179.54deg, rgba(213,158,251,0.12) 51.307%, rgba(120,10,193,0.12) 95.412%)",
+      }}
+    />
+    <div className="relative z-10 flex flex-col">
+      <p className="px-5 pt-5 uppercase font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.4] text-[#780AC1]">
+        {card.eyebrow}
+      </p>
+      <div className="px-5 mt-4 flex flex-col items-start gap-2 text-left capitalize">
+        <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] w-full text-black">
+          {card.title}
+        </p>
+        <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] w-full text-[#404040]">
+          {card.description}
+        </p>
+      </div>
+      <div
+        className="mt-4 h-[220px] w-full sm:h-[300px]"
+        style={{
+          backgroundImage: "url(/general_assets/about_story_mockup_large.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+    </div>
+  </div>
+);
+
 const Story = () => {
   const [activeIndex, setActiveIndex] = useState(2);
 
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           {`It Started With `}
           <span className="text-[#780AC1]">One Simple Observation.</span>
         </h2>
@@ -153,7 +187,15 @@ const Story = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 items-stretch w-full mt-10">
+      {/* Mobile/tablet: simple stacked cards */}
+      <div className="flex flex-col gap-5 w-full mt-10 lg:hidden">
+        {cards.map((card) => (
+          <MobileStoryCard key={card.eyebrow} card={card} />
+        ))}
+      </div>
+
+      {/* Desktop: interactive width-toggle cards */}
+      <div className="hidden gap-5 items-stretch w-full mt-10 lg:flex">
         {cards.map((card, index) => (
           <StoryCardItem
             key={card.eyebrow}

@@ -24,26 +24,28 @@ const CtaMockup = ({
 
 const NetworkCta = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="relative max-w-[1280px] mx-auto h-[561px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="relative max-w-[1280px] mx-auto h-auto min-h-[380px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white py-12 lg:h-[561px] lg:py-0">
         {/* Glows */}
         <div className="pointer-events-none absolute right-[-492px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
         <div className="pointer-events-none absolute left-[-621px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
 
         {/* Bottom mockups */}
-        <CtaMockup
-          className="bottom-[-398.59px] left-[calc(50%-258px)]"
-          rotate="-4.78deg"
-        />
-        <CtaMockup
-          className="bottom-[-368.78px] left-[calc(50%+261.2px)]"
-          rotate="-5.01deg"
-        />
+        <div className="hidden lg:contents">
+          <CtaMockup
+            className="bottom-[-398.59px] left-[calc(50%-258px)]"
+            rotate="-4.78deg"
+          />
+          <CtaMockup
+            className="bottom-[-368.78px] left-[calc(50%+261.2px)]"
+            rotate="-5.01deg"
+          />
+        </div>
 
         {/* Content */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-5 items-center">
-          <div className="flex flex-col gap-1 items-center text-center capitalize">
-            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+        <div className="relative left-1/2 -translate-x-1/2 lg:absolute lg:top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-5 items-center px-5 lg:px-0">
+          <div className="flex flex-col gap-3 items-center text-center capitalize lg:gap-1">
+            <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
               {`Every Creator Needs `}
               <span className="text-[#780AC1]">
                 a System, Not Just Content.
@@ -57,7 +59,7 @@ const NetworkCta = () => {
             </p>
           </div>
 
-          <div className="flex gap-5 items-center">
+          <div className="flex flex-wrap gap-4 items-center justify-center sm:gap-5">
             <a
               href="/become-creator"
               className="flex items-center justify-center rounded-full border border-[#780AC1] px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-[#780AC1] capitalize whitespace-nowrap"

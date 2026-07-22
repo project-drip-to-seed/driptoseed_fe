@@ -52,9 +52,9 @@ const AsteriskIcon = ({ className }: { className?: string }) => (
 
 const Principles = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           {`The principles that `}
           <span className="text-[#780AC1]">guide everything we build.</span>
         </h2>
@@ -65,11 +65,11 @@ const Principles = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-5 w-full mt-10">
+      <div className="grid grid-cols-1 gap-5 w-full mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {principles.map((principle) => (
           <div
             key={principle.title}
-            className="group flex flex-col gap-8 items-start px-5 py-5 min-w-0 h-[230px] rounded-3xl bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#D59EFB] hover:to-[#780AC1]"
+            className="group flex flex-col gap-8 items-start px-5 py-5 min-w-0 min-h-[230px] rounded-3xl bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#D59EFB] hover:to-[#780AC1]"
           >
             <div className="flex items-center justify-center shrink-0 size-[66px] rounded-2xl bg-[#EED7FF] transition-colors duration-300 group-hover:bg-white/20">
               <AsteriskIcon className="size-8 text-[#780AC1] transition-colors duration-300 group-hover:text-white" />

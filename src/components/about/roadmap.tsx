@@ -38,11 +38,11 @@ const phases: Phase[] = [
 
 const Roadmap = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="relative w-full rounded-3xl border border-[#D59EFB] bg-white overflow-hidden px-10 py-[60px]">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="relative w-full rounded-3xl border border-[#D59EFB] bg-white overflow-hidden px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-[60px]">
         {/* decorative glow bleeding from bottom-right */}
         <div
-          className="absolute rounded-full pointer-events-none"
+          className="absolute hidden rounded-full pointer-events-none lg:block"
           style={{
             left: 788,
             top: 304,
@@ -54,8 +54,8 @@ const Roadmap = () => {
         />
 
         {/* heading */}
-        <div className="relative flex flex-col gap-1 items-start capitalize w-[900px] max-w-full">
-          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+        <div className="relative flex flex-col gap-1 items-start capitalize w-full lg:w-[900px] max-w-full">
+          <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
             {`Building the `}
             <span className="text-[#780AC1]">
               future of creator distribution.
@@ -69,8 +69,8 @@ const Roadmap = () => {
         </div>
 
         {/* timeline + visual panel */}
-        <div className="relative flex gap-5 items-stretch w-full mt-10">
-          <div className="relative w-[674px] shrink-0">
+        <div className="relative flex flex-col gap-5 items-stretch w-full mt-10 lg:flex-row">
+          <div className="relative w-full lg:w-[674px] shrink-0">
             <div className="absolute left-3 top-3 bottom-3 w-px bg-[#D59EFB]" />
             <div className="flex flex-col gap-[54px] w-full">
               {phases.map((phase) => (
@@ -104,7 +104,7 @@ const Roadmap = () => {
           </div>
 
           {/* visual panel */}
-          <div className="flex-1 min-w-0 bg-[#D59EFB]" />
+          <div className="flex-1 min-w-0 h-[200px] lg:h-auto bg-[#D59EFB]" />
         </div>
       </div>
     </section>

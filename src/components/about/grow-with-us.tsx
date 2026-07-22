@@ -53,9 +53,9 @@ const ArrowUpRightIcon = () => (
 
 const GrowWithUs = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           {`Grow `}
           <span className="text-[#780AC1]">with us.</span>
         </h2>
@@ -66,14 +66,14 @@ const GrowWithUs = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 items-stretch w-full mt-10">
+      <div className="flex flex-col gap-5 items-stretch w-full mt-10 lg:flex-row">
         {cards.map((card) => (
           <div
             key={card.title}
             className="flex-1 min-w-0 flex flex-col rounded-3xl border border-[#D59EFB] bg-white overflow-hidden"
           >
             <div
-              className="relative w-full h-[332px] shrink-0"
+              className="relative w-full h-[240px] sm:h-[332px] shrink-0"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",

@@ -28,7 +28,7 @@ const FooterColumn = ({
   title: string;
   links: NavigationLink[];
 }) => (
-  <div className="flex flex-col gap-5 items-start w-[157px] shrink-0">
+  <div className="flex w-1/2 shrink-0 flex-col items-start gap-5 sm:w-auto sm:min-w-[157px]">
     <p className="font-[family-name:var(--font-inter)] font-medium uppercase text-[20px] leading-[1.2] text-white whitespace-nowrap">
       {title}
     </p>
@@ -77,13 +77,13 @@ const ArrowIcon = () => (
 const Footer = () => {
   return (
     <footer
-      className="relative w-full overflow-hidden px-20 pt-[60px] pb-10"
+      className="relative w-full overflow-hidden px-5 pt-10 pb-10 sm:px-8 md:px-12 md:pt-[60px] lg:px-20"
       style={{
         background: "linear-gradient(180deg, #D59EFB 11%, #780AC1 142.75%)",
       }}
     >
-      <div className="flex justify-between items-start w-full flex-wrap gap-y-10">
-        <div className="flex flex-col gap-[14px] items-start w-[324px] shrink-0">
+      <div className="flex w-full flex-wrap items-start justify-between gap-y-10">
+        <div className="flex w-full shrink-0 flex-col items-start gap-[14px] sm:w-[324px]">
           <Image
             src="/general_assets/drip_logo.svg"
             alt="Drip"
@@ -101,7 +101,7 @@ const Footer = () => {
         <FooterColumn title="Company" links={companyLinks} />
         <FooterColumn title="Get Started" links={getStartedLinks} />
 
-        <div className="flex flex-col gap-8 items-start w-[321px] shrink-0">
+        <div className="flex w-full shrink-0 flex-col items-start gap-8 sm:w-[321px]">
           <div className="flex flex-col gap-5 items-start">
             <p className="font-[family-name:var(--font-inter)] font-medium uppercase text-[20px] leading-[1.2] text-white whitespace-nowrap">
               Growth Tips

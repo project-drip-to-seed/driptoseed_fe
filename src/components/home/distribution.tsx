@@ -1,14 +1,14 @@
 const Distribution = () => {
   return (
     <section
-      className="relative w-full min-h-[600px] overflow-hidden flex items-center gap-10 px-20 py-20"
+      className="relative w-full overflow-hidden flex flex-col items-center gap-10 px-5 py-12 sm:px-8 md:px-12 lg:min-h-[600px] lg:flex-row lg:px-20 lg:py-20"
       style={{
         backgroundImage:
           "linear-gradient(117.56922283215188deg, #D59EFB 20%, #780AC1 100%)",
       }}
     >
-      <div className="flex flex-col gap-1 items-start flex-1 min-w-0 max-w-[540px]">
-        <h2 className="font-kugile capitalize leading-[1.6] text-[36px] w-full">
+      <div className="flex flex-col gap-1 items-start w-full flex-1 min-w-0 lg:max-w-[540px]">
+        <h2 className="font-kugile capitalize leading-[1.3] lg:leading-[1.6] text-[26px] sm:text-[30px] lg:text-[36px] w-full">
           <span className="text-black">Your Content.</span>
           <br />
           <span className="text-[#780AC1]">Everywhere It Matters.</span>
@@ -35,8 +35,8 @@ const Distribution = () => {
         </div>
       </div>
 
-      <div className="flex-1 min-w-0 max-w-[668px] h-[475px] bg-white flex items-center justify-center overflow-hidden">
-        <p className="font-kugile capitalize leading-[1.6] text-[96px] text-red-600 whitespace-nowrap">
+      <div className="w-full flex-1 min-w-0 h-[240px] sm:h-[340px] lg:max-w-[668px] lg:h-[475px] bg-white flex items-center justify-center overflow-hidden">
+        <p className="font-kugile capitalize leading-[1.6] text-[48px] sm:text-[72px] lg:text-[96px] text-red-600 whitespace-nowrap">
           Graphic
         </p>
       </div>

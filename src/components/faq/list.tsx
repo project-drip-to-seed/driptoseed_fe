@@ -63,7 +63,7 @@ const FaqCard = ({
       aria-expanded={open}
       className="flex items-center justify-between gap-4 w-full px-5 py-5 text-left"
     >
-      <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[24px] leading-[1.2] text-black">
+      <p className="font-[family-name:var(--font-inter)] font-medium capitalize text-[18px] sm:text-[24px] leading-[1.2] text-black">
         {question}
       </p>
       <PlusIcon open={open} />
@@ -85,7 +85,7 @@ const FaqList = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="w-full py-20 px-20 bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="mx-auto flex max-w-[900px] flex-col gap-3 items-start w-full">
         {faqs.map((faq, index) => (
           <FaqCard

@@ -43,8 +43,32 @@ const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
   </svg>
 );
 
+const MenuIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    {isOpen ? (
+      <path
+        d="M6 6l12 12M18 6L6 18"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ) : (
+      <path
+        d="M4 7h16M4 12h16M4 17h16"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    )}
+  </svg>
+);
+
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -63,20 +87,35 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isSolutionsOpen]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsMobileSolutionsOpen(false);
+  }, []);
+
   return (
-    <nav className="absolute left-0 right-0 top-0 z-50 flex h-20 items-center justify-between px-20">
+    <nav className="absolute left-0 right-0 top-0 z-50 flex h-20 items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-[10px]">
+      <Link href="/" className="relative z-50 flex items-center gap-[10px]">
         <Image
           src="/general_assets/drip_logo.svg"
           alt="Drip"
           width={77.7}
           height={40}
+          className="h-8 w-auto lg:h-10"
         />
       </Link>
 
-      {/* Nav Items */}
-      <div className="flex items-center gap-8">
+      {/* Desktop Nav Items */}
+      <div className="hidden items-center gap-8 lg:flex">
         <div className="flex items-center gap-8">
           <div ref={dropdownRef} className="relative">
             <button
@@ -129,6 +168,80 @@ const Navbar = () => {
           </a>
         </div>
       </div>
+
+      {/* Mobile / Tablet menu toggle */}
+      <button
+        type="button"
+        onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+        aria-expanded={isMobileMenuOpen}
+        className="relative z-50 flex size-10 items-center justify-center rounded-full text-white lg:hidden"
+      >
+        <MenuIcon isOpen={isMobileMenuOpen} />
+      </button>
+
+      {/* Mobile / Tablet menu panel */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 overflow-y-auto bg-[#780AC1] px-5 pb-10 pt-24 sm:px-8"
+          style={{
+            background: "linear-gradient(180deg, #780AC1 0%, #4a0679 100%)",
+          }}
+        >
+          <div className="flex flex-col gap-1">
+            <div>
+              <button
+                type="button"
+                onClick={() => setIsMobileSolutionsOpen((prev) => !prev)}
+                className="flex w-full cursor-pointer items-center justify-between border-b border-white/15 py-4 font-[family-name:var(--font-inter)] text-lg font-normal capitalize text-white"
+              >
+                Solutions
+                <ChevronIcon isOpen={isMobileSolutionsOpen} />
+              </button>
+              {isMobileSolutionsOpen && (
+                <div className="flex flex-col gap-1 py-2 pl-4">
+                  {solutionLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="py-3 font-[family-name:var(--font-inter)] text-base font-normal text-white/80"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="border-b border-white/15 py-4 font-[family-name:var(--font-inter)] text-lg font-normal capitalize text-white"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4">
+            <a
+              href="/become-editor"
+              className="w-full rounded-full border border-white px-6 py-3 text-center font-normal text-white"
+            >
+              Become An Editor
+            </a>
+
+            <a
+              href="/become-creator"
+              className="w-full rounded-full bg-white px-6 py-3 text-center font-normal text-[#780AC1]"
+            >
+              Become A Creator
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

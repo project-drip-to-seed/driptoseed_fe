@@ -6,12 +6,12 @@ import {
 
 const ResourcesCaseStudies = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
         {/* Heading + tabs */}
         <div className="flex flex-col gap-5 items-start w-full">
-          <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+          <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full capitalize">
+            <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
               {`Explore Real `}
               <span className="text-[#780AC1]">Creator Transformations.</span>
             </h2>
@@ -42,17 +42,17 @@ const ResourcesCaseStudies = () => {
         </div>
 
         {/* Case study grid */}
-        <div className="grid grid-cols-2 gap-5 w-full">
+        <div className="grid grid-cols-1 gap-5 w-full lg:grid-cols-2">
           {caseStudies.map((study) => (
             <div
               key={study.slug}
-              className="relative h-[260px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white"
+              className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white lg:h-[260px]"
             >
               {/* Glow */}
               <div className="pointer-events-none absolute bottom-[-256px] right-[-236px] size-[471px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.5)_0%,rgba(213,158,251,0)_70%)]" />
 
               {/* Card image */}
-              <div className="absolute bottom-[-21px] right-[-24px] h-[260px] w-[287px]">
+              <div className="absolute bottom-[-10px] right-[-16px] h-[180px] w-[200px] sm:h-[220px] sm:w-[243px] lg:bottom-[-21px] lg:right-[-24px] lg:h-[260px] lg:w-[287px]">
                 <img
                   alt=""
                   className="block h-full w-full object-contain object-bottom"
@@ -61,7 +61,7 @@ const ResourcesCaseStudies = () => {
               </div>
 
               {/* Text */}
-              <div className="absolute left-[19px] top-[19px] w-[383px] flex flex-col gap-[6px] items-start capitalize">
+              <div className="absolute left-[19px] top-[19px] w-[calc(100%-38px)] flex flex-col gap-[6px] items-start capitalize lg:w-[383px]">
                 <div className="flex flex-col gap-[6px] items-start w-full leading-[1.4]">
                   <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] text-black w-full">
                     {study.title}

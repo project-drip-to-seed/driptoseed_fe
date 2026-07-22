@@ -151,13 +151,13 @@ const Journey = () => {
   const rowTwo = [steps[5], steps[4], steps[3]];
 
   return (
-    <section ref={sectionRef} className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.6] whitespace-nowrap">
+    <section ref={sectionRef} className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.6]">
           <span className="text-black">From One Upload to </span>
           <span className="text-[#780AC1]">Thousands of New Viewers.</span>
         </h2>
-        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[900px] max-w-full">
+        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-full lg:w-[900px] max-w-full">
           Growing as a creator shouldn&apos;t depend on chance. Our
           structured workflow transforms every upload into a long-term growth
           opportunity through strategic planning, content repurposing,
@@ -165,7 +165,21 @@ const Journey = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 items-start w-full mt-10">
+      {/* Mobile/tablet: simple vertical stepper */}
+      <div className="mt-10 flex flex-col gap-10 items-start w-full lg:hidden">
+        {steps.map((step, i) => (
+          <StepCard
+            key={step.num}
+            step={step}
+            order={i}
+            reversedArrow={false}
+            visible={visible}
+          />
+        ))}
+      </div>
+
+      {/* Desktop: zig-zag two-row layout */}
+      <div className="hidden lg:flex lg:flex-col gap-10 items-start w-full mt-10">
         <div className="flex gap-10 items-start w-full">
           {rowOne.map((step, i) => (
             <StepCard

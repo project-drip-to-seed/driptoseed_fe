@@ -29,14 +29,14 @@ const Divider = () => <div className="w-full h-px bg-black/10" />;
 
 const Services = () => {
   return (
-    <section className="w-full py-20 px-20 bg-[#EED7FF66]">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.6]">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-[#EED7FF66]">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.6]">
           <span className="text-black">One Content Engine.</span>
           <br />
           <span className="text-[#780AC1]">Three Powerful Growth Services.</span>
         </h2>
-        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[868px] max-w-full">
+        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-full lg:w-[868px] max-w-full">
           Creating great content is only the beginning. Our Creator Growth
           Engine combines strategic clipping, seeding, and distribution to
           help your content reach new audiences, stay relevant longer, and
@@ -44,13 +44,13 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 items-stretch w-full mt-10">
+      <div className="flex flex-col gap-5 items-stretch w-full mt-10 lg:flex-row">
         {/* Card 1 - distribution */}
-        <div className="relative flex flex-col flex-[3] min-w-0 bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+        <div className="relative flex flex-col w-full lg:flex-[3] min-w-0 bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
           <img
             alt=""
             src="/hero_section/power_1.svg"
-            className="w-full h-[240px] block shrink-0"
+            className="w-full h-[200px] sm:h-[240px] block shrink-0"
           />
           <div className="flex flex-col flex-1 justify-between gap-5 px-5 py-5">
             <div className="flex flex-col gap-5">
@@ -87,12 +87,12 @@ const Services = () => {
         </div>
 
         {/* Cards 2 & 3 - stacked right column */}
-        <div className="flex flex-col gap-5 flex-[4] min-w-0">
-          <div className="relative flex h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+        <div className="flex flex-col gap-5 w-full lg:flex-[4] min-w-0">
+          <div className="relative flex flex-col sm:flex-row sm:h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
             <img
               alt=""
               src="/hero_section/power_2.svg"
-              className="w-[240px] h-[300px] object-cover shrink-0 block"
+              className="w-full h-[200px] sm:w-[240px] sm:h-[300px] object-cover shrink-0 block"
             />
             <div className="flex flex-col gap-5 pt-5 px-5 pb-4 flex-1 min-w-0">
               <div className="flex flex-col gap-3 items-start">
@@ -120,11 +120,11 @@ const Services = () => {
             <ArrowButton />
           </div>
 
-          <div className="relative flex h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
+          <div className="relative flex flex-col sm:flex-row sm:h-[300px] bg-white border border-[#D59EFB] rounded-3xl overflow-hidden">
             <img
               alt=""
               src="/hero_section/power_3.svg"
-              className="w-[240px] h-[300px] object-cover shrink-0 block"
+              className="w-full h-[200px] sm:w-[240px] sm:h-[300px] object-cover shrink-0 block"
             />
             <div className="flex flex-col gap-5 pt-5 px-5 pb-4 flex-1 min-w-0">
               <div className="flex flex-col gap-3 items-start">

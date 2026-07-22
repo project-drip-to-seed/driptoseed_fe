@@ -19,7 +19,7 @@ const CaseStudyHeader = ({
   const tail = splitIndex > -1 ? title.slice(splitIndex + 4) : "";
 
   return (
-    <section className="relative w-full bg-[#F2E7F9] pt-20 pb-20 px-20 overflow-hidden">
+    <section className="relative w-full bg-[#F2E7F9] pt-24 pb-12 px-5 overflow-hidden sm:px-8 md:px-12 lg:pt-20 lg:pb-20 lg:px-20">
       {/* Purple band behind the fixed navbar */}
       <div
         className="absolute top-0 left-0 right-0 h-20"
@@ -28,14 +28,14 @@ const CaseStudyHeader = ({
         }}
       />
 
-      <div className="relative max-w-[1280px] mx-auto flex flex-col items-center gap-16">
+      <div className="relative max-w-[1280px] mx-auto flex flex-col items-center gap-10 lg:gap-16">
         {/* Hero */}
-        <div className="flex flex-col items-center gap-5 w-[900px] max-w-full">
+        <div className="flex flex-col items-center gap-5 w-full lg:w-[900px] max-w-full">
           <span className="rounded-full bg-[rgba(238,215,255,0.4)] px-6 py-2 font-[family-name:var(--font-inter)] font-normal text-[14px] leading-[1.2] text-[#780AC1] capitalize whitespace-nowrap">
             CASE STUDY • CREATOR GROWTH
           </span>
           <div className="flex flex-col items-center gap-2 text-center capitalize">
-            <h1 className="font-kugile text-[36px] leading-[1.4] text-black w-full">
+            <h1 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black w-full">
               {head}
               {tail && <span className="text-[#780AC1]">{tail}</span>}
             </h1>

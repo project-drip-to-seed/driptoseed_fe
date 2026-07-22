@@ -39,15 +39,15 @@ const StatsRow = ({
 
 const Milestone = () => {
   return (
-    <section className="relative w-full h-[280px] flex items-center gap-20 px-20 bg-[#F2E7F9] overflow-hidden">
-      <h2 className="shrink-0 w-[313px] font-kugile capitalize leading-[1.4] text-[36px] text-[#780AC1]">
+    <section className="relative w-full flex flex-col items-start gap-10 px-5 py-10 sm:px-8 md:px-12 lg:h-[280px] lg:flex-row lg:items-center lg:gap-20 lg:px-20 lg:py-0 bg-[#F2E7F9] overflow-hidden">
+      <h2 className="shrink-0 w-full lg:w-[313px] font-kugile capitalize leading-[1.4] text-[28px] sm:text-[32px] lg:text-[36px] text-[#780AC1]">
         <span className="text-black">Built to </span>
         <span>Amplify</span>
         <br />
         Creator Growth
       </h2>
 
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 w-full relative overflow-hidden">
         {/* base row, muted */}
         <div className="flex gap-10 items-center w-max animate-marquee">
           <StatsRow keyPrefix="a" color="#D59EFB" />

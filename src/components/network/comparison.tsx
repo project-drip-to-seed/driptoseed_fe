@@ -75,7 +75,7 @@ const Column = ({
       }`}
     >
       <p
-        className={`font-[family-name:var(--font-inter)] font-medium text-[28px] leading-[1.4] uppercase ${
+        className={`font-[family-name:var(--font-inter)] font-medium text-[22px] sm:text-[28px] leading-[1.4] uppercase ${
           isFramework ? "text-[#780AC1]" : "text-black"
         }`}
       >
@@ -119,11 +119,11 @@ const Column = ({
 
 const NetworkComparison = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
         {/* Heading */}
-        <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+        <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full capitalize">
+          <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
             A System Built
             <span className="text-[#780AC1]">{` for Long-Term Growth.`}</span>
           </h2>
@@ -135,7 +135,7 @@ const NetworkComparison = () => {
         </div>
 
         {/* Columns */}
-        <div className="flex gap-10 items-stretch w-full">
+        <div className="flex flex-col gap-10 items-stretch w-full lg:flex-row">
           <Column
             title="Traditional Workflow"
             rows={traditional}

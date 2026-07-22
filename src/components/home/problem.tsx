@@ -62,9 +62,9 @@ const Problem = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section ref={sectionRef} className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.4] text-black">
           {`Great Content Doesn't Fail. `}
           <span className="text-[#780AC1]">Distribution Does.</span>
         </h2>
@@ -75,11 +75,11 @@ const Problem = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 items-stretch w-full mt-10">
+      <div className="grid grid-cols-1 gap-5 items-stretch w-full mt-10 sm:grid-cols-2 lg:flex lg:items-stretch">
         {cards.map((card, i) => (
           <div
             key={card.title}
-            className={`group flex flex-col gap-8 items-start min-w-0 flex-1 min-h-[354px] rounded-3xl px-5 py-6 overflow-hidden bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1] ${
+            className={`group flex flex-col gap-8 items-start min-w-0 lg:flex-1 min-h-[354px] rounded-3xl px-5 py-6 overflow-hidden bg-white border border-[#D59EFB] transition-colors duration-300 hover:border-transparent hover:bg-gradient-to-b hover:from-[#D59EFB] hover:to-[#780AC1] ${
               visible ? "animotion-blur-reveal" : "opacity-0"
             }`}
             style={visible ? { animationDelay: `${i * 120}ms` } : undefined}
