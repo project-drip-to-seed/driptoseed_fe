@@ -87,7 +87,7 @@ const Footer = () => {
           <Image
             src="/general_assets/drip_logo.svg"
             alt="Drip"
-            width={77.7}
+            width={78}
             height={40}
           />
           <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-white">

@@ -108,9 +108,10 @@ const Navbar = () => {
         <Image
           src="/general_assets/drip_logo.svg"
           alt="Drip"
-          width={77.7}
+          width={78}
           height={40}
           className="h-8 w-auto lg:h-10"
+          style={{ width: "auto" }}
         />
       </Link>
 
