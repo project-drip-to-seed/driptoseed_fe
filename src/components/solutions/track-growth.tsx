@@ -1,7 +1,7 @@
 const TrackGrowth = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="relative h-[400px] w-full rounded-[44px] border border-[#D59EFB] bg-white overflow-hidden">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="relative h-auto min-h-[420px] w-full rounded-[32px] border border-[#D59EFB] bg-white overflow-hidden sm:min-h-[460px] lg:h-[400px] lg:rounded-[44px]">
         {/* purple glow bleeding in from the bottom-right */}
         <img
           alt=""
@@ -13,14 +13,14 @@ const TrackGrowth = () => {
         {/* dashboard mockup (pre-tilted, with shadow) anchored bottom-right */}
         <img
           alt="Growth tracking dashboard preview"
-          className="pointer-events-none absolute bottom-0 right-0 h-full w-auto max-w-none object-contain object-right-bottom"
+          className="pointer-events-none absolute bottom-0 right-0 h-[180px] w-full object-contain object-right-bottom sm:h-[220px] lg:h-full lg:w-auto lg:max-w-none"
           src="/solutions/track_growth_mockup.png"
         />
 
         {/* copy */}
-        <div className="relative z-10 flex h-full max-w-[515px] flex-col items-start justify-center gap-8 px-10">
+        <div className="relative z-10 flex h-full w-full flex-col items-start justify-start gap-8 px-6 py-8 sm:px-8 lg:max-w-[515px] lg:justify-center lg:px-10 lg:py-0">
           <div className="flex flex-col gap-1 items-start capitalize">
-            <h2 className="font-kugile text-[36px] leading-[1.4]">
+            <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4]">
               <span className="text-black">{`Track Every `}</span>
               <span className="text-[#780AC1]">Stage of Your Growth.</span>
             </h2>

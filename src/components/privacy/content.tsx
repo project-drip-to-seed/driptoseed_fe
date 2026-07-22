@@ -5,14 +5,14 @@ const SectionHeading = ({
   lead: string;
   accent: string;
 }) => (
-  <p className="font-kugile leading-[1.2] text-[36px] text-black w-full">
+  <p className="font-kugile leading-[1.2] text-[26px] sm:text-[30px] lg:text-[36px] text-black w-full">
     {lead}
     <span className="text-[#780AC1]">{accent}</span>
   </p>
 );
 
 const SubHeading = ({ children }: { children: string }) => (
-  <p className="font-[family-name:var(--font-inter)] font-semibold leading-[1.2] text-[24px] text-black w-full">
+  <p className="font-[family-name:var(--font-inter)] font-semibold leading-[1.2] text-[20px] sm:text-[24px] text-black w-full">
     {children}
   </p>
 );
@@ -134,15 +134,15 @@ const otherSections = [
 
 const PrivacyContent = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="mx-auto flex max-w-[900px] flex-col gap-20 items-start">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="mx-auto flex max-w-[900px] flex-col gap-14 items-start lg:gap-20">
         <p className="font-[family-name:var(--font-inter)] text-[14px] leading-[1.6] text-[#686868]">
           Last updated: July 22, 2026
         </p>
 
         {/* Introduction */}
         <div className="flex flex-col gap-3 items-start w-full">
-          <p className="font-kugile leading-[1.2] text-[36px] text-black w-full">
+          <p className="font-kugile leading-[1.2] text-[26px] sm:text-[30px] lg:text-[36px] text-black w-full">
             Introduction
           </p>
           <div className="flex flex-col gap-4 items-start w-full">

@@ -79,11 +79,12 @@ const SolutionsSystem = () => {
   }, []);
 
   const activeStage = clockwiseOrder[activeIndex];
+  const allStages = [...topStages, ...bottomStages];
 
   return (
-    <section className="w-full py-20 px-20 bg-white overflow-x-clip">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white overflow-x-clip">
       <div className="flex flex-col gap-1 items-center w-full text-center">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4]">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4]">
           <span className="text-black">A Repeatable System for </span>
           <span className="text-[#780AC1]">Sustainable Creator Growth.</span>
         </h2>
@@ -93,7 +94,26 @@ const SolutionsSystem = () => {
         </p>
       </div>
 
-      <div className="relative w-full max-w-[1280px] mx-auto mt-[100px] h-[578px]">
+      {/* Mobile/tablet: simple stage list */}
+      <div className="mt-10 grid grid-cols-1 gap-5 w-full sm:grid-cols-2 lg:hidden">
+        {allStages.map((stage) => (
+          <div
+            key={stage.title}
+            className="flex flex-col items-center gap-3 rounded-3xl border border-[#D59EFB] bg-[#F2E7F9] px-5 py-8 text-center"
+          >
+            <StageIcon highlighted={stage.title === activeStage} />
+            <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black">
+              {stage.title}
+            </p>
+            <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
+              {stage.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: stadium track */}
+      <div className="relative hidden w-full max-w-[1280px] mx-auto mt-[100px] h-[578px] lg:block">
         {/* stadium track */}
         <div className="absolute inset-x-0 top-[60px] h-[320px] rounded-[374px] border-2 border-[#D59EFB]">
           <div className="absolute inset-x-5 top-[79px] flex gap-10 text-center">

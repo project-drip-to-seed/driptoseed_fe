@@ -1,14 +1,14 @@
 const CaseStudyMeasured = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="relative max-w-[1280px] mx-auto h-[561px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="relative max-w-[1280px] mx-auto h-auto min-h-[320px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white py-12 lg:h-[561px] lg:py-0">
         {/* Glows */}
         <div className="pointer-events-none absolute right-[-492px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
         <div className="pointer-events-none absolute left-[-621px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
 
         {/* Heading */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-1 items-center text-center capitalize">
-          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+        <div className="relative left-1/2 -translate-x-1/2 lg:absolute lg:top-[59px] w-[900px] max-w-[calc(100%-40px)] flex flex-col gap-1 items-center text-center capitalize">
+          <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
             {`Every Placement. `}
             <span className="text-[#780AC1]">Every Result. Fully Measured.</span>
           </h2>
@@ -20,7 +20,7 @@ const CaseStudyMeasured = () => {
         </div>
 
         {/* Dashboard mockup */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-532.75px] flex h-[1092.752px] w-[1128.169px] items-center justify-center">
+        <div className="hidden lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-[-532.75px] lg:flex lg:h-[1092.752px] lg:w-[1128.169px] lg:items-center lg:justify-center">
           <div className="rotate-[16.48deg]">
             <div className="relative h-[867.405px] w-[919.862px] shadow-[-20px_24px_24px_0px_rgba(0,0,0,0.25)] rounded-[16px]">
               <div className="absolute inset-0 overflow-hidden rounded-[16px]">

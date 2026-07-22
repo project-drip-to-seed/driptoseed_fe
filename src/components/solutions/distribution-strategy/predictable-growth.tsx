@@ -75,9 +75,9 @@ const PillarCard = ({ pillar }: { pillar: Pillar }) => (
 
 const PredictableGrowth = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-        <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full capitalize">
+        <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           Strategy Creates
           <span className="text-[#780AC1]">{` Predictable Growth.`}</span>
         </h2>
@@ -88,7 +88,7 @@ const PredictableGrowth = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 gap-5 mt-10">
+      <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar) => (
           <PillarCard key={pillar.title} pillar={pillar} />
         ))}

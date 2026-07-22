@@ -86,7 +86,7 @@ const NetworkBetterSystem = () => {
             ].map((card) => (
               <div
                 key={card.title}
-                className="relative h-[200px] sm:h-[218px] w-full overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white"
+                className="relative min-h-[220px] sm:h-[218px] w-full overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white"
               >
                 <CardGlow className="bottom-[-236px] right-[-236px]" />
                 <div className="absolute left-5 top-5 w-[calc(100%-40px)] sm:w-[312px] flex flex-col gap-2 items-start capitalize">

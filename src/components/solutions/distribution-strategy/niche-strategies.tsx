@@ -125,13 +125,13 @@ const NicheCard = ({ niche }: { niche: Niche }) => (
 
 const NicheStrategies = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.6]">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.6]">
           <span className="text-black">Tailored Strategies </span>
           <span className="text-[#780AC1]">for Every Creator Niche.</span>
         </h2>
-        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-[900px] max-w-full">
+        <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868] w-full lg:w-[900px] max-w-full">
           Every industry has unique audience behaviors, preferred platforms,
           and content formats. Our distribution strategies are customized to
           match the specific needs of your niche.
@@ -139,12 +139,12 @@ const NicheStrategies = () => {
       </div>
 
       <div className="flex flex-col gap-5 items-start w-full mt-10">
-        <div className="flex gap-5 items-center w-full">
+        <div className="grid grid-cols-2 gap-3 w-full sm:grid-cols-3 sm:gap-5 lg:flex lg:items-center">
           {niches.slice(0, 5).map((niche) => (
             <NicheCard key={niche.name} niche={niche} />
           ))}
         </div>
-        <div className="flex gap-5 items-center w-full">
+        <div className="grid grid-cols-2 gap-3 w-full sm:grid-cols-3 sm:gap-5 lg:flex lg:items-center">
           {niches.slice(5, 10).map((niche) => (
             <NicheCard key={niche.name} niche={niche} />
           ))}

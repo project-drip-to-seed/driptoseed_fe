@@ -1,9 +1,9 @@
 const CaseStudyCta = () => {
   return (
-    <section className="w-full bg-[#F9F9F9] px-20 py-[60px]">
+    <section className="w-full bg-[#F9F9F9] px-5 py-12 sm:px-8 md:px-12 lg:px-20 lg:py-[60px]">
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-1 text-center capitalize">
-          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+          <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
             {`Don't Let Great Content `}
             <span className="text-[#780AC1]">Stop at One Upload.</span>
           </h2>

@@ -51,15 +51,15 @@ const PlayIcon = () => (
 
 const DistributionTimeline = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white p-10">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white p-5 sm:p-8 lg:p-10">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-[492px] top-1/2 size-[983px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]"
         />
 
-        <div className="relative flex flex-col gap-1 items-start w-[900px] max-w-full capitalize">
-          <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+        <div className="relative flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full capitalize">
+          <h2 className="font-kugile text-[24px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
             A Distribution Strategy That
             <span className="text-[#780AC1]">{` Extends Beyond Day One.`}</span>
           </h2>
@@ -71,7 +71,7 @@ const DistributionTimeline = () => {
         </div>
 
         <div className="relative mt-10 flex gap-5 items-start">
-          <div className="flex gap-5 items-start flex-1 min-w-0 max-w-[674px]">
+          <div className="flex gap-5 items-start flex-1 min-w-0 lg:max-w-[674px]">
             <div className="flex flex-col items-center shrink-0 pt-1">
               {weeks.map((week, i) => (
                 <div key={week.label} className="flex flex-col items-center">

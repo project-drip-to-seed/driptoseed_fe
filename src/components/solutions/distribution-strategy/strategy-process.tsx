@@ -151,9 +151,9 @@ const StrategyProcess = () => {
   const rowTwo = [steps[5], steps[4], steps[3]];
 
   return (
-    <section ref={sectionRef} className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4]">
+    <section ref={sectionRef} className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4]">
           <span className="text-black">Every Distribution </span>
           <span className="text-[#780AC1]">Plan Begins With Strategy.</span>
         </h2>
@@ -164,7 +164,21 @@ const StrategyProcess = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 items-start w-full mt-10">
+      {/* Mobile/tablet: simple vertical stepper */}
+      <div className="mt-10 flex flex-col gap-10 items-start w-full lg:hidden">
+        {steps.map((step, i) => (
+          <StepCard
+            key={step.num}
+            step={step}
+            order={i}
+            reversedArrow={false}
+            visible={visible}
+          />
+        ))}
+      </div>
+
+      {/* Desktop: zig-zag two-row layout */}
+      <div className="hidden lg:flex lg:flex-col gap-10 items-start w-full mt-10">
         <div className="flex gap-10 items-start w-full">
           {rowOne.map((step, i) => (
             <StepCard

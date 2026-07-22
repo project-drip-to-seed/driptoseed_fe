@@ -38,9 +38,9 @@ const cards = [
 
 const SolutionsProblem = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           {`Great Content Doesn't `}
           <span className="text-[#780AC1]">
             Always Reach Great Audiences.
@@ -53,11 +53,11 @@ const SolutionsProblem = () => {
         </p>
       </div>
 
-      <div className="flex gap-3 items-stretch w-full mt-10">
+      <div className="grid grid-cols-1 gap-3 items-stretch w-full mt-10 sm:grid-cols-2 lg:flex">
         {cards.map((card) => (
           <div
             key={card.title}
-            className="group flex min-w-0 flex-1 h-[390px] flex-col rounded-2xl p-5 overflow-hidden border border-[#D59EFB] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0)] to-[142.75%] to-[rgba(120,10,193,0)] transition-colors duration-300 hover:from-[rgba(213,158,251,0.08)] hover:to-[rgba(120,10,193,0.08)]"
+            className="group flex min-w-0 lg:flex-1 min-h-[320px] lg:h-[390px] flex-col rounded-2xl p-5 overflow-hidden border border-[#D59EFB] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0)] to-[142.75%] to-[rgba(120,10,193,0)] transition-colors duration-300 hover:from-[rgba(213,158,251,0.08)] hover:to-[rgba(120,10,193,0.08)]"
           >
             <img
               alt=""

@@ -17,10 +17,10 @@ const stats = [
 
 export default function EditorNetwork() {
   return (
-    <section className="relative h-[600px] w-full overflow-hidden bg-[#F2E7F9]">
-      <div className="absolute left-5 top-[60px] w-[628px] max-w-[calc(100%-40px)] lg:left-20">
-        <div className="flex w-[620px] max-w-full flex-col gap-1">
-          <h2 className="font-kugile text-[34px] leading-[1.4] text-black sm:text-[36px]">
+    <section className="relative h-auto w-full overflow-hidden bg-[#F2E7F9] py-12 sm:py-16 lg:h-[600px] lg:py-0">
+      <div className="relative left-5 top-0 w-auto max-w-[calc(100%-40px)] px-5 sm:px-8 md:px-12 lg:absolute lg:top-[60px] lg:left-20 lg:w-[628px] lg:px-0">
+        <div className="flex w-full max-w-[620px] flex-col gap-1">
+          <h2 className="font-kugile text-[26px] leading-[1.3] sm:text-[36px] lg:leading-[1.4]">
             Great Clips Are Crafted by{" "}
             <span className="text-[#780AC1]">Great Editors.</span>
           </h2>
@@ -43,11 +43,11 @@ export default function EditorNetwork() {
           ))}
         </div>
 
-        <div className="mt-10 grid h-[120px] grid-cols-[156px_1px_156px_1px_156px] items-center justify-between">
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-6 sm:grid sm:h-[120px] sm:grid-cols-[156px_1px_156px_1px_156px] sm:items-center sm:justify-between sm:gap-0">
           {stats.map((stat, index) => (
             <div key={index} className="contents">
-              <div className="flex w-[156px] flex-col text-left">
-                <p className="text-[48px] leading-[1.2] text-[#780AC1]">
+              <div className="flex w-[140px] shrink-0 flex-col text-left sm:w-[156px]">
+                <p className="text-[36px] leading-[1.2] text-[#780AC1] sm:text-[48px]">
                   {stat.value}
                 </p>
                 <p className="font-[family-name:var(--font-inter)] text-base leading-[1.4] text-[#686868]">
@@ -55,7 +55,7 @@ export default function EditorNetwork() {
                 </p>
               </div>
               {index < stats.length - 1 ? (
-                <div className="h-[120px] w-px bg-[#D59EFB]" />
+                <div className="hidden h-[120px] w-px bg-[#D59EFB] sm:block" />
               ) : null}
             </div>
           ))}

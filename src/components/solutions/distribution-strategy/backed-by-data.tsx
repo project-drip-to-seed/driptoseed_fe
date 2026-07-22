@@ -6,11 +6,11 @@ const stats = [
 
 const BackedByData = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F2E7F9] py-20 px-20">
-      <div className="relative mx-auto flex max-w-[1280px] items-center justify-between gap-10">
-        <div className="flex max-w-[628px] flex-col gap-10 items-start shrink-0">
+    <section className="relative w-full overflow-hidden bg-[#F2E7F9] py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-10 lg:flex-row">
+        <div className="flex w-full max-w-[628px] flex-col gap-10 items-start shrink-0">
           <div className="flex flex-col gap-1 items-start capitalize">
-            <h2 className="font-kugile text-[36px] leading-[1.4] text-black">
+            <h2 className="font-kugile text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
               Every Decision Is
               <span className="text-[#780AC1]">{` Backed by Data.`}</span>
             </h2>
@@ -28,11 +28,11 @@ const BackedByData = () => {
             </div>
           </div>
 
-          <div className="flex gap-10 items-center w-full">
+          <div className="flex w-full items-center gap-6 overflow-x-auto sm:gap-10">
             {stats.map((stat, i) => (
-              <div key={i} className="flex items-center gap-10">
-                {i > 0 && <div className="h-[120px] w-px bg-[#780AC1]/30" />}
-                <div className="flex flex-col items-center gap-1 text-center w-[156px] capitalize">
+              <div key={i} className="flex shrink-0 items-center gap-6 sm:gap-10">
+                {i > 0 && <div className="h-[100px] w-px bg-[#780AC1]/30 sm:h-[120px]" />}
+                <div className="flex w-[130px] shrink-0 flex-col items-center gap-1 text-center capitalize sm:w-[156px]">
                   <p className="font-[family-name:var(--font-inter)] font-normal text-[48px] leading-[1.2] text-[#780AC1]">
                     {stat.value}
                   </p>

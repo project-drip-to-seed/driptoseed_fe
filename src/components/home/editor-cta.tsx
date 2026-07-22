@@ -54,7 +54,7 @@ const EditorCta = () => {
 
         {/* Right panel */}
         <div
-          className="relative shrink-0 w-full lg:w-[540px] max-w-full h-[280px] sm:h-[335px] rounded-3xl overflow-hidden"
+          className="relative shrink-0 w-full lg:w-[540px] max-w-full rounded-3xl overflow-hidden sm:h-[335px]"
           style={{
             background:
               "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",
@@ -63,20 +63,22 @@ const EditorCta = () => {
           <img
             alt=""
             src="/general_assets/editor_play_icon.svg"
-            className="absolute left-0 top-0 w-full h-[240px] block"
+            className="relative w-full h-[200px] block sm:absolute sm:left-0 sm:top-0 sm:h-[240px]"
           />
 
-          <div className="absolute left-5 top-[260px] flex flex-col items-start">
-            <p className="font-[family-name:var(--font-inter)] leading-[1.2] text-[32px] text-black">
-              300+
-            </p>
-            <p className="font-[family-name:var(--font-inter)] capitalize leading-[1.4] text-[12px] text-[#686868]">
-              Distribution Partners
-            </p>
-          </div>
+          <div className="flex items-center justify-between gap-3 px-5 py-4 sm:block sm:px-0 sm:py-0">
+            <div className="flex flex-col items-start sm:absolute sm:left-5 sm:top-[260px]">
+              <p className="font-[family-name:var(--font-inter)] leading-[1.2] text-[28px] sm:text-[32px] text-black">
+                300+
+              </p>
+              <p className="font-[family-name:var(--font-inter)] capitalize leading-[1.4] text-[12px] text-[#686868]">
+                Distribution Partners
+              </p>
+            </div>
 
-          <div className="absolute right-5 bottom-[26px] bg-[#780AC1] capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-full text-[16px] text-white whitespace-nowrap">
-            ✓ ₹175 Paid
+            <div className="bg-[#780AC1] capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-4 py-2 rounded-full text-[13px] text-white whitespace-nowrap sm:absolute sm:right-5 sm:bottom-[26px] sm:px-6 sm:py-3 sm:text-[16px]">
+              ✓ ₹175 Paid
+            </div>
           </div>
         </div>
       </div>

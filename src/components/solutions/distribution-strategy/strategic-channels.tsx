@@ -81,9 +81,9 @@ const ChannelCard = ({ channel }: { channel: Channel }) => (
 
 const StrategicChannels = () => {
   return (
-    <section className="w-full py-20 px-20 bg-white">
-      <div className="flex flex-col gap-1 items-start w-[900px] max-w-full">
-        <h2 className="font-kugile capitalize text-[36px] leading-[1.4] text-black">
+    <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
+      <div className="flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full">
+        <h2 className="font-kugile capitalize text-[26px] sm:text-[30px] lg:text-[36px] leading-[1.3] lg:leading-[1.4] text-black">
           Strategic Distribution
           <span className="text-[#780AC1]">{` Across Every Relevant Channel.`}</span>
         </h2>
@@ -95,7 +95,7 @@ const StrategicChannels = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-5 mt-10">
+      <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {channels.map((channel) => (
           <ChannelCard key={channel.title} channel={channel} />
         ))}

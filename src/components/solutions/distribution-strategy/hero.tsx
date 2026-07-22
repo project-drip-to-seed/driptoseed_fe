@@ -1,7 +1,7 @@
 export default function DistributionStrategyHero() {
   return (
-    <section className="relative h-[456px] w-full overflow-hidden bg-[#F2E7F9]">
-      <div className="absolute left-[-234px] top-[-243px] size-[851px]">
+    <section className="relative h-auto min-h-[380px] py-16 w-full overflow-hidden bg-[#F2E7F9] sm:min-h-[420px] lg:h-[456px] lg:py-0">
+      <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img
             alt=""
@@ -12,7 +12,7 @@ export default function DistributionStrategyHero() {
         </div>
       </div>
 
-      <div className="absolute right-[-387px] top-[-525px] size-[1080px]">
+      <div className="absolute right-[-387px] top-[-525px] size-[500px] sm:size-[760px] lg:size-[1080px]">
         <div className="absolute inset-[-70.37%]">
           <img
             alt=""
@@ -23,7 +23,7 @@ export default function DistributionStrategyHero() {
         </div>
       </div>
 
-      <div className="absolute left-[180px] top-[191px] size-[1080px]">
+      <div className="absolute left-[180px] top-[191px] hidden size-[1080px] lg:block">
         <div className="absolute inset-[-75.93%]">
           <img
             alt=""
