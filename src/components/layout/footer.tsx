@@ -2,28 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  solutionLinks,
-  solutionsLink,
-  type NavigationLink,
-} from "@/lib/navigation";
+import { solutionLinks, type NavigationLink } from "@/lib/navigation";
 
-const platformLinks: NavigationLink[] = [solutionsLink, ...solutionLinks];
+const platformLinks: NavigationLink[] = solutionLinks;
 
 const companyLinks: NavigationLink[] = [
   { name: "About", href: "/about" },
   { name: "Our Framework", href: "/network" },
-  { name: "Careers", href: "/careers" },
+  { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
 
-const getStartedLinks: NavigationLink[] = [
-  { name: "Apply as Creator", href: "/become-creator" },
-  { name: "Become an Editor", href: "/become-editor" },
-  { name: "Book a Call", href: "/contact" },
-];
+const getStartedLinks: NavigationLink[] = [{ name: "Book a Call", href: "/contact" }];
 
-const legalLinks = ["Privacy Policy", "Terms & Condition", "FAQs"];
+const legalLinks: NavigationLink[] = [
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms & Condition", href: "/terms" },
+  { name: "FAQs", href: "/faq" },
+];
 
 const FooterColumn = ({
   title,
@@ -176,17 +172,18 @@ const Footer = () => {
 
       <div className="flex items-center justify-between w-full mt-5 flex-wrap gap-4">
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.2] text-white whitespace-nowrap">
-          © 2026 Distro. All rights reserved.
+          © 2026 Driptoseed. All rights reserved.
         </p>
         <div className="flex gap-5 items-center flex-wrap">
           {legalLinks.map((link) => (
-            <p
-              key={link}
-              className="flex items-center gap-2 font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.2] text-white whitespace-nowrap"
+            <Link
+              key={link.href}
+              href={link.href}
+              className="flex items-center gap-2 font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.2] text-white whitespace-nowrap transition-opacity hover:opacity-75"
             >
               <span aria-hidden="true">•</span>
-              {link}
-            </p>
+              {link.name}
+            </Link>
           ))}
         </div>
       </div>
