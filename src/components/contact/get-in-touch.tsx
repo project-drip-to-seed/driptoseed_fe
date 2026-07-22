@@ -70,9 +70,29 @@ const GetInTouch = () => {
     message: "",
   });
   const [agreed, setAgreed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      setForm({ fullName: "", email: "", phone: "", message: "" });
+      setAgreed(false);
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -100,7 +120,7 @@ const GetInTouch = () => {
                 <div className="flex gap-3 items-center">
                   <MailIcon />
                   <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-[#686868] capitalize whitespace-nowrap">
-                    info@pyromedia.com
+                    driptoseed@gmail.com
                   </p>
                 </div>
                 <div className="flex gap-3 items-center">
@@ -121,9 +141,9 @@ const GetInTouch = () => {
                   <PinIcon />
                 </div>
                 <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.4] text-[#686868] capitalize">
-                  H-32, Shanti Bhawan, Sai-dulajab, Saket,
+                  lorem ipsum dolor sit amet. <br />
                   <br />
-                  New Delhi - 110030
+                  lorem ipsum dolor sit amet.
                 </p>
               </div>
             </div>
@@ -193,10 +213,22 @@ const GetInTouch = () => {
 
             <button
               type="submit"
-              className="flex h-10 w-[180px] items-center justify-center rounded-[40px] border border-[#780AC1] font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-[#780AC1] capitalize"
+              disabled={status === "submitting"}
+              className="flex h-10 w-[180px] items-center justify-center rounded-[40px] border border-[#780AC1] font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-[#780AC1] capitalize disabled:opacity-50"
             >
-              Submit now
+              {status === "submitting" ? "Submitting..." : "Submit now"}
             </button>
+
+            {status === "success" && (
+              <p className="font-[family-name:var(--font-inter)] text-[14px] text-green-600">
+                Thanks! We&apos;ll be in touch shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="font-[family-name:var(--font-inter)] text-[14px] text-red-600">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
         </div>
       </div>

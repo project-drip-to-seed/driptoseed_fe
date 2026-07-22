@@ -23,17 +23,6 @@ const ContactHero = () => {
         </div>
       </div>
 
-      <div className="absolute left-[180px] top-[191px] size-[1080px]">
-        <div className="absolute inset-[-75.93%]">
-          <img
-            alt=""
-            aria-hidden="true"
-            className="block size-full max-w-none"
-            src="/general_assets/hero_bg_ellipse_bottom.svg"
-          />
-        </div>
-      </div>
-
       <div className="absolute left-1/2 bottom-[80px] z-10 flex w-[900px] max-w-[calc(100%-40px)] -translate-x-1/2 flex-col items-center gap-1 text-center text-white capitalize">
         <h1 className="w-full font-kugile text-[42px] leading-[1.3] sm:text-[50px] lg:text-[57px] lg:leading-[1.4]">
           Contact Us

@@ -1,16 +1,25 @@
 const NetworkHero = () => {
   return (
-    <section
-      className="relative w-full h-[456px] overflow-hidden"
-      style={{
-        background: [
-          "radial-gradient(80% 70% at 50% 16%, rgba(232,196,250,0.55) 0%, rgba(232,196,250,0) 55%)",
-          "radial-gradient(95% 120% at 14% 62%, #7A12C1 0%, rgba(122,18,193,0) 60%)",
-          "radial-gradient(95% 120% at 88% 6%, #8A28CC 0%, rgba(138,40,204,0) 55%)",
-          "linear-gradient(180deg, #9A45D3 0%, #780AC1 55%, #6C0BB2 100%)",
-        ].join(", "),
-      }}
-    >
+    <section className="relative w-full h-[456px] overflow-hidden bg-[#F2E7F9]">
+      <div className="absolute left-[-234px] top-[-243px] size-[851px]">
+        <div className="absolute inset-[-71.68%]">
+          <img
+            alt=""
+            className="block max-w-none size-full"
+            src="/general_assets/hero_bg_ellipse_left.svg"
+          />
+        </div>
+      </div>
+      <div className="absolute right-[-387px] top-[-525px] size-[1080px]">
+        <div className="absolute inset-[-70.37%]">
+          <img
+            alt=""
+            className="block max-w-none size-full"
+            src="/general_assets/hero_bg_ellipse_right.svg"
+          />
+        </div>
+      </div>
+
       {/* Headline + copy */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-20 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-1 text-center text-white capitalize">
         <h1 className="font-kugile leading-[1.4] text-[57px] w-full">
