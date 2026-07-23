@@ -32,7 +32,7 @@ const metrics = [
 export default function CreatorSeedingPage() {
   return (
     <main>
-      <section className="relative h-[482px] w-full overflow-hidden bg-[#F2E7F9]">
+      <section className="relative h-auto min-h-[380px] w-full overflow-hidden bg-[#F2E7F9] pb-10 pt-28 sm:min-h-[440px] sm:pt-32 lg:h-[482px] lg:py-0">
         <div className="absolute left-[-234px] top-[-243px] size-[851px]">
           <div className="absolute inset-[-71.68%]">
             <img
@@ -63,7 +63,7 @@ export default function CreatorSeedingPage() {
           </div>
         </div>
 
-        <div className="absolute left-1/2 top-[160px] flex w-[900px] max-w-full -translate-x-1/2 flex-col items-center gap-1 px-5 text-center text-white">
+        <div className="relative left-1/2 z-10 flex w-[900px] max-w-full -translate-x-1/2 flex-col items-center gap-1 px-5 text-center text-white lg:absolute lg:top-[160px]">
           <h1 className="w-full font-kugile text-[42px] leading-[1.3] sm:text-[50px] lg:text-[57px] lg:leading-[1.4]">
             Great Content Deserves Greater Reach.
           </h1>
@@ -92,7 +92,7 @@ export default function CreatorSeedingPage() {
           </div>
         ))}
 
-        <div className="absolute inset-x-5 bottom-5 grid grid-cols-2 gap-3 lg:hidden">
+        <div className="relative z-10 mt-8 grid grid-cols-2 gap-3 px-5 lg:hidden">
           {metrics.map((metric) => (
             <div
               key={metric.label}

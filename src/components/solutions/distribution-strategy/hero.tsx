@@ -1,6 +1,6 @@
 export default function DistributionStrategyHero() {
   return (
-    <section className="relative h-auto min-h-[380px] py-16 w-full overflow-hidden bg-[#F2E7F9] sm:min-h-[420px] lg:h-[456px] lg:py-0">
+    <section className="relative h-auto min-h-[380px] pb-16 pt-28 w-full overflow-hidden bg-[#F2E7F9] sm:min-h-[420px] sm:pt-32 lg:h-[456px] lg:py-0">
       <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img
@@ -34,7 +34,7 @@ export default function DistributionStrategyHero() {
         </div>
       </div>
 
-      <div className="absolute left-1/2 top-[160px] z-10 flex w-[900px] max-w-[calc(100%-40px)] -translate-x-1/2 flex-col items-center gap-1 text-center text-white">
+      <div className="relative left-1/2 z-10 flex w-[900px] max-w-[calc(100%-40px)] -translate-x-1/2 flex-col items-center gap-1 text-center text-white lg:absolute lg:top-[160px]">
         <h1 className="w-full font-kugile text-[42px] leading-[1.3] sm:text-[50px] lg:text-[57px] lg:leading-[1.4]">
           Every Creator Needs a Distribution Strategy.
         </h1>

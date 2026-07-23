@@ -1,6 +1,6 @@
 const FaqHero = () => {
   return (
-    <section className="relative h-auto min-h-[320px] w-full overflow-hidden bg-[#F2E7F9] py-16 sm:min-h-[360px] lg:h-[402px] lg:py-0">
+    <section className="relative h-auto min-h-[320px] w-full overflow-hidden bg-[#F2E7F9] pb-16 pt-28 sm:min-h-[360px] sm:pt-32 lg:h-[402px] lg:py-0">
       <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img
@@ -34,7 +34,7 @@ const FaqHero = () => {
         </div>
       </div>
 
-      <div className="absolute left-1/2 bottom-[80px] z-10 flex w-[900px] max-w-[calc(100%-40px)] -translate-x-1/2 flex-col items-center gap-1 text-center text-white capitalize">
+      <div className="relative left-1/2 z-10 flex w-[900px] max-w-[calc(100%-40px)] -translate-x-1/2 flex-col items-center gap-1 text-center text-white capitalize lg:absolute lg:bottom-[80px]">
         <h1 className="w-full font-kugile text-[42px] leading-[1.3] sm:text-[50px] lg:text-[57px] lg:leading-[1.4]">
           Frequently Asked Questions
         </h1>

@@ -21,7 +21,7 @@ export default function ContentLibrary() {
       <div className="mx-auto max-w-[1280px]">
         <div className="mx-auto flex max-w-[900px] flex-col items-center text-center">
           <div className="flex w-full flex-col gap-1">
-            <h2 className="font-kugile text-[34px] capitalize leading-[1.4] text-black sm:text-[36px]">
+            <h2 className="font-kugile text-[34px] capitalize leading-[1.6] text-black sm:text-[36px] sm:leading-[1.4]">
               Every Long-Form Video Is{" "}
               <span className="text-[#780AC1]">A Library Of Content.</span>
             </h2>

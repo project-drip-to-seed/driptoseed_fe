@@ -33,7 +33,7 @@ const stats = [
 
 const SolutionsHero = () => {
   return (
-    <section className="relative w-full h-auto min-h-[380px] py-16 overflow-hidden bg-[#F2E7F9] sm:min-h-[440px] lg:h-[640px] lg:py-0">
+    <section className="relative w-full h-auto min-h-[380px] pb-16 pt-28 overflow-hidden bg-[#F2E7F9] sm:min-h-[440px] sm:pt-32 lg:h-[640px] lg:py-0">
       {/* Background glow blobs */}
       <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">

@@ -13,7 +13,7 @@ const thumbnailCards = [
 
 export default function CreatorClippingHero() {
   return (
-    <section className="relative h-auto min-h-[380px] w-full overflow-hidden bg-[#F2E7F9] py-16 sm:min-h-[440px] lg:h-[846px] lg:py-0">
+    <section className="relative h-auto min-h-[380px] w-full overflow-hidden bg-[#F2E7F9] pb-16 pt-28 sm:min-h-[440px] sm:pt-32 lg:h-[846px] lg:py-0">
       <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
           <img

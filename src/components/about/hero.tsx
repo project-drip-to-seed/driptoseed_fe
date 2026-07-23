@@ -22,7 +22,7 @@ const AboutHero = () => {
       </div>
 
       {/* Headline + copy */}
-      <div className="absolute left-1/2 top-1/2 w-[900px] max-w-full -translate-x-1/2 -translate-y-1/2 px-5 flex flex-col items-center gap-3 text-center text-white capitalize lg:top-[160px] lg:translate-y-0 lg:gap-1">
+      <div className="relative left-1/2 z-10 w-[900px] max-w-full -translate-x-1/2 px-5 flex flex-col items-center gap-3 text-center text-white capitalize lg:absolute lg:top-[160px] lg:gap-1">
         <h1 className="font-kugile leading-[1.3] text-[32px] sm:text-[42px] lg:text-[57px] lg:leading-[1.4]">
           Building the Future of
           <br />
