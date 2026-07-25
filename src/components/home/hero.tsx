@@ -36,7 +36,7 @@ const Hero = () => {
 
         <div className="flex flex-wrap gap-4 items-center sm:gap-5">
           <a
-            href="/apply-creator"
+            href="/become-creator"
             className="bg-white capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-full text-[#780AC1] text-[16px] whitespace-nowrap"
           >
             Apply as creator

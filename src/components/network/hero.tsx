@@ -19,6 +19,15 @@ const NetworkHero = () => {
           />
         </div>
       </div>
+      <div className="absolute left-[180px] top-[191px] hidden size-[1080px] lg:block">
+        <div className="absolute inset-[-75.93%]">
+          <img
+            alt=""
+            className="block max-w-none size-full"
+            src="/general_assets/hero_bg_ellipse_bottom.svg"
+          />
+        </div>
+      </div>
 
       {/* Headline + copy */}
       <div className="relative left-1/2 z-10 -translate-x-1/2 w-[900px] max-w-[calc(100%-40px)] flex flex-col items-center gap-3 text-center text-white capitalize lg:absolute lg:bottom-20 lg:gap-1">
