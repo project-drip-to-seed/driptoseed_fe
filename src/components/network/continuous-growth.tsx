@@ -44,7 +44,7 @@ const NetworkContinuousGrowth = () => {
               }`}
             >
               {card.highlighted && (
-                <div className="pointer-events-none absolute bottom-[-100px] right-[-56px] size-[240px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.5)_0%,rgba(213,158,251,0)_70%)]" />
+                <div className="pointer-events-none absolute bottom-[-100px] right-[-56px] size-[240px] rounded-full bg-[#780AC1] opacity-80 blur-[125px]" />
               )}
               <div className="absolute left-5 top-5">
                 <AsteriskIcon width={35} height={36} color="#780AC1" />

@@ -17,7 +17,7 @@ const cards: GrowCard[] = [
       "Live growth dashboard",
     ],
     cta: "Apply as a creator",
-    href: "/apply-creator",
+    href: "/become-creator",
   },
   {
     title: "Become an Editor",

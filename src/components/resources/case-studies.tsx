@@ -49,7 +49,7 @@ const ResourcesCaseStudies = () => {
               className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white lg:h-[260px]"
             >
               {/* Glow */}
-              <div className="pointer-events-none absolute bottom-[-256px] right-[-236px] size-[471px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.5)_0%,rgba(213,158,251,0)_70%)]" />
+              <div className="pointer-events-none absolute bottom-[-256px] right-[-236px] size-[471px] rounded-full bg-[#780AC1] blur-[170px]" />
 
               {/* Card image */}
               <div className="absolute bottom-[-10px] right-[-16px] h-[180px] w-[200px] sm:h-[220px] sm:w-[243px] lg:bottom-[-21px] lg:right-[-24px] lg:h-[260px] lg:w-[287px]">

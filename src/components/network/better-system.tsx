@@ -1,6 +1,6 @@
 const CardGlow = ({ className }: { className: string }) => (
   <div
-    className={`pointer-events-none absolute size-[471px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.45)_0%,rgba(213,158,251,0)_70%)] ${className}`}
+    className={`pointer-events-none absolute size-[471px] rounded-full bg-[#780AC1] blur-[170px] ${className}`}
   />
 );
 
@@ -43,7 +43,7 @@ const NetworkBetterSystem = () => {
         {/* Bento */}
         <div className="flex flex-col gap-3 w-full lg:flex-row lg:items-center">
           {/* Two square cards */}
-          <div className="flex flex-col gap-3 w-full sm:flex-row lg:shrink-0">
+          <div className="flex flex-col gap-3 w-full sm:flex-row lg:w-auto lg:shrink-0">
             {[
               {
                 title: "Content Has a Short Lifespan",
@@ -73,7 +73,7 @@ const NetworkBetterSystem = () => {
           </div>
 
           {/* Two wide stacked cards */}
-          <div className="flex flex-col gap-3 items-start w-full lg:w-[576px] lg:shrink-0">
+          <div className="flex flex-col gap-3 items-start w-full lg:flex-1 lg:min-w-0">
             {[
               {
                 title: "Valuable Content Goes Unused",
