@@ -39,11 +39,7 @@ const TermsHero = () => {
           Terms &amp; Conditions
         </h1>
         <p className="w-full font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[1.5] sm:text-[16px] sm:leading-[1.6]">
-          Every creator&apos;s journey is unique, but sustainable growth
-          follows a proven system. Explore how our Creator Growth Framework
-          has helped creators increase reach, maximize content value, and
-          build stronger audiences through clipping, strategic distribution,
-          and data-driven optimization.
+          The terms that apply when you use Drip&apos;s website and take part in our Creator and Editor programs.
         </p>
       </div>
     </section>

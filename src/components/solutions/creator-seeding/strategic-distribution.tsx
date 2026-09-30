@@ -1,9 +1,16 @@
+import {
+  AudienceFirstArt,
+  CommunityReachArt,
+  LongTermVisibilityArt,
+} from "./seeding-art";
+
 type DistributionCard = {
   title: string;
   description: string;
   tags: string[];
   metric: string;
   metricLabel: string;
+  Art: () => React.JSX.Element;
   elevated?: boolean;
 };
 
@@ -19,6 +26,7 @@ const cards: DistributionCard[] = [
     ],
     metric: "94%",
     metricLabel: "Audience-content match rate",
+    Art: AudienceFirstArt,
   },
   {
     title: "Community-Based Reach",
@@ -31,6 +39,7 @@ const cards: DistributionCard[] = [
     ],
     metric: "50M+",
     metricLabel: "Community reach pool",
+    Art: CommunityReachArt,
     elevated: true,
   },
   {
@@ -44,6 +53,7 @@ const cards: DistributionCard[] = [
     ],
     metric: "30+",
     metricLabel: "Days of active visibility",
+    Art: LongTermVisibilityArt,
   },
 ];
 
@@ -57,15 +67,13 @@ function DistributionCard({ card }: { card: DistributionCard }) {
       }`}
     >
       <div
-        className="flex h-60 shrink-0 items-center justify-center"
+        className="h-60 shrink-0 overflow-hidden"
         style={{
           background:
             "linear-gradient(180deg, rgba(213, 158, 251, 0.08) 11%, rgba(120, 10, 193, 0.08) 142.75%)",
         }}
       >
-        <p className="font-kugile text-[64px] leading-[1.4] text-[#FF0000] sm:text-[76px]">
-          Graphic
-        </p>
+        <card.Art />
       </div>
 
       <div className="flex flex-1 flex-col p-5">

@@ -2,27 +2,22 @@ import type { Metadata } from "next";
 import FaqHero from "@/components/faq/hero";
 import Milestone from "@/components/home/milestone";
 import Faq from "@/components/home/faq";
-// import FaqList from "@/components/faq/list";
-// import Reveal from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
-    title: "Frequently Asked Questions",
-    description:
-        "Every creator's journey is unique, but sustainable growth follows a proven system. Explore how our Creator Growth Framework has helped creators increase reach, maximize content value, and build stronger audiences.",
-    alternates: { canonical: "/faq" },
+  title: "Frequently Asked Questions",
+  description:
+    "Answers to common questions about Drip's clipping, seeding and distribution services, how we work with creators, and how our editor program pays.",
+  alternates: { canonical: "/faq" },
 };
 
 const FaqPage = () => {
-    return (
-        <main className="relative">
-            <FaqHero />
-            <Milestone />
-            <Faq />
-            {/* <Reveal>
-                <FaqList />
-            </Reveal> */}
-        </main>
-    );
+  return (
+    <main className="relative">
+      <FaqHero />
+      <Milestone />
+      <Faq />
+    </main>
+  );
 };
 
 export default FaqPage;

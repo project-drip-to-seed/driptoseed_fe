@@ -61,13 +61,13 @@ const NetworkCta = () => {
 
           <div className="flex flex-wrap gap-4 items-center justify-center sm:gap-5">
             <a
-              href="/become-creator"
+              href="/apply/creator"
               className="flex items-center justify-center rounded-full border border-[#780AC1] px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-[#780AC1] capitalize whitespace-nowrap"
             >
               Apply as a Creator
             </a>
             <a
-              href="/become-editor"
+              href="/apply/editor"
               className="flex items-center justify-center rounded-full bg-[#780AC1] px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-white capitalize whitespace-nowrap"
             >
               Become an Editor

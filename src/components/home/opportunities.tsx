@@ -1,8 +1,15 @@
+import {
+  FindMomentsArt,
+  StandaloneStoriesArt,
+  WatchTodayArt,
+  WeeksOfContentArt,
+} from "./opportunity-art";
+
 const cards = [
-  { caption: "Find the Moments That Matter" },
-  { caption: "Transform Moments into Standalone Stories" },
-  { caption: "Built for How People Watch Today" },
-  { caption: "Weeks of Content from a Single Recording" },
+  { caption: "Find the Moments That Matter", Art: FindMomentsArt },
+  { caption: "Transform Moments into Standalone Stories", Art: StandaloneStoriesArt },
+  { caption: "Built for How People Watch Today", Art: WatchTodayArt },
+  { caption: "Weeks of Content from a Single Recording", Art: WeeksOfContentArt },
 ];
 
 const Opportunities = () => {
@@ -26,7 +33,9 @@ const Opportunities = () => {
             key={card.caption}
             className="flex flex-col gap-3 items-center min-w-0"
           >
-            <div className="w-full aspect-square rounded-3xl bg-[#F0E6F8] border border-[#D59EFB]" />
+            <div className="w-full aspect-square rounded-3xl bg-[#F0E6F8] border border-[#D59EFB] overflow-hidden">
+              <card.Art />
+            </div>
             <p className="font-[family-name:var(--font-inter)] font-normal capitalize leading-[1.4] text-[20px] text-black text-center px-2">
               {card.caption}
             </p>

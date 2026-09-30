@@ -15,7 +15,7 @@ const purposes: ClipPurpose[] = [
     description:
       "The most engaging, emotional, surprising, or attention-grabbing parts of your content that have the highest potential for widespread sharing.",
     detail: "Reaction bait · Peak energy moments",
-    result: "Avg. 340K views",
+    result: "Peak reach & shares",
     large: true,
   },
   {
@@ -23,13 +23,13 @@ const purposes: ClipPurpose[] = [
     description:
       "Structured, single-idea breakdowns that teach fast and keep viewers watching to the end.",
     detail: "How-tos · Frameworks · Quick tips",
-    result: "Avg. 340K views",
+    result: "Watch time & saves",
     large: true,
   },
   {
     title: "Trend-Led Content",
     description: "Fast-turnaround clips built around what's moving right now.",
-    detail: "How-tos · Frameworks · Quick tips",
+    detail: "Trending sounds · Timely formats · News hooks",
     result: "Always fresh",
     featured: true,
   },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
@@ -48,18 +49,18 @@ const NotFound = () => {
         </div>
 
         <div className="flex flex-wrap gap-4 items-center justify-center mt-3 sm:gap-5">
-          <a
+          <Link
             href="/"
             className="bg-white capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-full text-[#780AC1] text-[16px] whitespace-nowrap"
           >
             Back to Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="border border-white capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-full text-white text-[16px] whitespace-nowrap"
           >
             Contact Support
-          </a>
+          </Link>
         </div>
       </div>
     </main>

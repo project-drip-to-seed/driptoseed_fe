@@ -1,29 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { faqs } from "@/lib/faqs";
 
-const faqs = [
-  {
-    question: "Turn Your Editing Skills Into Real Earnings",
-    answer:
-      "No pitching clients. No chasing invoices. Just edit, submit, and get paid per performance. Join our clipping program and work with creators while earning rewards for high-performing edits.",
-  },
-  {
-    question: "Turn Your Editing Skills Into Real Earnings",
-    answer:
-      "No pitching clients. No chasing invoices. Just edit, submit, and get paid per performance. Join our clipping program and work with creators while earning rewards for high-performing edits.",
-  },
-  {
-    question: "Turn Your Editing Skills Into Real Earnings",
-    answer:
-      "No pitching clients. No chasing invoices. Just edit, submit, and get paid per performance. Join our clipping program and work with creators while earning rewards for high-performing edits.",
-  },
-  {
-    question: "Turn Your Editing Skills Into Real Earnings",
-    answer:
-      "No pitching clients. No chasing invoices. Just edit, submit, and get paid per performance. Join our clipping program and work with creators while earning rewards for high-performing edits.",
-  },
-];
 
 const PlusIcon = ({ open }: { open: boolean }) => (
   <span
@@ -82,7 +61,7 @@ const FaqCard = ({
 );
 
 const Faq = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(1);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
@@ -93,10 +72,8 @@ const Faq = () => {
             <span className="text-[#780AC1]">asked questions</span>
           </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
-            Every long-form video is packed with moments that deserve their
-            own audience. Whether it&apos;s a podcast, interview, vlog,
-            webinar, or educational session, there are countless highlights
-            that often go unnoticed after a single upload.
+            Everything creators and editors ask before getting started. Can&apos;t find your answer? Reach out and we&apos;ll walk you
+            through it.
           </p>
         </div>
 

@@ -38,15 +38,65 @@ const weeks: Week[] = [
 
 const platforms = ["IG", "YT", "TT"];
 
-const PlayIcon = () => (
-  <svg width="57" height="60" viewBox="0 0 57 60" fill="none" aria-hidden="true">
-    <path
-      d="M53 26.4a4 4 0 0 1 0 7.2L9.5 55.6A4 4 0 0 1 4 52V8a4 4 0 0 1 5.5-3.7L53 26.4Z"
-      stroke="#780AC1"
-      strokeWidth="3"
-      strokeLinejoin="round"
-    />
-  </svg>
+const launchChecklist = ["Caption", "Thumbnail", "Hashtags", "Metadata"];
+
+const LaunchPreview = () => (
+  <div className="flex h-[240px] gap-4 rounded-2xl bg-white p-4">
+    <div
+      className="relative flex h-full w-[112px] shrink-0 flex-col items-center justify-between overflow-hidden rounded-xl px-3 pb-3 pt-4"
+      style={{
+        background:
+          "linear-gradient(160deg, #A24BEA 0%, #780AC1 55%, #54078F 100%)",
+      }}
+    >
+      <span className="mt-8 flex size-12 items-center justify-center rounded-full bg-white/20">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
+          <path
+            d="M6.5 3.5L16 10l-9.5 6.5z"
+            fill="#fff"
+            stroke="#fff"
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <span className="flex w-full flex-col gap-1.5">
+        <span className="h-1.5 w-4/5 rounded-full bg-white/90" />
+        <span className="h-1.5 w-3/5 rounded-full bg-white/60" />
+      </span>
+    </div>
+
+    <div className="flex min-w-0 flex-1 flex-col justify-between py-1">
+      <div className="flex flex-col gap-3">
+        <p className="font-[family-name:var(--font-inter)] text-[12px] font-medium uppercase leading-none tracking-[0.08em] text-[#686868]">
+          Optimized for launch
+        </p>
+        <ul className="flex flex-col gap-2.5">
+          {launchChecklist.map((item) => (
+            <li key={item} className="flex items-center gap-2.5">
+              <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#780AC1]">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 7.5l2.6 2.6L11 4.6"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <span className="font-[family-name:var(--font-inter)] text-[15px] font-normal leading-none text-black">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <span className="w-fit rounded-full bg-[#EED7FF66] px-3 py-1.5 font-[family-name:var(--font-inter)] text-[12px] font-normal leading-none text-[#780AC1]">
+        Day 1 · Primary platforms
+      </span>
+    </div>
+  </div>
 );
 
 const DistributionTimeline = () => {
@@ -125,9 +175,7 @@ const DistributionTimeline = () => {
               </p>
             </div>
 
-            <div className="flex h-[240px] items-center justify-center rounded-2xl bg-white">
-              <PlayIcon />
-            </div>
+            <LaunchPreview />
 
             <div className="flex items-center justify-between w-full">
               <div className="flex gap-2 items-center">
@@ -143,7 +191,7 @@ const DistributionTimeline = () => {
                 ))}
               </div>
               <p className="font-[family-name:var(--font-inter)] font-normal text-[14px] leading-[1.2] text-[#780AC1] capitalize whitespace-nowrap">
-                ↑ +8.2K reach
+                Live on 3 platforms
               </p>
             </div>
           </div>

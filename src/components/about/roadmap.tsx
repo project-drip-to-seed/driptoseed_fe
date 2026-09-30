@@ -1,3 +1,5 @@
+import RoadmapArt from "./roadmap-art";
+
 type Phase = {
   eyebrow: string;
   title: string;
@@ -62,9 +64,7 @@ const Roadmap = () => {
             </span>
           </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-            Every day, creators invest countless hours researching ideas,
-            writing scripts, filming videos, editing content, and publishing
-            across multiple platforms.
+            From the first partner network to a growth system that runs itself, here is where Drip has been and where it is going.
           </p>
         </div>
 
@@ -103,8 +103,18 @@ const Roadmap = () => {
             </div>
           </div>
 
-          {/* visual panel */}
-          <div className="flex-1 min-w-0 h-[200px] lg:h-auto bg-[#D59EFB]" />
+          {/* visual panel (desktop only; the timeline carries the story on small screens) */}
+          <div
+            className="relative hidden min-h-[420px] min-w-0 flex-1 overflow-hidden rounded-2xl lg:block"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(213,158,251,0.16) 11%, rgba(120,10,193,0.12) 142.75%)",
+            }}
+          >
+            <div className="absolute inset-0 p-4">
+              <RoadmapArt />
+            </div>
+          </div>
         </div>
       </div>
     </section>

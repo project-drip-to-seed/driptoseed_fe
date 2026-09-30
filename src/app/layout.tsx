@@ -60,9 +60,8 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // Icons come from the app-router file conventions: favicon.ico, icon.svg
+  // and apple-icon.png in this folder (all generated from /brand/drip_app_icon.svg).
 };
 
 const organizationJsonLd = {
@@ -70,7 +69,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/general_assets/drip_logo.svg`,
+  logo: `${siteConfig.url}/brand/drip_app_icon.svg`,
   description: siteConfig.description,
   sameAs: Object.values(siteConfig.links),
 };

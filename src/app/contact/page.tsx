@@ -7,7 +7,7 @@ import Faq from "@/components/home/faq";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Every creator's journey is unique, but sustainable growth follows a proven system. Explore how our Creator Growth Framework has helped creators increase reach, maximize content value, and build stronger audiences through clipping, strategic distribution, and data-driven optimization.",
+    "Get in touch with Drip. Tell us about your content and we'll show you how clipping, seeding and distribution can grow your audience.",
   alternates: { canonical: "/contact" },
 };
 

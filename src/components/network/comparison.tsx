@@ -2,57 +2,58 @@ import AsteriskIcon from "@/components/shared/asterisk-icon";
 
 type Row = { title: string; desc: string };
 
+// Rows are paired: row N on the left is the problem, row N on the right is how the framework answers it.
 const traditional: Row[] = [
   {
     title: "Upload once",
-    desc: "Content is uploaded whenever it's ready, without considering audience behavior, platform timing, or distribution opportunities.",
+    desc: "Content is published once and left to the algorithm, with no plan for what happens after day one.",
   },
   {
     title: "One content asset",
-    desc: "Creators rely entirely on platform algorithms to determine visibility and reach.",
+    desc: "A long video is treated as a single post, so most of its best moments never get shared.",
   },
   {
     title: "Platform-dependent",
-    desc: "Most posts lose momentum within a few days and rarely reach new audiences afterward.",
+    desc: "Reach depends on one platform's algorithm, so visibility rises and falls outside your control.",
   },
   {
     title: "Short content lifespan",
-    desc: "Content circulates mainly among existing followers instead of attracting new viewers.",
+    desc: "Most posts lose momentum within days and rarely reach new audiences afterward.",
   },
   {
     title: "Vanity metrics",
-    desc: "Growth depends on occasional viral moments rather than a repeatable system.",
+    desc: "Success is judged by likes and views, with little insight into what actually drives audience growth.",
   },
   {
     title: "Campaign mindset",
-    desc: "Growth depends on occasional viral moments rather than a repeatable system.",
+    desc: "Effort comes in bursts around launches instead of a repeatable system that compounds.",
   },
 ];
 
 const framework: Row[] = [
   {
     title: "Continuous distribution",
-    desc: "Every upload follows a structured publishing and amplification schedule.",
+    desc: "Every upload follows a structured publishing and amplification schedule that keeps it visible for weeks.",
   },
   {
     title: "Multiple content assets",
-    desc: "Content is optimized and distributed across multiple platforms and partner networks.",
+    desc: "One long-form video becomes many short clips, each with its own chance to be discovered.",
   },
   {
     title: "Multi-channel ecosystem",
-    desc: "Each piece of content continues generating impressions and engagement over several weeks.",
+    desc: "Content is distributed across platforms, communities and partner networks, not a single feed.",
   },
   {
     title: "Extended content lifecycle",
-    desc: "Content reaches communities and audiences that align with your niche and goals.",
+    desc: "Staggered placements keep every piece of content generating impressions long after launch.",
   },
   {
     title: "Growth-focused reporting",
-    desc: "Consistent visibility creates predictable audience growth and stronger brand authority.",
+    desc: "Transparent reporting ties every clip and placement to real reach and audience growth.",
   },
   {
     title: "Long-term creator growth",
-    desc: "Analytics are utilized to refine strategies and enhance future content performance.",
+    desc: "Analytics refine each cycle, so growth compounds instead of arriving as one-off wins.",
   },
 ];
 

@@ -1,18 +1,40 @@
 import AsteriskIcon from "@/components/shared/asterisk-icon";
 
 const cards = [
-  { title: "Creator Uploads" },
-  { title: "Content Review", highlighted: true },
-  { title: "Clipping" },
-  { title: "Optimization" },
-  { title: "Distribution" },
-  { title: "Audience Growth" },
-  { title: "Performance Reporting" },
-  { title: "Improvement & Repeat" },
+  {
+    title: "Creator Uploads",
+    desc: "It all starts with the long-form videos, podcasts, interviews or vlogs you already publish.",
+  },
+  {
+    title: "Content Review",
+    desc: "Our team reviews every upload to find the moments with the greatest potential to travel.",
+    highlighted: true,
+  },
+  {
+    title: "Clipping",
+    desc: "Editors turn each upload into multiple short-form clips, each built around one strong moment.",
+  },
+  {
+    title: "Optimization",
+    desc: "Hooks, captions, framing and formatting are refined for every platform before anything goes live.",
+  },
+  {
+    title: "Distribution",
+    desc: "Clips are placed across relevant communities, media pages and partner networks on a planned schedule.",
+  },
+  {
+    title: "Audience Growth",
+    desc: "Each placement introduces your content to new viewers, turning reach into followers and engagement.",
+  },
+  {
+    title: "Performance Reporting",
+    desc: "Clear reporting shows which clips, channels and placements are driving results.",
+  },
+  {
+    title: "Improvement & Repeat",
+    desc: "What the data reveals feeds the next round of content, so every cycle performs better than the last.",
+  },
 ];
-
-const description =
-  "High-velocity, culture-first pages that push content into daily scroll habits.";
 
 const NetworkContinuousGrowth = () => {
   return (
@@ -54,7 +76,7 @@ const NetworkContinuousGrowth = () => {
                   {card.title}
                 </p>
                 <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#404040] w-full">
-                  {description}
+                  {card.desc}
                 </p>
               </div>
             </div>

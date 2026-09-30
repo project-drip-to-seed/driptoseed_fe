@@ -59,9 +59,7 @@ const Principles = () => {
           <span className="text-[#780AC1]">guide everything we build.</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
-          Every day, creators invest countless hours researching ideas,
-          writing scripts, filming videos, editing content, and publishing
-          across multiple platforms.
+          Six principles shape how we work with creators, editors and partners, and how we decide what to build next.
         </p>
       </div>
 

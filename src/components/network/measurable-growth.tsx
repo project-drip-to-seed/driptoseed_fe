@@ -3,41 +3,33 @@ import AsteriskIcon from "@/components/shared/asterisk-icon";
 const cards = [
   {
     title: "Increased Reach",
-    desc: "Publish optimized content across your owned social channels with platform-specific formatting and scheduling.",
-    tags: [
-      "Existing audience engagement",
-      "Brand consistency",
-      "Long-term content library",
-    ],
+    desc: "Every clip and placement puts your content in front of viewers who don't follow you yet.",
+    tags: ["New audiences", "Wider distribution", "Beyond your followers"],
   },
   {
     title: "Audience Growth",
-    desc: "Collaborate with trusted partners, complementary creators, and relevant businesses to expand your reach.",
-    tags: ["Audience crossover", "Higher credibility", "Community trust"],
+    desc: "Reach that lands in the right communities turns into followers, engagement and loyal fans.",
+    tags: ["Follower growth", "Higher engagement", "Community trust"],
   },
   {
     title: "Better Discoverability",
-    desc: "Place content on digital publications, editorial platforms, and media brands to increase authority and visibility.",
-    tags: ["Thought leadership", "Business creators", "Industry experts"],
+    desc: "Optimized clips on trusted pages and publications show up where your ideal viewers already look.",
+    tags: ["Optimized hooks", "Trusted placements", "Feed visibility"],
   },
   {
     title: "More Content Assets",
-    desc: "Distribute content within niche groups, online forums, regional pages, and interest-based communities.",
-    tags: [
-      "Highly engaged audiences",
-      "Better discoverability",
-      "Relevant conversations",
-    ],
+    desc: "One long-form upload becomes a library of short-form clips you can publish across the month.",
+    tags: ["Clip library", "Multi-platform formats", "Weeks of content"],
   },
   {
     title: "Transparent Analytics",
-    desc: "Amplify high-performing content using targeted paid promotion to accelerate reach and audience growth.",
-    tags: ["Product launches", "Campaigns", "New creator discovery"],
+    desc: "See how every clip performs across platforms and placements, and what to improve next.",
+    tags: ["Clip-level insights", "Placement tracking", "Clear reporting"],
   },
   {
     title: "More Brand Opportunities",
-    desc: "Cross-promote content through trusted creator collaborations and ecosystem pages to increase organic exposure.",
-    tags: ["Shared audiences", "Collaborative growth", "Network effects"],
+    desc: "A larger, more engaged audience makes your channel more attractive to brands, partners and collaborators.",
+    tags: ["Partnerships", "Sponsorships", "Collaborations"],
   },
 ];
 

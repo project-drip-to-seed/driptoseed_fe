@@ -1,9 +1,16 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpengraphImage() {
+  const logoSvg = await readFile(
+    path.join(process.cwd(), "public/brand/drip_logo_color.svg")
+  );
+  const logoSrc = `data:image/svg+xml;base64,${logoSvg.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -14,22 +21,19 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "center",
-          padding: "80px",
+          padding: "64px 80px",
           background:
             "linear-gradient(160deg, #F2E7F9 0%, #E8C4FA 45%, #780AC1 100%)",
         }}
       >
-        <div
-          style={{
-            fontSize: 40,
-            color: "#780AC1",
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            marginBottom: 24,
-          }}
-        >
-          Drip
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logoSrc}
+          alt="Drip"
+          width={240}
+          height={139}
+          style={{ marginBottom: 24 }}
+        />
         <div
           style={{
             fontStyle: "italic",

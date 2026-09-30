@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const stats = [
   { value: "300+", label: "Distribution Partners" },
   { value: "50M+", label: "Monthly reach" },
-  { value: "50M+", label: "Monthly reach" },
+  { value: "1,000+", label: "Placements monthly" },
 ];
 
 const BackedByData = () => {
@@ -44,8 +46,8 @@ const BackedByData = () => {
             ))}
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="flex items-center justify-center rounded-[30px] px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-white capitalize whitespace-nowrap"
             style={{
               backgroundImage:
@@ -53,7 +55,7 @@ const BackedByData = () => {
             }}
           >
             Track Dashboard
-          </button>
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center justify-center shrink-0 w-[500px]">

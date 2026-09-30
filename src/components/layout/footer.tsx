@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { solutionLinks, type NavigationLink } from "@/lib/navigation";
 
 const platformLinks: NavigationLink[] = solutionLinks;
@@ -13,7 +14,12 @@ const companyLinks: NavigationLink[] = [
   { name: "Contact", href: "/contact" },
 ];
 
-const getStartedLinks: NavigationLink[] = [{ name: "Book a Call", href: "/contact" }];
+const getStartedLinks: NavigationLink[] = [
+  { name: "Apply as a Creator", href: "/apply/creator" },
+  { name: "Become an Editor", href: "/apply/editor" },
+  { name: "Book a Call", href: "/contact" },
+  { name: "Log In", href: "/login" },
+];
 
 const legalLinks: NavigationLink[] = [
   { name: "Privacy Policy", href: "/privacy" },
@@ -75,6 +81,9 @@ const ArrowIcon = () => (
 );
 
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/dashboard")) return null;
+
   return (
     <footer
       className="relative w-full overflow-hidden px-5 pt-10 pb-10 sm:px-8 md:px-12 md:pt-[60px] lg:px-20"
@@ -85,10 +94,12 @@ const Footer = () => {
       <div className="flex w-full flex-wrap items-start justify-between gap-y-10">
         <div className="flex w-full shrink-0 flex-col items-start gap-[14px] sm:w-[324px]">
           <Image
-            src="/general_assets/drip_logo.svg"
+            src="/brand/drip_logo_white.svg"
             alt="Drip"
-            width={78}
-            height={40}
+            width={605}
+            height={350}
+            className="h-14 w-auto"
+            style={{ width: "auto" }}
           />
           <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-white">
             We help creators grow beyond algorithms through strategic content

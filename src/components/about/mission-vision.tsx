@@ -23,9 +23,7 @@ const MissionVision = () => {
           <span className="text-[#780AC1]">Mission &amp; Vision</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
-          Every day, creators invest countless hours researching ideas,
-          writing scripts, filming videos, editing content, and publishing
-          across multiple platforms.
+          What we are here to do today, and the network we are building toward.
         </p>
       </div>
 

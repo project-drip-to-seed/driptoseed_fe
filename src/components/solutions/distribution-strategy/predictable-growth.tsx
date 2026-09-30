@@ -10,38 +10,38 @@ const pillars: Pillar[] = [
   {
     title: "Planned Publishing Schedule",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Every upload follows a structured calendar, so visibility builds over weeks instead of spiking on day one.",
   },
   {
     title: "Multi-Platform Visibility",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Content is formatted and published across Instagram, YouTube, TikTok and LinkedIn so it meets viewers wherever they scroll.",
     featured: true,
   },
   {
     title: "Community Placements",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Clips are placed inside niche communities and pages where your ideal audience is already active.",
   },
   {
     title: "Continuous Amplification",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "High-performing content is reshared and re-promoted to keep earning new viewers long after launch.",
   },
   {
     title: "Performance Optimization",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Every result feeds back into the plan, so hooks, timing and placements improve with each campaign.",
   },
   {
     title: "Consistent Audience Growth",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Steady, repeatable visibility replaces unpredictable viral spikes with growth you can plan around.",
   },
   {
     title: "Transparent Analytics",
     description:
-      "High-velocity, culture-first pages that push content into daily scroll habits.",
+      "Clear reporting shows exactly which clips, channels and placements are driving reach and followers.",
   },
 ];
 
@@ -82,9 +82,7 @@ const PredictableGrowth = () => {
           <span className="text-[#780AC1]">{` Predictable Growth.`}</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-          Our network consists of carefully selected partners across multiple
-          categories, allowing every creator to benefit from targeted
-          distribution instead of broad, unfocused exposure.
+          A strategy turns distribution from guesswork into a system. These are the building blocks that make growth planned instead of accidental.
         </p>
       </div>
 

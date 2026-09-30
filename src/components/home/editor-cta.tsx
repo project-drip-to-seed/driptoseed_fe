@@ -1,3 +1,5 @@
+import EditorPayoutVisual from "./editor-payout-visual";
+
 const tags = [
   "Remote",
   "Flexible",
@@ -45,7 +47,7 @@ const EditorCta = () => {
           </div>
 
           <a
-            href="/apply-editor"
+            href="/apply/editor"
             className="bg-[#780AC1] capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-full text-[16px] text-white w-fit whitespace-nowrap"
           >
             Apply as Editor
@@ -60,11 +62,9 @@ const EditorCta = () => {
               "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",
           }}
         >
-          <img
-            alt=""
-            src="/general_assets/editor_play_icon.svg"
-            className="relative w-full h-[200px] block sm:absolute sm:left-0 sm:top-0 sm:h-[240px]"
-          />
+          <div className="relative sm:absolute sm:left-0 sm:top-0 sm:h-[240px] sm:w-full">
+            <EditorPayoutVisual />
+          </div>
 
           <div className="flex items-center justify-between gap-3 px-5 py-4 sm:block sm:px-0 sm:py-0">
             <div className="flex flex-col items-start sm:absolute sm:left-5 sm:top-[260px]">

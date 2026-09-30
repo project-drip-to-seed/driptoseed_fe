@@ -9,9 +9,11 @@ const stats = [
 const CaseStudyHeader = ({
   title,
   creator,
+  summary,
 }: {
   title: string;
   creator: string;
+  summary: string;
 }) => {
   // Two-tone the title on the last " to " like the Figma ("... to 2.8M Organic Reach")
   const splitIndex = title.lastIndexOf(" to ");
@@ -39,12 +41,11 @@ const CaseStudyHeader = ({
               {head}
               {tail && <span className="text-[#780AC1]">{tail}</span>}
             </h1>
+            <p className="font-[family-name:var(--font-inter)] font-medium text-[16px] leading-[1.6] text-[#780AC1] w-full">
+              {creator}
+            </p>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] w-full">
-              {creator} — every day, creators dedicate hours to researching
-              ideas, writing scripts, recording videos, editing footage, and
-              publishing content. Yet despite this effort, most content receives
-              only a brief window of visibility before disappearing from feeds
-              and recommendations.
+              {summary}
             </p>
           </div>
         </div>

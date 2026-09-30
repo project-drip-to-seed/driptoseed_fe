@@ -3,6 +3,18 @@ const landscapeThumbnail =
 
 const filters = ["Creator", "Podcast", "Interview", "Vlog"];
 
+// Same source frame, reframed: three different looks at the long-form video,
+// then eleven short clips cut from it (each a different crop of the frame).
+const sourceCrops = [
+  { zoom: 1, origin: "50% 50%" },
+  { zoom: 1.7, origin: "25% 35%" },
+  { zoom: 1.7, origin: "72% 40%" },
+];
+const clipCrops = [
+  "15% 30%", "30% 42%", "46% 30%", "60% 36%", "75% 30%", "88% 46%",
+  "24% 68%", "40% 72%", "55% 62%", "70% 68%", "90% 72%",
+].map((origin) => ({ zoom: 2.2, origin }));
+
 const ChevronIcon = () => (
   <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
     <path
@@ -48,7 +60,7 @@ export default function ContentLibrary() {
 
         <div className="mt-10">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {sourceCrops.map((crop, index) => (
               <div
                 key={index}
                 className="h-60 min-w-0 overflow-hidden rounded-3xl"
@@ -57,6 +69,10 @@ export default function ContentLibrary() {
                   alt="Long-form creator video preview"
                   src={landscapeThumbnail}
                   className="size-full object-cover"
+                  style={{
+                    transform: `scale(${crop.zoom})`,
+                    transformOrigin: crop.origin,
+                  }}
                 />
               </div>
             ))}
@@ -74,7 +90,7 @@ export default function ContentLibrary() {
             <div className="mx-5 h-[100px] w-px shrink-0 bg-[#D59EFB]" />
 
             <div className="flex min-w-0 flex-1 gap-2 overflow-hidden">
-              {Array.from({ length: 11 }).map((_, index) => (
+              {clipCrops.map((crop, index) => (
                 <div
                   key={index}
                   className="h-[100px] w-20 shrink-0 overflow-hidden rounded-xl"
@@ -83,6 +99,10 @@ export default function ContentLibrary() {
                     alt={"Short clip preview " + (index + 1)}
                     src={landscapeThumbnail}
                     className="size-full object-cover"
+                    style={{
+                      transform: `scale(${crop.zoom})`,
+                      transformOrigin: crop.origin,
+                    }}
                   />
                 </div>
               ))}

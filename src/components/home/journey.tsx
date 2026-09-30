@@ -29,9 +29,9 @@ const steps: Step[] = [
   },
   {
     num: "04",
-    title: "Performance Reporting",
+    title: "Content Optimization",
     description:
-      "Growth is measured, not guessed. Every campaign includes transparent reporting that shows how your content performs across the distribution ecosystem. We continuously use these insights to improve future content and distribution strategies.",
+      "Every clip is refined before it goes out: hooks, captions, framing, pacing, and platform-specific formatting, all tuned to maximize discoverability and audience retention.",
   },
   {
     num: "05",
@@ -41,9 +41,9 @@ const steps: Step[] = [
   },
   {
     num: "06",
-    title: "Content Optimization",
+    title: "Performance Reporting",
     description:
-      "Every clip is optimized to maximize discoverability and audience retention before distribution. Our team refines every detail to improve performance across platforms.",
+      "Growth is measured, not guessed. Every campaign includes transparent reporting that shows how your content performs across the distribution ecosystem. We continuously use these insights to improve future content and distribution strategies.",
   },
 ];
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import CaseStudyCta from "@/components/case-study/cta";
 import CaseStudyMeasured from "@/components/case-study/measured";
 import DistributionEcosystem from "@/components/solutions/creator-seeding/distribution-ecosystem";
@@ -5,6 +6,13 @@ import DistributionOutcomes from "@/components/solutions/creator-seeding/distrib
 import StrategicDistribution from "@/components/solutions/creator-seeding/strategic-distribution";
 import SolutionsSystem from "@/components/solutions/system";
 import Faq from "@/components/home/faq";
+
+export const metadata: Metadata = {
+  title: "Creator Seeding",
+  description:
+    "Place your content in front of relevant audiences through 300+ trusted communities, pages and publishing partners, so it reaches people beyond your followers.",
+  alternates: { canonical: "/solutions/creator-seeding" },
+};
 
 const metrics = [
   {

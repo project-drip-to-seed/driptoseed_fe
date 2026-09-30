@@ -1,10 +1,10 @@
-const paragraph =
-  "We exist to close the gap between making something worth watching and making sure it's watched. Every service we build clipping, seeding, strategy points at the same outcome: content that keeps working long after it's published.";
-
-const approachParagraph =
-  "We're building toward a world where content doesn't move through one channel at a time it moves through a living network, matched automatically to the communities most likely to care.";
-
-const CaseStudyChallengeApproach = () => {
+const CaseStudyChallengeApproach = ({
+  challenge,
+  approach,
+}: {
+  challenge: string;
+  approach: string;
+}) => {
   return (
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
@@ -14,9 +14,7 @@ const CaseStudyChallengeApproach = () => {
             <span className="text-[#780AC1]">{` Reaching New People`}</span>
           </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-            Every day, creators invest countless hours researching ideas,
-            writing scripts, filming videos, editing content, and publishing
-            across multiple platforms.
+            Here is the challenge this creator faced, and how we approached it.
           </p>
         </div>
 
@@ -26,7 +24,7 @@ const CaseStudyChallengeApproach = () => {
               The Challenge
             </p>
             <p className="mt-2 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] capitalize">
-              {paragraph} {paragraph}
+              {challenge}
             </p>
           </div>
           <div className="flex-1 min-w-0 rounded-[24px] bg-[#EED7FF] p-5">
@@ -34,7 +32,7 @@ const CaseStudyChallengeApproach = () => {
               Our Approach
             </p>
             <p className="mt-2 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868] capitalize">
-              {approachParagraph} {approachParagraph}
+              {approach}
             </p>
           </div>
         </div>

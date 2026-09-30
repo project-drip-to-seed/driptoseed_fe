@@ -10,26 +10,26 @@ const cards: GrowCard[] = [
   {
     title: "Become a Creator",
     description:
-      "Plug your content into a system built to keep it working after upload day. Plug your content into a system built to keep it working after upload day. Plug your content into a system built to keep it working after upload day.",
+      "Plug your content into a system built to keep it working after upload day. We clip your long-form videos, place them across our partner network, and show you exactly how they perform.",
     tags: [
       "Full clipping pipeline included",
       "Access to 300+ partner pages",
       "Live growth dashboard",
     ],
     cta: "Apply as a creator",
-    href: "/apply-creator",
+    href: "/apply/creator",
   },
   {
     title: "Become an Editor",
     description:
-      "Join the team turning long-form footage into the clips creators need daily. Join the team turning long-form footage. Join the team turning long-form footage into the clips creators need daily.",
+      "Join the team turning long-form footage into the clips creators need. Work remotely on real creator content and earn based on how your edits perform.",
     tags: [
       "Steady, ongoing project flow",
       "Paid per clip performance",
       "Direct creator collaboration",
     ],
     cta: "Apply as an editor",
-    href: "/become-editor",
+    href: "/apply/editor",
   },
 ];
 
@@ -60,9 +60,7 @@ const GrowWithUs = () => {
           <span className="text-[#780AC1]">with us.</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
-          Every day, creators invest countless hours researching ideas,
-          writing scripts, filming videos, editing content, and publishing
-          across multiple platforms.
+          Whether you create the content or craft the clips, there is a place for you in the Drip network.
         </p>
       </div>
 

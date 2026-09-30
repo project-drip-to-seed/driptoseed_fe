@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Signed-in areas and the API proxy have nothing worth indexing.
+      disallow: ["/dashboard", "/login", "/api/"],
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
   };

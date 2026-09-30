@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const TrackGrowth = () => {
   return (
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
@@ -30,8 +32,8 @@ const TrackGrowth = () => {
             </p>
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="capitalize font-[family-name:var(--font-inter)] font-normal leading-[1.2] px-6 py-3 rounded-[30px] text-[16px] text-white whitespace-nowrap"
             style={{
               backgroundImage:
@@ -39,7 +41,7 @@ const TrackGrowth = () => {
             }}
           >
             Track your growth
-          </button>
+          </Link>
         </div>
       </div>
     </section>

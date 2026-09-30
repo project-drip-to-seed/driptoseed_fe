@@ -16,7 +16,7 @@ const CaseStudyCta = () => {
         </div>
 
         <a
-          href="/become-creator"
+          href="/apply/creator"
           className="flex items-center justify-center rounded-full px-6 py-3 font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.2] text-white capitalize whitespace-nowrap"
           style={{
             backgroundImage:

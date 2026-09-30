@@ -13,9 +13,7 @@ const CaseStudyMeasured = () => {
             <span className="text-[#780AC1]">Every Result. Fully Measured.</span>
           </h2>
           <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-            Every day, creators invest countless hours researching ideas,
-            writing scripts, filming videos, editing content, and publishing
-            across multiple platforms.
+            Every clip and placement is tracked, so you can see exactly where your content landed and what it earned.
           </p>
         </div>
 

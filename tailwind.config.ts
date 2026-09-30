@@ -30,12 +30,18 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-14px)" },
         },
+        "bar-fill": {
+          "0%": { transform: "scaleX(0)", opacity: "1" },
+          "60%, 90%": { transform: "scaleX(1)", opacity: "1" },
+          "100%": { transform: "scaleX(1)", opacity: "0" },
+        },
       },
       animation: {
         marquee: "marquee 30s linear infinite",
         "arrow-flow": "arrow-flow 6s linear infinite",
         "num-pulse": "num-pulse 6s linear infinite",
         float: "float 5s ease-in-out infinite",
+        "bar-fill": "bar-fill 4.5s ease-out infinite",
       },
     },
   },

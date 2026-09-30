@@ -1,3 +1,5 @@
+import DistributionGraphic from "./distribution-graphic";
+
 const Distribution = () => {
   return (
     <section
@@ -35,10 +37,8 @@ const Distribution = () => {
         </div>
       </div>
 
-      <div className="w-full flex-1 min-w-0 h-[240px] sm:h-[340px] lg:max-w-[668px] lg:h-[475px] bg-white flex items-center justify-center overflow-hidden">
-        <p className="font-kugile capitalize leading-[1.6] text-[48px] sm:text-[72px] lg:text-[96px] text-red-600 whitespace-nowrap">
-          Graphic
-        </p>
+      <div className="w-full flex-1 min-w-0 aspect-[600/520] rounded-3xl bg-white overflow-hidden shadow-[0_24px_60px_rgba(55,7,87,0.25)] lg:aspect-auto lg:max-w-[668px] lg:h-[475px]">
+        <DistributionGraphic />
       </div>
     </section>
   );

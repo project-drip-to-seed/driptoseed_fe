@@ -29,8 +29,10 @@ const cards: StoryCard[] = [
   },
 ];
 
-const ACTIVE_WIDTH = 560;
-const INACTIVE_WIDTH = 340;
+// Cards share the row proportionally (560:340 in the original design) instead of fixed
+// pixel widths, so the row still fits on 1280px laptops instead of clipping the last card.
+const ACTIVE_GROW = 1.65;
+const INACTIVE_GROW = 1;
 const ACTIVE_WASH =
   "linear-gradient(179.54deg, rgba(213,158,251,0.12) 51.307%, rgba(120,10,193,0.12) 95.412%)";
 
@@ -48,8 +50,8 @@ const StoryCardItem = ({
       type="button"
       onClick={onSelect}
       aria-pressed={isActive}
-      className="group relative shrink-0 h-[448px] rounded-3xl border border-[#D59EFB] overflow-hidden text-left transition-[width] duration-500 ease-in-out cursor-pointer flex flex-col"
-      style={{ width: isActive ? ACTIVE_WIDTH : INACTIVE_WIDTH }}
+      className="group relative min-w-0 basis-0 h-[448px] rounded-3xl border border-[#D59EFB] overflow-hidden text-left transition-[flex-grow] duration-500 ease-in-out cursor-pointer flex flex-col"
+      style={{ flexGrow: isActive ? ACTIVE_GROW : INACTIVE_GROW }}
     >
       {/* base + gradient wash crossfade */}
       <div className="absolute inset-0 bg-white" />

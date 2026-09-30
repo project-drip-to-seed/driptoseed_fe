@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { solutionLinks } from "@/lib/navigation";
 
@@ -66,6 +67,7 @@ const MenuIcon = ({ isOpen }: { isOpen: boolean }) => (
 );
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
@@ -96,28 +98,27 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setIsMobileSolutionsOpen(false);
-  }, []);
+  // The dashboard has its own shell (sidebar); the marketing nav would just get in the way.
+  if (pathname?.startsWith("/dashboard")) return null;
 
   return (
-    <nav className="absolute left-0 right-0 top-0 z-50 flex h-20 items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
+    <nav className="absolute left-0 right-0 top-0 z-50 flex h-20 items-center justify-between px-5 sm:px-8 md:px-12 lg:px-10 xl:px-20">
       {/* Logo */}
-      <Link href="/" className="relative z-50 flex items-center gap-[10px]">
+      <Link href="/" className="relative z-50 flex shrink-0 items-center gap-[10px]">
         <Image
-          src="/general_assets/drip_logo.svg"
+          src="/brand/drip_logo_white.svg"
           alt="Drip"
-          width={78}
-          height={40}
-          className="h-8 w-auto lg:h-10"
+          width={605}
+          height={350}
+          priority
+          className="h-10 w-auto lg:h-14"
           style={{ width: "auto" }}
         />
       </Link>
 
       {/* Desktop Nav Items */}
-      <div className="hidden items-center gap-8 lg:flex">
-        <div className="flex items-center gap-8">
+      <div className="hidden items-center gap-5 lg:flex xl:gap-8">
+        <div className="flex items-center gap-5 xl:gap-8">
           <div ref={dropdownRef} className="relative">
             <button
               type="button"
@@ -153,17 +154,23 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 xl:gap-5">
+          <Link
+            href="/login"
+            className="hidden font-[family-name:var(--font-inter)] text-base font-normal leading-[1.2] text-white whitespace-nowrap xl:block"
+          >
+            Log in
+          </Link>
           <a
-            href="/become-editor"
-            className="border border-white text-white px-6 py-3 rounded-full font-normal whitespace-nowrap"
+            href="/apply/editor"
+            className="border border-white text-white px-4 py-3 rounded-full font-normal whitespace-nowrap xl:px-6"
           >
             Become An Editor
           </a>
 
           <a
-            href="/become-creator"
-            className="bg-white text-[#780AC1] px-6 py-3 rounded-full font-normal whitespace-nowrap"
+            href="/apply/creator"
+            className="bg-white text-[#780AC1] px-4 py-3 rounded-full font-normal whitespace-nowrap xl:px-6"
           >
             Become A Creator
           </a>
@@ -226,16 +233,24 @@ const Navbar = () => {
             ))}
           </div>
 
+          <Link
+            href="/login"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block border-b border-white/15 py-4 font-[family-name:var(--font-inter)] text-lg font-normal text-white"
+          >
+            Log in
+          </Link>
+
           <div className="mt-8 flex flex-col gap-4">
             <a
-              href="/become-editor"
+              href="/apply/editor"
               className="w-full rounded-full border border-white px-6 py-3 text-center font-normal text-white"
             >
               Become An Editor
             </a>
 
             <a
-              href="/become-creator"
+              href="/apply/creator"
               className="w-full rounded-full bg-white px-6 py-3 text-center font-normal text-[#780AC1]"
             >
               Become A Creator

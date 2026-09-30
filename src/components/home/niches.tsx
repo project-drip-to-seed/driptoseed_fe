@@ -1,14 +1,14 @@
 const niches = [
   { name: "Fashion", image: "/niche_images/fashion.svg" },
   { name: "Beauty", image: "/niche_images/beauty.svg" },
-  { name: "Lifestyle", image: null },
-  { name: "Travel", image: null },
-  { name: "Fitness", image: null },
-  { name: "Food", image: null },
-  { name: "Business", image: null },
-  { name: "Finance", image: null },
-  { name: "Comedy", image: null },
-  { name: "Luxury", image: null },
+  { name: "Lifestyle", image: "/niche_images/lifestyle.svg" },
+  { name: "Travel", image: "/niche_images/travel.svg" },
+  { name: "Fitness", image: "/niche_images/fitness.svg" },
+  { name: "Food", image: "/niche_images/food.svg" },
+  { name: "Business", image: "/niche_images/business.svg" },
+  { name: "Finance", image: "/niche_images/finance.svg" },
+  { name: "Comedy", image: "/niche_images/comedy.svg" },
+  { name: "Luxury", image: "/niche_images/luxury.svg" },
 ];
 
 const StarIcon = () => (
@@ -22,7 +22,7 @@ const StarIcon = () => (
 
 const NicheCard = ({ name, image }: { name: string; image: string | null }) => (
   <div
-    className="relative flex-1 min-w-0 aspect-square rounded-3xl overflow-hidden"
+    className="relative min-w-0 aspect-square rounded-3xl overflow-hidden"
     style={{
       background:
         "linear-gradient(180deg, rgba(213,158,251,0.08) 11%, rgba(120,10,193,0.08) 142.75%)",
@@ -71,17 +71,10 @@ const Niches = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-5 items-start w-full mt-10">
-        <div className="grid grid-cols-2 gap-3 w-full sm:grid-cols-3 sm:gap-5 lg:flex lg:items-center">
-          {niches.slice(0, 5).map((niche) => (
-            <NicheCard key={niche.name} name={niche.name} image={niche.image} />
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-3 w-full sm:grid-cols-3 sm:gap-5 lg:flex lg:items-center">
-          {niches.slice(5, 10).map((niche) => (
-            <NicheCard key={niche.name} name={niche.name} image={niche.image} />
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-3 w-full mt-10 sm:gap-5 lg:grid-cols-5">
+        {niches.map((niche) => (
+          <NicheCard key={niche.name} name={niche.name} image={niche.image} />
+        ))}
       </div>
     </section>
   );

@@ -39,11 +39,7 @@ const PrivacyHero = () => {
           Privacy Policy
         </h1>
         <p className="w-full font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[1.5] sm:text-[16px] sm:leading-[1.6]">
-          Every creator&apos;s journey is unique, but sustainable growth
-          follows a proven system. Explore how our Creator Growth Framework
-          has helped creators increase reach, maximize content value, and
-          build stronger audiences through clipping, strategic distribution,
-          and data-driven optimization.
+          Your privacy matters to us. Here is what we collect, how we use it, and the choices you have.
         </p>
       </div>
     </section>

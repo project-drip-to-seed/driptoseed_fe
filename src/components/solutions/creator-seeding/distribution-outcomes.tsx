@@ -82,9 +82,7 @@ export default function DistributionOutcomes() {
             <span className="text-[#780AC1]">Delivers More Than Views.</span>
           </h2>
           <p className="font-[family-name:var(--font-inter)] text-base font-normal leading-[1.6] text-[#686868]">
-            Our network consists of carefully selected partners across multiple
-            categories, allowing every creator to benefit from targeted
-            distribution instead of broad, unfocused exposure.
+            Reach is only the beginning. Seeding builds the authority, insights and steady momentum that turn one-time viewers into a lasting audience.
           </p>
         </div>
 

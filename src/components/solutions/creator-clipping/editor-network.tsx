@@ -12,7 +12,7 @@ const skills = [
 const stats = [
   { value: "300+", label: "Distribution Partners" },
   { value: "50M+", label: "Monthly Reach" },
-  { value: "50M+", label: "Monthly Reach" },
+  { value: "9,000+", label: "Clips Published" },
 ];
 
 export default function EditorNetwork() {

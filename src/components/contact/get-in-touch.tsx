@@ -1,36 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const MailIcon = () => (
   <svg width="24" height="17" viewBox="0 0 24 17" fill="none" aria-hidden="true">
     <rect x="1" y="1" width="22" height="15" rx="2" stroke="#686868" strokeWidth="1.4" />
     <path d="M1.5 1.8 12 9.5l10.5-7.7" stroke="#686868" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const PhoneIcon = () => (
-  <svg width="18" height="24" viewBox="0 0 18 24" fill="none" aria-hidden="true">
-    <path
-      d="M3 2h5l1.5 4.5L7 8.5a11 11 0 0 0 6.5 6.5l2-2.5 4.5 1.5v5a2 2 0 0 1-2 2C8.94 21 -0.94 12.06 1 3a2 2 0 0 1 2-2Z"
-      transform="translate(0 1) scale(0.85)"
-      stroke="#686868"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const PinIcon = () => (
-  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" aria-hidden="true">
-    <path
-      d="M10 22s7.5-6.6 7.5-12.5a7.5 7.5 0 1 0-15 0C2.5 15.4 10 22 10 22Z"
-      stroke="#686868"
-      strokeWidth="1.4"
-      strokeLinejoin="round"
-    />
-    <circle cx="10" cy="9.5" r="2.75" stroke="#686868" strokeWidth="1.4" />
   </svg>
 );
 
@@ -105,9 +81,7 @@ const GetInTouch = () => {
               <span className="text-[#780AC1]">{` touch`}</span>
             </h2>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-              Every day, creators invest countless hours researching ideas,
-              writing scripts, filming videos, editing content, and
-              publishing across multiple platforms.
+              Have a question about clipping, seeding or distribution, or want to join as a creator or editor? Send us a message and we&apos;ll get back to you.
             </p>
           </div>
 
@@ -119,32 +93,13 @@ const GetInTouch = () => {
               <div className="flex flex-wrap gap-10 items-center">
                 <div className="flex gap-3 items-center">
                   <MailIcon />
-                  <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-[#686868] capitalize whitespace-nowrap">
+                  <a
+                    href="mailto:driptoseed@gmail.com"
+                    className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-[#686868] whitespace-nowrap hover:text-[#780AC1]"
+                  >
                     driptoseed@gmail.com
-                  </p>
+                  </a>
                 </div>
-                <div className="flex gap-3 items-center">
-                  <PhoneIcon />
-                  <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-[#686868] whitespace-nowrap">
-                    +91 00000 00000
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 items-start w-full">
-              <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-black capitalize">
-                Visit us at:
-              </p>
-              <div className="flex gap-3 items-start">
-                <div className="shrink-0 pt-0.5">
-                  <PinIcon />
-                </div>
-                <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.4] text-[#686868] capitalize">
-                  lorem ipsum dolor sit amet. <br />
-                  <br />
-                  lorem ipsum dolor sit amet.
-                </p>
               </div>
             </div>
           </div>
@@ -198,16 +153,24 @@ const GetInTouch = () => {
               />
             </div>
 
-            <label className="flex gap-2 items-center cursor-pointer">
+            <label className="flex gap-2 items-start cursor-pointer">
               <input
                 type="checkbox"
+                required
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="size-4 shrink-0 rounded-sm border border-[#404040] accent-[#780AC1]"
+                className="mt-0.5 size-4 shrink-0 rounded-sm border border-[#404040] accent-[#780AC1]"
               />
-              <span className="font-[family-name:var(--font-inter)] font-normal text-[12px] leading-[1.2] text-[#404040] capitalize">
-                The banking and finance industry is at the forefront of
-                digital changeover.
+              <span className="font-[family-name:var(--font-inter)] font-normal text-[12px] leading-[1.4] text-[#404040]">
+                I agree to the{" "}
+                <Link href="/privacy" className="text-[#780AC1] underline">
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link href="/terms" className="text-[#780AC1] underline">
+                  Terms &amp; Conditions
+                </Link>
+                , and to Drip contacting me about my inquiry.
               </span>
             </label>
 

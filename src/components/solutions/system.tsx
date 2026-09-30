@@ -12,17 +12,17 @@ const topStages: Stage[] = [
   {
     title: "Create",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "It starts with your content. Share long-form videos, podcasts, interviews or vlogs and we learn your niche, audience and goals.",
   },
   {
     title: "Clip",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "Our editors cut every upload into multiple short-form clips, each built around a single moment worth watching.",
   },
   {
     title: "Optimize",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "Hooks, captions, framing and formatting are refined for every platform to maximize discovery and retention.",
   },
 ];
 
@@ -30,17 +30,17 @@ const bottomStages: Stage[] = [
   {
     title: "Distribute",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "Clips are placed across our network of 300+ partners, from niche pages to communities and media, on a planned schedule.",
   },
   {
     title: "Analyze",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "Performance is tracked across every clip and placement, so you can see exactly what is working.",
   },
   {
     title: "Grow",
     description:
-      "Every long-form upload is re-cut into dozens of platform-native short clips built to perform on their own.",
+      "Insights feed the next round of content and distribution, so growth compounds instead of resetting with each upload.",
   },
 ];
 
@@ -89,7 +89,7 @@ const SolutionsSystem = () => {
           <span className="text-[#780AC1]">Sustainable Creator Growth.</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-          Seven stages, running on loop so growth compounds instead of
+          Six stages, running on loop so growth compounds instead of
           resetting with every upload.
         </p>
       </div>

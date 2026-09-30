@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Solutions",
   description:
     "Creating exceptional content is no longer enough. In today's creator economy, sustainable growth comes from consistently reaching new audiences, not just posting more videos.",
-  alternates: { canonical: "/solutions" },
+  alternates: { canonical: "/solutions/creator-growth" },
 };
 
 const SolutionsPage = () => {

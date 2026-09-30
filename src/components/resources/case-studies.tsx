@@ -1,10 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import {
   caseStudies,
   caseStudyCategories,
 } from "@/lib/case-studies";
 
+const ALL = "All";
+const tabs = [ALL, ...caseStudyCategories];
+
 const ResourcesCaseStudies = () => {
+  const [active, setActive] = useState(ALL);
+  const visible =
+    active === ALL
+      ? caseStudies
+      : caseStudies.filter((study) => study.category === active);
+
   return (
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-start">
@@ -16,34 +28,40 @@ const ResourcesCaseStudies = () => {
               <span className="text-[#780AC1]">Creator Transformations.</span>
             </h2>
             <p className="font-[family-name:var(--font-inter)] font-normal text-[16px] leading-[1.6] text-[#686868]">
-              Every day, creators dedicate hours to researching ideas, writing
-              scripts, recording videos, editing footage, and publishing
-              content. Yet despite this effort, most content receives only a
-              brief window of visibility before disappearing from feeds and
-              recommendations.
+              Browse how creators in different niches used clipping, seeding and distribution to reach audiences beyond their followers.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 items-center">
-            {caseStudyCategories.map((category, index) => (
-              <button
-                key={category}
-                type="button"
-                className={`rounded-full px-6 py-2 font-[family-name:var(--font-inter)] font-normal text-[14px] leading-[1.2] capitalize whitespace-nowrap ${
-                  index === 0
-                    ? "bg-[#780AC1] text-white"
-                    : "bg-[rgba(238,215,255,0.4)] text-[#780AC1]"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div
+            role="tablist"
+            aria-label="Filter case studies by niche"
+            className="flex flex-wrap gap-3 items-center"
+          >
+            {tabs.map((category) => {
+              const isActive = category === active;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActive(category)}
+                  className={`rounded-full px-6 py-2 font-[family-name:var(--font-inter)] font-normal text-[14px] leading-[1.2] capitalize whitespace-nowrap transition-colors ${
+                    isActive
+                      ? "bg-[#780AC1] text-white"
+                      : "bg-[rgba(238,215,255,0.4)] text-[#780AC1] hover:bg-[rgba(238,215,255,0.8)]"
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Case study grid */}
         <div className="grid grid-cols-1 gap-5 w-full lg:grid-cols-2">
-          {caseStudies.map((study) => (
+          {visible.map((study) => (
             <div
               key={study.slug}
               className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white lg:h-[260px]"
@@ -88,6 +106,11 @@ const ResourcesCaseStudies = () => {
               </Link>
             </div>
           ))}
+          {visible.length === 0 && (
+            <p className="col-span-full rounded-[24px] border border-dashed border-[#D59EFB] px-6 py-12 text-center font-[family-name:var(--font-inter)] text-[16px] leading-[1.6] text-[#686868]">
+              {`We're preparing a ${active} case study. Check back soon, or talk to us about your niche.`}
+            </p>
+          )}
         </div>
       </div>
     </section>

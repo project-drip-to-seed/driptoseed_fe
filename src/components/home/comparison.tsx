@@ -44,10 +44,9 @@ const Comparison = () => {
           <span className="text-[#780AC1]">{`We're Infrastructure.`}</span>
         </h2>
         <p className="font-[family-name:var(--font-inter)] font-normal capitalize text-[16px] leading-[1.6] text-[#686868]">
-          Every long-form video is packed with moments that deserve their own
-          audience. Whether it&apos;s a podcast, interview, vlog, webinar, or
-          educational session, there are countless highlights that often go
-          unnoticed after a single upload.
+          Agencies sell hours and hope. Drip runs a repeatable distribution
+          system: every clip is edited, optimized, and placed across our
+          partner network, with pricing and reporting you can actually see.
         </p>
       </div>
 

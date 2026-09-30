@@ -77,12 +77,23 @@ const CaseStudyDetailPage = async ({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
-      <CaseStudyHeader title={study.title} creator={study.creator} />
+      <CaseStudyHeader
+        title={study.title}
+        creator={study.creator}
+        summary={study.summary}
+      />
       <Reveal>
-        <CaseStudyMeetCreator />
+        <CaseStudyMeetCreator
+          meet={study.meet}
+          category={study.category}
+          creator={study.creator}
+        />
       </Reveal>
       <Reveal>
-        <CaseStudyChallengeApproach />
+        <CaseStudyChallengeApproach
+          challenge={study.challenge}
+          approach={study.approach}
+        />
       </Reveal>
       <Reveal>
         <SolutionsSystem />
