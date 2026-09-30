@@ -90,7 +90,7 @@ const GetInTouch = () => {
               <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[1.2] text-black capitalize">
                 Contact us at:
               </p>
-              <div className="flex flex-wrap gap-10 items-center">
+              <div className="flex gap-10 items-center">
                 <div className="flex gap-3 items-center">
                   <MailIcon />
                   <a

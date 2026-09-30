@@ -105,7 +105,7 @@ const DistributionTimeline = () => {
       <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white p-5 sm:p-8 lg:p-10">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-[492px] top-1/2 size-[983px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]"
+          className="pointer-events-none absolute -right-[540px] top-1/2 size-[1080px] -translate-y-1/2 rounded-full bg-[#780AC1] blur-[380px]"
         />
 
         <div className="relative flex flex-col gap-1 items-start w-full lg:w-[900px] max-w-full capitalize">

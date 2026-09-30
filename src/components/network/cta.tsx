@@ -27,8 +27,8 @@ const NetworkCta = () => {
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="relative max-w-[1280px] mx-auto h-auto min-h-[380px] overflow-hidden rounded-[24px] border border-[#D59EFB] bg-white py-12 lg:h-[561px] lg:py-0">
         {/* Glows */}
-        <div className="pointer-events-none absolute right-[-492px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
-        <div className="pointer-events-none absolute left-[-621px] bottom-[-476px] size-[983px] rounded-full bg-[radial-gradient(circle,rgba(213,158,251,0.4)_0%,rgba(213,158,251,0)_70%)]" />
+        <div className="pointer-events-none absolute right-[-527px] top-[calc(50%+39px)] -translate-y-1/2 size-[1055px] rounded-full bg-[#780AC1] opacity-60 blur-[305px]" />
+        <div className="pointer-events-none absolute left-[-568px] top-[calc(50%+39.5px)] -translate-y-1/2 size-[1162px] rounded-full bg-[#780AC1] opacity-60 blur-[305px]" />
 
         {/* Bottom mockups */}
         <div className="hidden lg:contents">

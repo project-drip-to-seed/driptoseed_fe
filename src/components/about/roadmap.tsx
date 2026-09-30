@@ -46,12 +46,12 @@ const Roadmap = () => {
         <div
           className="absolute hidden rounded-full pointer-events-none lg:block"
           style={{
-            left: 788,
-            top: 304,
-            width: 983,
-            height: 983,
-            background:
-              "radial-gradient(circle, rgba(213,158,251,0.5) 0%, rgba(120,10,193,0.22) 50%, transparent 72%)",
+            left: 740,
+            top: 256,
+            width: 1080,
+            height: 1080,
+            background: "#780AC1",
+            filter: "blur(380px)",
           }}
         />
 
