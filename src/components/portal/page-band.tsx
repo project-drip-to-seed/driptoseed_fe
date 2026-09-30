@@ -1,6 +1,7 @@
 // Purple hero band used by the apply / login pages, matching the site's other heroes
 // (and giving the fixed white navbar something to sit on).
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 export default function PageBand({
@@ -35,13 +36,25 @@ export default function PageBand({
   );
 }
 
+/**
+ * Shown when the portal API can't be reached. It must sit on the purple band like every other
+ * page here: the navbar is white text meant to overlay a hero, so on a plain white page the logo
+ * and links disappear.
+ */
 export function PortalDown() {
   return (
-    <main className="min-h-[60vh] bg-white px-5 pb-20 pt-40 text-center">
-      <h1 className="font-kugile text-[28px] text-black">We&apos;ll be right back</h1>
-      <p className="mx-auto mt-3 max-w-md font-[family-name:var(--font-inter)] text-[16px] leading-[1.6] text-[#686868]">
-        Applications and dashboards are temporarily unavailable. Please try again in a few minutes.
-      </p>
+    <main>
+      <PageBand
+        title="We'll be right back"
+        description="Applications and dashboards are temporarily unavailable. Please try again in a few minutes."
+      >
+        <Link
+          href="/"
+          className="mt-4 rounded-full bg-white px-6 py-3 font-[family-name:var(--font-inter)] text-[16px] text-[#780AC1] transition-colors hover:bg-[#EED7FF]"
+        >
+          Back to home
+        </Link>
+      </PageBand>
     </main>
   );
 }
