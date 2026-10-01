@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ReviewPanel } from "@/components/portal/admin-forms";
-import ApplicationDetails, { ApplicationHistory } from "@/components/portal/application-details";
+import ApplicationDetails, { ApplicationHistory, ChannelsToCheck } from "@/components/portal/application-details";
 import { Card, DefinitionRow, StatusBadge } from "@/components/portal/ui";
 import { formatDate } from "@/lib/portal/format";
 import { getMeta, NotFoundError, portalGet, requireRole } from "@/lib/portal/server";
@@ -39,6 +39,7 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
 
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <div className="flex flex-col gap-6">
+          <ChannelsToCheck application={application} />
           <Card>
             <h2 className="mb-2 font-kugile text-[20px] text-black">Applicant</h2>
             <dl>
@@ -56,7 +57,7 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
           </Card>
           <Card>
             <h2 className="mb-2 font-kugile text-[20px] text-black">Application</h2>
-            <ApplicationDetails application={application} meta={meta} />
+            <ApplicationDetails application={application} meta={meta} showChannels={false} />
           </Card>
         </div>
 

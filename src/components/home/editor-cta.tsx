@@ -34,8 +34,8 @@ const EditorCta = () => {
               Turn Your Editing Skills Into Real Earnings
             </p>
             <p className="font-[family-name:var(--font-inter)] font-normal capitalize leading-[1.6] text-[16px] text-[#686868]">
-              No pitching clients. No chasing invoices. Just edit, submit, and
-              get paid per performance. Join our clipping program and work
+              No pitching clients. No chasing invoices. Just edit, post on your
+              own channel, and get paid per performance. Join our clipping program and work
               with creators while earning rewards for high-performing edits.
             </p>
           </div>

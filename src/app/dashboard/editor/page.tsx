@@ -46,11 +46,16 @@ export default async function EditorOverviewPage() {
                 {meta.limits.max_editors_per_content} editors can work on each one.
               </li>
               <li>
-                <strong>Submit clips</strong>: paste the link to each edit. Every clip link can only be submitted once.
+                <strong>Edit and post</strong>: edit the video and post it on one of your own channels, the ones you listed when you
+                applied.
               </li>
               <li>
-                <strong>Get reviewed</strong>: once a clip is approved, its views are tracked. Reach{" "}
-                {compactNumber(meta.payout.views_threshold)} and it earns {inr(meta.payout.per_clip_inr)}.
+                <strong>Submit the link</strong>: once your post has the views, paste its link as your proof. It has to be on your
+                approved channel, and each link can only be submitted once.
+              </li>
+              <li>
+                <strong>Get paid</strong>: our team checks the video and its views. Reach {compactNumber(meta.payout.views_threshold)} and
+                it earns {inr(meta.payout.per_clip_inr)}.
               </li>
             </ol>
           </Card>

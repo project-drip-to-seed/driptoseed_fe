@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClipActions } from "@/components/portal/editor-forms";
 import {
   EmptyState,
   ExternalLink,
@@ -35,8 +36,8 @@ export default async function EditorClipsPage({
   return (
     <div className="flex flex-col gap-6">
       <PageHeader
-        title="My clips"
-        description="Every clip you've submitted, its review status and how it's performing. The Drip team records views after review, so open a clip to see its live count on the platform."
+        title="My videos"
+        description="Every posted video you've submitted for payment. The Drip team checks it's on your approved channel and confirms its views, so open a video to see its live count on the platform."
       />
 
       <FilterTabs
@@ -52,13 +53,13 @@ export default async function EditorClipsPage({
       />
 
       {list.items.length === 0 ? (
-        <EmptyState title="No clips here" description="Submit clips from the My jobs page and they'll be listed here." />
+        <EmptyState title="No videos here" description="Submit a posted video from the My jobs page and it will be listed here." />
       ) : (
         <div className={tableClasses.wrapper}>
           <table className={tableClasses.table}>
             <thead>
               <tr>
-                {["Clip", "Video", "Platform", "Status", "Views", "Payout", "Submitted"].map((h) => (
+                {["Video", "For", "Status", "Views", "Payout", "Submitted", ""].map((h) => (
                   <th key={h} className={tableClasses.th}>
                     {h}
                   </th>
@@ -68,10 +69,11 @@ export default async function EditorClipsPage({
             <tbody>
               {list.items.map((clip) => (
                 <tr key={clip.id}>
-                  <td className={tableClasses.td}>
+                  <td className={`${tableClasses.td} min-w-[150px]`}>
                     <div className="flex flex-col gap-1">
                       {clip.title && <span className="font-medium">{clip.title}</span>}
-                      <ExternalLink href={clip.clip_url}>Open clip</ExternalLink>
+                      <ExternalLink href={clip.clip_url}>Open video</ExternalLink>
+                      <span className="text-[12px] text-[#686868]">{labelOf(meta.platforms, clip.platform)}</span>
                       {clip.status === "rejected" && clip.review?.note && (
                         <span className="mt-1 rounded-lg bg-[#FDE2E2] px-2 py-1 text-[12px] leading-[1.4] text-[#9B1C1C]">
                           Feedback: {clip.review.note}
@@ -80,9 +82,16 @@ export default async function EditorClipsPage({
                     </div>
                   </td>
                   <td className={tableClasses.td}>{clip.content_title}</td>
-                  <td className={tableClasses.td}>{labelOf(meta.platforms, clip.platform)}</td>
                   <td className={tableClasses.td}>
-                    <StatusBadge status={clip.status} />
+                    <div className="flex flex-col items-start gap-1.5">
+                      <StatusBadge status={clip.status} label={clip.status === "pending" ? "Awaiting review" : undefined} />
+                      {clip.channel_check && (
+                        <StatusBadge
+                          status={clip.channel_check.status === "verified" ? "approved" : "pending"}
+                          label={clip.channel_check.status === "verified" ? "Channel matched" : "Team will confirm channel"}
+                        />
+                      )}
+                    </div>
                   </td>
                   <td className={tableClasses.td}>
                     {clip.status === "approved" ? (
@@ -107,6 +116,9 @@ export default async function EditorClipsPage({
                     )}
                   </td>
                   <td className={tableClasses.td}>{formatDate(clip.created_at)}</td>
+                  <td className={`${tableClasses.td} min-w-[140px]`}>
+                    <ClipActions clipId={clip.id} status={clip.status} />
+                  </td>
                 </tr>
               ))}
             </tbody>

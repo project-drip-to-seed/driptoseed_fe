@@ -32,13 +32,13 @@ export default async function ApplyEditorPage() {
     <main className="relative bg-white">
       <PageBand
         title="Apply as an Editor"
-        description="No pitching clients. No chasing invoices. Edit, submit, and get paid per performance while working with real creators."
+        description="No pitching clients. Edit real creators' videos, post the clips on your own channels, and get paid when they perform."
       />
       <div className="relative z-10 mx-auto -mt-16 flex max-w-[820px] flex-col gap-6 px-5 pb-20 font-[family-name:var(--font-inter)]">
         <Card className="flex flex-col items-start gap-1 border-[#780AC1]/30 bg-[#FBF5FF] sm:flex-row sm:items-baseline sm:gap-4">
           <span className="text-[40px] leading-[1.1] text-[#780AC1]">₹{formatNumber(per_clip_inr)}</span>
           <span className="text-[16px] leading-[1.5] text-[#404040]">
-            for every clip that reaches {compactNumber(views_threshold)}+ views. Remote, flexible, and it builds your portfolio.
+            for every clip you post on your own channel that reaches {compactNumber(views_threshold)}+ views. Remote, flexible, and it grows your own audience.
           </span>
         </Card>
         <ApplyForm role="editor" meta={meta} />

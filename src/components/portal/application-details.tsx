@@ -2,7 +2,8 @@
 
 import { formatDateTime, labelOf, labelsOf } from "@/lib/portal/format";
 import type { Application, Meta } from "@/lib/portal/types";
-import { DefinitionRow, ExternalLink, StatusBadge } from "./ui";
+import ChannelList from "./channel-list";
+import { Card, DefinitionRow, ExternalLink, StatusBadge } from "./ui";
 
 function Links({ links }: { links: unknown }) {
   const list = Array.isArray(links) ? (links as string[]) : [];
@@ -18,31 +19,55 @@ function Links({ links }: { links: unknown }) {
   );
 }
 
-export default function ApplicationDetails({ application, meta }: { application: Application; meta: Meta }) {
+const socialsOf = (application: Application) => (application.data.socials ?? {}) as Record<string, string>;
+
+/**
+ * The first thing an admin looks at: the channels this person gave. Creators and editors both have to show
+ * theirs, and an editor can only be paid for videos posted on one of their approved channels.
+ */
+export function ChannelsToCheck({ application }: { application: Application }) {
+  return (
+    <Card className="flex flex-col gap-3 border-[#780AC1]/40 bg-[#FBF5FF]">
+      <div className="flex flex-col gap-1">
+        <h2 className="font-kugile text-[20px] text-black">Channels to check</h2>
+        <p className="text-[14px] leading-[1.6] text-[#404040]">
+          Open each link before you decide.{" "}
+          {application.type === "editor"
+            ? "This editor will post on these channels, and can only be paid for videos posted on them."
+            : "Approve only if these are real and belong to this applicant."}
+        </p>
+      </div>
+      <ChannelList socials={socialsOf(application)} emptyText="No channels were listed (an older application). Ask for them before approving." />
+    </Card>
+  );
+}
+
+export default function ApplicationDetails({
+  application,
+  meta,
+  showChannels = true,
+}: {
+  application: Application;
+  meta: Meta;
+  /** The admin page shows channels in their own card above, so it turns this off. */
+  showChannels?: boolean;
+}) {
   const d = application.data as Record<string, unknown>;
+  const channels = showChannels ? (
+    <DefinitionRow label="Channels">
+      <ChannelList socials={socialsOf(application)} emptyText="None listed" />
+    </DefinitionRow>
+  ) : null;
 
   if (application.type === "creator") {
-    const socials = Object.entries((d.socials ?? {}) as Record<string, string>);
     return (
       <dl>
+        <DefinitionRow label="Applying as">{labelOf(meta.creator_types, String(d.creator_type ?? ""))}</DefinitionRow>
         <DefinitionRow label="Niche">{String(d.niche ?? "—")}</DefinitionRow>
         <DefinitionRow label="Audience size">{labelOf(meta.audience_sizes, String(d.audience_size ?? ""))}</DefinitionRow>
         <DefinitionRow label="Publishes">{labelOf(meta.publish_frequencies, String(d.publish_frequency ?? ""))}</DefinitionRow>
         <DefinitionRow label="Content types">{labelsOf(meta.content_types, d.content_types)}</DefinitionRow>
-        <DefinitionRow label="Channels">
-          {socials.length ? (
-            <ul className="flex flex-col gap-1">
-              {socials.map(([name, url]) => (
-                <li key={name}>
-                  <span className="mr-2 capitalize text-[#686868]">{name}:</span>
-                  <ExternalLink href={url} />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            "—"
-          )}
-        </DefinitionRow>
+        {channels}
         <DefinitionRow label="Sample videos">
           <Links links={d.sample_links} />
         </DefinitionRow>
@@ -53,6 +78,7 @@ export default function ApplicationDetails({ application, meta }: { application:
 
   return (
     <dl>
+      {channels}
       <DefinitionRow label="Portfolio">
         {d.portfolio_url ? <ExternalLink href={String(d.portfolio_url)} /> : "—"}
       </DefinitionRow>
@@ -60,7 +86,9 @@ export default function ApplicationDetails({ application, meta }: { application:
       <DefinitionRow label="Availability">{labelOf(meta.weekly_availability, String(d.weekly_availability ?? ""))}</DefinitionRow>
       <DefinitionRow label="Tools">{labelsOf(meta.editing_tools, d.tools)}</DefinitionRow>
       <DefinitionRow label="Niches">{Array.isArray(d.niches) ? (d.niches as string[]).join(", ") : "—"}</DefinitionRow>
-      <DefinitionRow label="Platforms">{labelsOf(meta.platforms, d.platforms)}</DefinitionRow>
+      {Array.isArray(d.platforms) && d.platforms.length > 0 && (
+        <DefinitionRow label="Platforms">{labelsOf(meta.platforms, d.platforms)}</DefinitionRow>
+      )}
       <DefinitionRow label="Sample clips">
         <Links links={d.sample_links} />
       </DefinitionRow>

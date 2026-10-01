@@ -59,6 +59,7 @@ export interface Option {
 }
 
 export interface Meta {
+  creator_types: Option[];
   niches: Option[];
   platforms: Option[];
   audience_sizes: Option[];
@@ -110,6 +111,16 @@ export interface ContentItem {
   my_approved_clips?: number;
 }
 
+/** Whether a submitted video was matched to a channel the editor gave when applying. */
+export interface ChannelCheck {
+  /** "verified": confirmed automatically. "unverified": the admin has to confirm it by eye. */
+  status: "verified" | "unverified";
+  method: "url" | "oembed" | null;
+  /** The approved channel link it was checked against. */
+  channel: string;
+  detail: string;
+}
+
 export interface Clip {
   id: string;
   content_id: string;
@@ -128,7 +139,11 @@ export interface Clip {
   paid: boolean;
   paid_at: string | null;
   created_at: string | null;
+  channel_check?: ChannelCheck | null;
+  /** The editor confirmed the video is on their own approved channel. */
+  own_channel?: boolean;
   // added by some endpoints
+  editor_channels?: Record<string, string>;
   content_title?: string;
   editor_name?: string;
   editor_email?: string;

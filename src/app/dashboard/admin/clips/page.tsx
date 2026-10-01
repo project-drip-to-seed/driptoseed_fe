@@ -30,7 +30,7 @@ export default async function AdminClipsPage({
     <div className="flex flex-col gap-6">
       <PageHeader
         title="Clip review"
-        description={`Approve editors' clips and record their views. ${compactNumber(meta.payout.views_threshold)}+ views on an approved clip earns ₹${meta.payout.per_clip_inr}.`}
+        description={`Check each posted video is on one of the editor's approved channels, confirm its views, then approve. ${compactNumber(meta.payout.views_threshold)}+ views on an approved video earns ₹${meta.payout.per_clip_inr}.`}
       />
 
       <FilterTabs

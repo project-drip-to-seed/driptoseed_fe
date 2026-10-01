@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api, ApiError } from "@/lib/portal/client";
+import { CHANNELS } from "@/lib/portal/channels";
 import type { Meta } from "@/lib/portal/types";
 import { Checkbox, ChipGroup, Field, FormAlert, PasswordInput, Select, SubmitButton, TextArea, TextInput } from "./form";
 import { Card } from "./ui";
@@ -19,6 +20,7 @@ interface Values {
   phone: string;
   password: string;
   // creator
+  creator_type: string;
   niche: string;
   instagram: string;
   youtube: string;
@@ -34,7 +36,6 @@ interface Values {
   experience: string;
   tools: string[];
   niches: string[];
-  platforms: string[];
   weekly_availability: string;
   motivation: string;
   // shared
@@ -47,6 +48,7 @@ const EMPTY: Values = {
   email: "",
   phone: "",
   password: "",
+  creator_type: "",
   niche: "",
   instagram: "",
   youtube: "",
@@ -61,7 +63,6 @@ const EMPTY: Values = {
   experience: "",
   tools: [],
   niches: [],
-  platforms: [],
   weekly_availability: "",
   motivation: "",
   sample_links: ["", "", ""],
@@ -73,6 +74,7 @@ function fromApplication(data: Record<string, unknown>): Values {
   const samples = ((data.sample_links as string[] | undefined) ?? []).slice(0, 3);
   return {
     ...EMPTY,
+    creator_type: String(data.creator_type ?? ""),
     niche: String(data.niche ?? ""),
     instagram: socials.instagram ?? "",
     youtube: socials.youtube ?? "",
@@ -87,7 +89,6 @@ function fromApplication(data: Record<string, unknown>): Values {
     experience: String(data.experience ?? ""),
     tools: (data.tools as string[]) ?? [],
     niches: (data.niches as string[]) ?? [],
-    platforms: (data.platforms as string[]) ?? [],
     weekly_availability: String(data.weekly_availability ?? ""),
     motivation: String(data.motivation ?? ""),
     sample_links: [...samples, "", "", ""].slice(0, 3),
@@ -96,6 +97,14 @@ function fromApplication(data: Record<string, unknown>): Values {
 }
 
 const blankToUndefined = (v: string) => (v.trim() ? v.trim() : undefined);
+
+const socialsOf = (v: Values) => ({
+  instagram: blankToUndefined(v.instagram),
+  youtube: blankToUndefined(v.youtube),
+  tiktok: blankToUndefined(v.tiktok),
+  linkedin: blankToUndefined(v.linkedin),
+  website: blankToUndefined(v.website),
+});
 
 function buildPayload(role: Role, v: Values, mode: "create" | "edit") {
   const account =
@@ -107,14 +116,9 @@ function buildPayload(role: Role, v: Values, mode: "create" | "edit") {
   if (role === "creator") {
     return {
       ...account,
+      creator_type: v.creator_type,
       niche: v.niche,
-      socials: {
-        instagram: blankToUndefined(v.instagram),
-        youtube: blankToUndefined(v.youtube),
-        tiktok: blankToUndefined(v.tiktok),
-        linkedin: blankToUndefined(v.linkedin),
-        website: blankToUndefined(v.website),
-      },
+      socials: socialsOf(v),
       audience_size: v.audience_size,
       content_types: v.content_types,
       publish_frequency: v.publish_frequency,
@@ -125,12 +129,12 @@ function buildPayload(role: Role, v: Values, mode: "create" | "edit") {
   }
   return {
     ...account,
+    socials: socialsOf(v),
     portfolio_url: v.portfolio_url,
     sample_links: samples,
     experience: v.experience,
     tools: v.tools,
     niches: v.niches,
-    platforms: v.platforms,
     weekly_availability: v.weekly_availability,
     motivation: v.motivation,
     consent: v.consent,
@@ -256,8 +260,14 @@ export default function ApplyForm({
 
       {role === "creator" ? (
         <>
-          <Section title="About your channel" description="Help us understand your content and audience.">
+          <Section
+            title="About you and your content"
+            description="Brands, influencers, or anyone with a video that deserves a bigger audience can apply."
+          >
             <div className="grid gap-5 sm:grid-cols-2">
+              <Field label="You're applying as" required error={err("creator_type")} htmlFor="creator_type">
+                <Select id="creator_type" value={values.creator_type} onChange={(v) => set("creator_type", v)} options={meta.creator_types} placeholder="Choose one" invalid={!!err("creator_type")} />
+              </Field>
               <Field label="Main niche" required error={err("niche")} htmlFor="niche">
                 <Select id="niche" value={values.niche} onChange={(v) => set("niche", v)} options={meta.niches} placeholder="Choose a niche" invalid={!!err("niche")} />
               </Field>
@@ -273,24 +283,7 @@ export default function ApplyForm({
             </Field>
           </Section>
 
-          <Section title="Where can we find you?" description="Add at least one link to a channel or profile.">
-            {err("socials") && <p role="alert" className="text-[13px] text-[#C53030]">{err("socials")}</p>}
-            <div className="grid gap-5 sm:grid-cols-2">
-              {(
-                [
-                  ["instagram", "Instagram", "https://instagram.com/yourname"],
-                  ["youtube", "YouTube", "https://youtube.com/@yourchannel"],
-                  ["tiktok", "TikTok", "https://tiktok.com/@yourname"],
-                  ["linkedin", "LinkedIn", "https://linkedin.com/in/yourname"],
-                  ["website", "Website", "https://"],
-                ] as const
-              ).map(([key, label, placeholder]) => (
-                <Field key={key} label={label} error={err(`socials.${key}`)} htmlFor={key}>
-                  <TextInput id={key} type="url" placeholder={placeholder} value={values[key]} onChange={(v) => set(key, v)} invalid={!!err(`socials.${key}`)} />
-                </Field>
-              ))}
-            </div>
-          </Section>
+          <ChannelsSection role="creator" values={values} set={set} err={err} />
 
           <SamplesAndNotes
             values={values}
@@ -322,12 +315,11 @@ export default function ApplyForm({
             </Field>
           </Section>
 
+          <ChannelsSection role="editor" values={values} set={set} err={err} />
+
           <Section title="What you edit" description="We match you with creators in the niches you know.">
             <Field label="Niches" required error={err("niches")} hint="Pick up to 5.">
               <ChipGroup options={meta.niches} value={values.niches} onChange={(v) => set("niches", v)} max={5} />
-            </Field>
-            <Field label="Platforms you edit for" required error={err("platforms")}>
-              <ChipGroup options={meta.platforms} value={values.platforms} onChange={(v) => set("platforms", v)} />
             </Field>
           </Section>
 
@@ -372,6 +364,42 @@ export default function ApplyForm({
         </div>
       </Card>
     </form>
+  );
+}
+
+/**
+ * Both creators and editors show their channels before anything else: the admin opens them to decide whether
+ * to approve the application. An editor's approved channels are also the only places they can be paid for.
+ */
+function ChannelsSection({
+  role,
+  values,
+  set,
+  err,
+}: {
+  role: Role;
+  values: Values;
+  set: <K extends keyof Values>(key: K, value: Values[K]) => void;
+  err: (name: string) => string | undefined;
+}) {
+  return (
+    <Section
+      title="Your channels"
+      description={
+        role === "creator"
+          ? "Add at least one link to a channel, profile or website. Our team looks at your channels before approving you."
+          : "Add the channels where you'll post your edited videos. Our team looks at them before approving you, and you can only be paid for videos posted on one of these channels."
+      }
+    >
+      {err("socials") && <p role="alert" className="text-[13px] text-[#C53030]">{err("socials")}</p>}
+      <div className="grid gap-5 sm:grid-cols-2">
+        {CHANNELS.map(({ key, label, placeholder }) => (
+          <Field key={key} label={label} error={err(`socials.${key}`)} htmlFor={key}>
+            <TextInput id={key} type="url" placeholder={placeholder} value={values[key]} onChange={(v) => set(key, v)} invalid={!!err(`socials.${key}`)} />
+          </Field>
+        ))}
+      </div>
+    </Section>
   );
 }
 

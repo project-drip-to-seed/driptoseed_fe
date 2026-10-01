@@ -45,6 +45,6 @@ export const faqs: Faq[] = [
   {
     question: "I'm an editor. How do I get paid?",
     answer:
-      "You earn ₹175 for every clip that reaches 200K+ views. No pitching clients and no chasing invoices — edit, submit, and get paid per performance while working with real creators. It's remote and flexible, and a great way to build your portfolio.",
+      "You earn ₹175 for every clip that reaches 200K+ views. No pitching clients and no chasing invoices — edit real creators' videos, post the clips on your own channels, and get paid per performance. It's remote and flexible, and a great way to grow your own audience.",
   },
 ];

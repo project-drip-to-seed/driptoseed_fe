@@ -6,6 +6,7 @@ import { api, ApiError } from "@/lib/portal/client";
 import type { Clip } from "@/lib/portal/types";
 import { formatDate, compactNumber, formatNumber, inr } from "@/lib/portal/format";
 import { ActionButton, Field, FormAlert, TextArea, TextInput } from "./form";
+import ChannelList from "./channel-list";
 import { Card, ExternalLink, Pill, StatusBadge } from "./ui";
 
 /** Approve / reject an application, with a note the applicant will see. */
@@ -128,8 +129,27 @@ export function ClipReviewCard({
           </p>
         </div>
         <div className="flex flex-col gap-1 text-[14px] sm:items-end">
-          <ExternalLink href={clip.clip_url}>Open clip</ExternalLink>
+          <ExternalLink href={clip.clip_url}>Open posted video</ExternalLink>
           {clip.source_url && <ExternalLink href={clip.source_url}>Source video</ExternalLink>}
+        </div>
+      </div>
+
+      <div
+        className={`flex flex-col gap-2 rounded-2xl p-3 ${
+          clip.channel_check?.status === "verified" ? "bg-[#DDF6E6]" : "bg-[#FFF4D6]"
+        }`}
+      >
+        <p className="text-[12px] font-medium uppercase tracking-[0.05em] text-[#686868]">
+          Channel check · {clip.channel_check?.status === "verified" ? "matched automatically" : "please confirm"}
+        </p>
+        <p className="text-[14px] leading-[1.6] text-[#404040]">
+          {clip.channel_check?.detail ??
+            "This was submitted before automatic checks existed. Open the video and confirm it is on one of the approved channels."}
+          {clip.own_channel && " The editor confirmed it is on their own approved channel."}
+        </p>
+        <div className="flex flex-col gap-1">
+          <span className="text-[12px] font-medium uppercase tracking-[0.05em] text-[#686868]">Approved channels for this editor</span>
+          <ChannelList socials={clip.editor_channels} emptyText="No channels on this editor's application." />
         </div>
       </div>
 
@@ -148,7 +168,7 @@ export function ClipReviewCard({
       {clip.status === "pending" && (
         <div className="flex flex-col gap-4 border-t border-[#D59EFB]/30 pt-4">
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Current views" htmlFor={`views-${clip.id}`} hint={`${compactNumber(threshold)}+ views earns the payout.`}>
+            <Field label="Views you confirmed" htmlFor={`views-${clip.id}`} hint={`Check the post on the platform. ${compactNumber(threshold)}+ views earns the payout.`}>
               <TextInput id={`views-${clip.id}`} inputMode="numeric" placeholder="0" value={views} onChange={setViews} invalid={viewsInvalid} />
             </Field>
             <Field label="Note (required if rejecting)" htmlFor={`note-${clip.id}`}>

@@ -28,7 +28,7 @@ export default async function ApplyCreatorPage() {
     <main className="relative bg-white">
       <PageBand
         title="Apply as a Creator"
-        description="Tell us about your channel. We review every application, and once you're in, your long-form videos become weeks of clips distributed across our network."
+        description="Brand, influencer, or anyone with a video: tell us about you and your channels. We review every application, and once you're in, your videos become clips that our editors post on their own channels."
       />
       <div className="relative z-10 mx-auto -mt-16 max-w-[820px] px-5 pb-20 font-[family-name:var(--font-inter)]">
         <ApplyForm role="creator" meta={meta} />
