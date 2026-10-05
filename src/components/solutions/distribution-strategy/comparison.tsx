@@ -91,7 +91,7 @@ const Column = ({
                 height={36}
                 color={isWithStrategy ? "#780AC1" : "#949494"}
               />
-              <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black capitalize whitespace-nowrap">
+              <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black capitalize sm:whitespace-nowrap">
                 {row.title}
               </p>
             </div>

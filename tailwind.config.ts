@@ -30,6 +30,10 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-14px)" },
         },
+        "glow-breathe": {
+          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.2)" },
+        },
         "bar-fill": {
           "0%": { transform: "scaleX(0)", opacity: "1" },
           "60%, 90%": { transform: "scaleX(1)", opacity: "1" },
@@ -41,6 +45,7 @@ const config: Config = {
         "arrow-flow": "arrow-flow 6s linear infinite",
         "num-pulse": "num-pulse 6s linear infinite",
         float: "float 5s ease-in-out infinite",
+        "glow-breathe": "glow-breathe 7s ease-in-out infinite",
         "bar-fill": "bar-fill 4.5s ease-out infinite",
       },
     },

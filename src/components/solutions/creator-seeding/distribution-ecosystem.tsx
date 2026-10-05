@@ -92,7 +92,7 @@ function EcosystemCard({ category }: { category: PartnerCategory }) {
         <AsteriskIcon width={35} height={36} />
       </div>
 
-      <div className="absolute left-5 top-[88px] z-10 flex w-[265px] flex-col gap-2">
+      <div className="absolute left-5 top-[88px] z-10 flex w-[calc(100%-40px)] flex-col gap-2">
         <h3 className="font-[family-name:var(--font-inter)] text-xl font-medium leading-[1.4] text-black">
           {category.title}
         </h3>

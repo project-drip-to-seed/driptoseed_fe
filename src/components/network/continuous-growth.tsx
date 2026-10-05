@@ -55,11 +55,11 @@ const NetworkContinuousGrowth = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-5 w-full sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 w-full sm:grid-cols-2 xl:grid-cols-4">
           {cards.map((card) => (
             <div
               key={card.title}
-              className={`relative min-h-[280px] overflow-hidden rounded-[16px] lg:h-[361px] ${
+              className={`relative min-h-[280px] overflow-hidden rounded-[16px] xl:h-[361px] ${
                 card.highlighted
                   ? "border border-[#D59EFB] bg-white"
                   : "bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0.08)] to-[142.75%] to-[rgba(120,10,193,0.08)]"
@@ -71,7 +71,7 @@ const NetworkContinuousGrowth = () => {
               <div className="absolute left-5 top-5">
                 <AsteriskIcon width={35} height={36} color="#780AC1" />
               </div>
-              <div className="absolute left-5 top-[88px] w-[calc(100%-40px)] flex flex-col gap-2 items-start capitalize lg:w-[265px]">
+              <div className="absolute left-5 top-[88px] w-[calc(100%-40px)] flex flex-col gap-2 items-start capitalize xl:w-[calc(100%-40px)]">
                 <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black w-full">
                   {card.title}
                 </p>

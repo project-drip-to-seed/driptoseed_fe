@@ -157,7 +157,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 xl:gap-5">
           <Link
             href="/login"
-            className="hidden font-[family-name:var(--font-inter)] text-base font-normal leading-[1.2] text-white whitespace-nowrap xl:block"
+            className="font-[family-name:var(--font-inter)] text-base font-normal leading-[1.2] text-white whitespace-nowrap"
           >
             Log in
           </Link>

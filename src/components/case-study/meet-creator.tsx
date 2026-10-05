@@ -23,18 +23,18 @@ const CaseStudyMeetCreator = ({
         {/* Framed niche illustration stack */}
         <div className="relative w-full max-w-[400px] h-[400px] shrink-0 sm:h-[440px] lg:h-[480px] lg:-mt-[160px]">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rotate-[-7.19deg]">
-              <div className="w-[340px] h-[440px] rounded-[24px] border-2 border-[#780AC1]" />
+            <div className="w-[min(340px,calc(100%-60px))] rotate-[-7.19deg]">
+              <div className="aspect-[340/440] w-full rounded-[24px] border-2 border-[#780AC1]" />
             </div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rotate-[7.19deg]">
-              <div className="w-[340px] h-[440px] rounded-[24px] border-2 border-[#780AC1]" />
+            <div className="w-[min(340px,calc(100%-60px))] rotate-[7.19deg]">
+              <div className="aspect-[340/440] w-full rounded-[24px] border-2 border-[#780AC1]" />
             </div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div
-              className="flex h-[440px] w-[340px] items-center justify-center overflow-hidden rounded-[24px]"
+              className="flex aspect-[340/440] w-[min(340px,calc(100%-60px))] items-center justify-center overflow-hidden rounded-[24px]"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(213,158,251,0.22) 11%, rgba(120,10,193,0.16) 142.75%)",

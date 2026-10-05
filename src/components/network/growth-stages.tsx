@@ -44,14 +44,14 @@ const NetworkGrowthStages = () => {
         </div>
 
         {/* Stage grid */}
-        <div className="grid grid-cols-1 gap-5 w-full sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 w-full sm:grid-cols-2 xl:grid-cols-3">
           {stages.map((stage, index) => (
             <div
               key={stage.title}
-              className="relative overflow-hidden rounded-[24px] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0.12)] to-[142.75%] to-[rgba(120,10,193,0.12)] lg:h-[154px]"
+              className="relative overflow-hidden rounded-[24px] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0.12)] to-[142.75%] to-[rgba(120,10,193,0.12)] xl:min-h-[154px]"
             >
               {/* Mobile/tablet layout */}
-              <div className="flex flex-col items-start gap-3 p-5 lg:hidden">
+              <div className="flex flex-col items-start gap-3 p-5 xl:hidden">
                 <span className="inline-flex items-center justify-center rounded-[40px] bg-[#780AC1] px-4 py-1.5">
                   <p className="font-[family-name:var(--font-inter)] font-normal text-[12px] leading-[1.6] text-white uppercase whitespace-nowrap">
                     Stage {index + 1}
@@ -68,7 +68,7 @@ const NetworkGrowthStages = () => {
               </div>
 
               {/* Desktop layout */}
-              <div className="hidden lg:contents">
+              <div className="hidden xl:contents">
                 <div className="absolute left-[10px] top-1/2 -translate-y-1/2 flex h-[134px] w-[36px] items-center justify-center">
                   <div className="rotate-[-90deg]">
                     <div className="flex h-[36px] w-[134px] items-center justify-center rounded-[40px] bg-[#780AC1]">
@@ -79,7 +79,7 @@ const NetworkGrowthStages = () => {
                   </div>
                 </div>
 
-                <div className="absolute left-[66px] top-5 w-[327px] flex flex-col gap-2 items-start capitalize">
+                <div className="absolute left-[66px] top-5 w-[calc(100%-86px)] flex flex-col gap-2 items-start capitalize">
                   <p className="font-[family-name:var(--font-inter)] font-medium text-[20px] leading-[1.4] text-black w-full">
                     {stage.title}
                   </p>

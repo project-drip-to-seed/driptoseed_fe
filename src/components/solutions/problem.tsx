@@ -53,11 +53,11 @@ const SolutionsProblem = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 items-stretch w-full mt-10 sm:grid-cols-2 lg:flex">
+      <div className="grid grid-cols-1 gap-3 items-stretch w-full mt-10 sm:grid-cols-2 xl:flex">
         {cards.map((card) => (
           <div
             key={card.title}
-            className="group flex min-w-0 lg:flex-1 min-h-[320px] lg:h-[390px] flex-col rounded-2xl p-5 overflow-hidden border border-[#D59EFB] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0)] to-[142.75%] to-[rgba(120,10,193,0)] transition-colors duration-300 hover:from-[rgba(213,158,251,0.08)] hover:to-[rgba(120,10,193,0.08)]"
+            className="group flex min-w-0 xl:flex-1 min-h-[320px] xl:h-[390px] flex-col rounded-2xl p-5 overflow-hidden border border-[#D59EFB] bg-gradient-to-b from-[11%] from-[rgba(213,158,251,0)] to-[142.75%] to-[rgba(120,10,193,0)] transition-colors duration-300 hover:from-[rgba(213,158,251,0.08)] hover:to-[rgba(120,10,193,0.08)]"
           >
             <img
               alt=""
