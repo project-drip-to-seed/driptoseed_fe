@@ -4,7 +4,7 @@ import { niches, type Niche } from "@/lib/niches";
 const NicheCard = ({ niche }: { niche: Niche }) => (
   <div className="group relative flex-1 min-w-0 aspect-square rounded-3xl border border-[#D59EFB] bg-white overflow-hidden p-5 flex flex-col cursor-default transition-colors duration-300 hover:border-transparent">
     <img
-      src="/solutions/niche_card_blob.png"
+      src="/media/niche-card-blob-v1.webp"
       alt=""
       aria-hidden="true"
       className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"

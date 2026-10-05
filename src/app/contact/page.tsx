@@ -1,19 +1,16 @@
-import type { Metadata } from "next";
 import ContactHero from "@/components/contact/hero";
 import Milestone from "@/components/home/milestone";
 import GetInTouch from "@/components/contact/get-in-touch";
 import Faq from "@/components/home/faq";
+import PageSchema from "@/components/shared/page-schema";
+import { metadataFor } from "@/lib/page-seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Drip. Tell us about your content and we'll show you how clipping, seeding and distribution can grow your audience.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata = metadataFor("contact");
 
 export default function ContactPage() {
   return (
     <main>
+      <PageSchema page="contact" />
       <ContactHero />
       <Milestone />
       <GetInTouch />

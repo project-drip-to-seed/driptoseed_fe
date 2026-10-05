@@ -1,12 +1,8 @@
-const CaseStudyMeetCreator = ({
-  meet,
-  category,
-  creator,
-}: {
-  meet: string;
-  category: string;
-  creator: string;
-}) => {
+import { findNicheIllustration } from "@/lib/niche-illustrations";
+
+const CaseStudyMeetCreator = ({ meet, category }: { meet: string; category: string }) => {
+  const niche = findNicheIllustration(category);
+
   return (
     <section className="w-full py-12 px-5 sm:px-8 md:px-12 lg:py-20 lg:px-20 bg-white">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 items-center lg:flex-row lg:items-start lg:justify-between">
@@ -41,9 +37,11 @@ const CaseStudyMeetCreator = ({
               }}
             >
               <img
-                alt={`${creator} illustration`}
+                alt={niche?.alt ?? `${category} creator niche illustration`}
                 className="h-full w-full object-cover"
-                src={`/niche_images/${category.toLowerCase()}.svg`}
+                src={niche?.image ?? `/niche_images/${category.toLowerCase()}.svg`}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

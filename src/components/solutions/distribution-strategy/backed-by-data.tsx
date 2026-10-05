@@ -63,6 +63,8 @@ const BackedByData = () => {
             <img
               alt="Growth tracking dashboard preview"
               src="/media/dashboard-mockup-v1.webp"
+              width={1200}
+              height={1200}
               loading="lazy"
               decoding="async"
               className="w-[520px] max-w-none rounded-2xl shadow-[-20px_24px_24px_0px_rgba(0,0,0,0.25)]"

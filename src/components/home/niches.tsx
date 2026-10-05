@@ -1,18 +1,6 @@
 import Appear from "@/components/shared/appear";
+import { nicheIllustrations } from "@/lib/niche-illustrations";
 import NicheCard from "./niche-card";
-
-const niches = [
-  { name: "Fashion", image: "/niche_images/fashion.svg" },
-  { name: "Beauty", image: "/niche_images/beauty.svg" },
-  { name: "Lifestyle", image: "/niche_images/lifestyle.svg" },
-  { name: "Travel", image: "/niche_images/travel.svg" },
-  { name: "Fitness", image: "/niche_images/fitness.svg" },
-  { name: "Food", image: "/niche_images/food.svg" },
-  { name: "Business", image: "/niche_images/business.svg" },
-  { name: "Finance", image: "/niche_images/finance.svg" },
-  { name: "Comedy", image: "/niche_images/comedy.svg" },
-  { name: "Luxury", image: "/niche_images/luxury.svg" },
-];
 
 const Niches = () => {
   return (
@@ -37,10 +25,10 @@ const Niches = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-3 w-full mt-10 sm:gap-5 lg:grid-cols-5">
-        {niches.map((niche, index) => (
+        {nicheIllustrations.map((niche, index) => (
           // The tiles arrive one after another along each row (the delay restarts every five tiles).
           <Appear key={niche.name} className="min-w-0" delay={(index % 5) * 90}>
-            <NicheCard name={niche.name} image={niche.image} />
+            <NicheCard name={niche.name} image={niche.image} alt={niche.alt} />
           </Appear>
         ))}
       </div>

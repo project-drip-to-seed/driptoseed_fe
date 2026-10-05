@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import LoginForm from "@/components/portal/login-form";
 import PageBand, { PortalDown } from "@/components/portal/page-band";
+import { metadataFor } from "@/lib/page-seo";
 import { dashboardPath, getSession } from "@/lib/portal/server";
 import type { Session } from "@/lib/portal/types";
 
-export const metadata: Metadata = {
-  title: "Log in",
-  description: "Log in to your Drip creator, editor or admin dashboard.",
-  robots: { index: false, follow: true },
-};
+// Kept out of search results; its own canonical so it never claims to be the home page.
+export const metadata = metadataFor("login");
 
 export const dynamic = "force-dynamic";
 

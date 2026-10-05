@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import AboutHero from "@/components/about/hero";
 import Milestone from "@/components/home/milestone";
 import Story from "@/components/about/story";
@@ -7,18 +6,16 @@ import Principles from "@/components/about/principles";
 import Roadmap from "@/components/about/roadmap";
 import GrowWithUs from "@/components/about/grow-with-us";
 import Faq from "@/components/home/faq";
+import PageSchema from "@/components/shared/page-schema";
 import Reveal from "@/components/shared/reveal";
+import { metadataFor } from "@/lib/page-seo";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "We're building a creator growth ecosystem that helps creators extend the life of every piece of content through strategic clipping, intelligent distribution, and data-driven growth strategies.",
-  alternates: { canonical: "/about" },
-};
+export const metadata = metadataFor("about");
 
 const AboutPage = () => {
   return (
     <main className="relative">
+      <PageSchema page="about" />
       <AboutHero />
       <Reveal>
         <Milestone />

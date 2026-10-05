@@ -78,8 +78,12 @@ const GrowWithUs = () => {
               }}
             >
               <img
-                alt=""
-                src="/general_assets/about_grow_network.png"
+                alt="Network of connected creator and partner profiles"
+                src="/media/about/grow-network-v1.webp"
+                width={504}
+                height={251}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-[12%_10%] w-[80%] h-[76%] object-contain"
               />
             </div>

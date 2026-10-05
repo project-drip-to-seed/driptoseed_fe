@@ -88,6 +88,9 @@ export default function StockVideo({ clip, className = "" }: { clip: StockClip; 
       ref={ref}
       src={clip.src}
       poster={clip.poster}
+      width={clip.width}
+      height={clip.height}
+      title={clip.label}
       role="img"
       aria-label={clip.label}
       muted

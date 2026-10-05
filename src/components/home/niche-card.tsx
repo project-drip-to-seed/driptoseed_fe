@@ -16,7 +16,7 @@ const StarIcon = () => (
  * purple and the illustration slowly zooms. (Hover effects only apply on devices that can hover, and all of it is
  * switched off for people who prefer reduced motion: see globals.css.)
  */
-export default function NicheCard({ name, image }: { name: string; image: string | null }) {
+export default function NicheCard({ name, image, alt }: { name: string; image: string | null; alt: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   // The light under the pointer is a CSS variable set straight on the element, so moving the mouse never re-renders.
@@ -56,8 +56,10 @@ export default function NicheCard({ name, image }: { name: string; image: string
       >
         {image && (
           <img
-            alt={name}
+            alt={alt}
             src={image}
+            loading="lazy"
+            decoding="async"
             className="block h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         )}

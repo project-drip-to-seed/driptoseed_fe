@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import CaseStudyCta from "@/components/case-study/cta";
 import CaseStudyMeasured from "@/components/case-study/measured";
 import DistributionEcosystem from "@/components/solutions/creator-seeding/distribution-ecosystem";
@@ -6,13 +5,10 @@ import DistributionOutcomes from "@/components/solutions/creator-seeding/distrib
 import StrategicDistribution from "@/components/solutions/creator-seeding/strategic-distribution";
 import SolutionsSystem from "@/components/solutions/system";
 import Faq from "@/components/home/faq";
+import PageSchema from "@/components/shared/page-schema";
+import { metadataFor } from "@/lib/page-seo";
 
-export const metadata: Metadata = {
-  title: "Creator Seeding",
-  description:
-    "Place your content in front of relevant audiences through 300+ trusted communities, pages and publishing partners, so it reaches people beyond your followers.",
-  alternates: { canonical: "/solutions/creator-seeding" },
-};
+export const metadata = metadataFor("creatorSeeding");
 
 const metrics = [
   {
@@ -40,6 +36,7 @@ const metrics = [
 export default function CreatorSeedingPage() {
   return (
     <main>
+      <PageSchema page="creatorSeeding" />
       <section className="relative h-auto min-h-[380px] w-full overflow-hidden bg-[#F2E7F9] pb-10 pt-28 sm:min-h-[440px] sm:pt-32 lg:h-[482px] lg:py-0">
         <div className="absolute left-[-234px] top-[-243px] size-[851px]">
           <div className="absolute inset-[-71.68%]">

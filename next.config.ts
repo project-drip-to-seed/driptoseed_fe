@@ -38,16 +38,26 @@ const nextConfig: NextConfig = {
         source: "/media/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
+      {
+        // The older static files (logo, font, illustrations) keep their names when they change, so they are cached for
+        // a day and then refreshed quietly in the background, instead of being re-checked on every page view.
+        source: "/:folder(fonts|brand|niche_images|general_assets|hero_section|solutions|solutions_assets|resources_assets)/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
     ];
   },
 
   async redirects() {
-    // Old links that used to 404 now land on the real application pages.
+    // Old links that used to 404 now land on the real application pages. They are permanent (308), so search engines
+    // move any ranking the old addresses earned over to the new ones and stop visiting the old ones.
     return [
-      { source: "/become-creator", destination: "/apply/creator", permanent: false },
-      { source: "/apply-creator", destination: "/apply/creator", permanent: false },
-      { source: "/become-editor", destination: "/apply/editor", permanent: false },
-      { source: "/apply-editor", destination: "/apply/editor", permanent: false },
+      { source: "/become-creator", destination: "/apply/creator", permanent: true },
+      { source: "/apply-creator", destination: "/apply/creator", permanent: true },
+      { source: "/become-editor", destination: "/apply/editor", permanent: true },
+      { source: "/apply-editor", destination: "/apply/editor", permanent: true },
+      // /solutions has no page of its own: send it to the overview that covers all the services. Not permanent, so
+      // a real /solutions page can replace this later without browsers remembering the redirect.
+      { source: "/solutions", destination: "/solutions/creator-growth", permanent: false },
     ];
   },
 };

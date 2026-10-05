@@ -9,14 +9,22 @@ const TrackGrowth = () => {
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          src="/solutions/track_growth_glow.png"
+          src="/media/track-growth-glow-v1.webp"
+          width={1142}
+          height={400}
+          loading="lazy"
+          decoding="async"
         />
 
         {/* dashboard mockup (pre-tilted, with shadow) anchored bottom-right */}
         <img
           alt="Growth tracking dashboard preview"
           className="pointer-events-none absolute bottom-0 right-0 h-[180px] w-full object-contain object-right-bottom sm:h-[220px] lg:h-full lg:w-auto lg:max-w-none"
-          src="/solutions/track_growth_mockup.png"
+          src="/media/track-growth-mockup-v1.webp"
+          width={769}
+          height={400}
+          loading="lazy"
+          decoding="async"
         />
 
         {/* copy */}

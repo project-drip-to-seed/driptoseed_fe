@@ -1,0 +1,32 @@
+# Drip
+
+> Drip is a creator-growth platform. It turns one long-form video into weeks of short clips and places them across 300+ partner pages and communities, so creators reach audiences beyond their own followers.
+
+Drip offers three connected services: clipping (cutting long-form videos into short, platform-ready clips), seeding (placing those clips with trusted communities, niche pages and publishing partners) and distribution strategy (choosing the right audience, platform and timing, then measuring what works). Drip also runs an editor program in which video editors work remotely on creator content and are paid per clip that performs.
+
+## Services
+
+- [Creator Clipping](https://www.driptoseed.com/solutions/creator-clipping): one video turned into weeks of high-performing short clips
+- [Creator Growth](https://www.driptoseed.com/solutions/creator-growth): how reaching new audiences, not posting more, drives sustainable growth
+- [Creator Seeding](https://www.driptoseed.com/solutions/creator-seeding): placing content across 300+ communities, pages and publishing partners
+- [Distribution Strategy](https://www.driptoseed.com/solutions/distribution-strategy): the right audience, on the right platform, at the right time
+
+## About Drip
+
+- [Home](https://www.driptoseed.com/): overview of Drip
+- [About](https://www.driptoseed.com/about): who Drip is and how it works
+- [The Creator Growth Framework](https://www.driptoseed.com/network): the clip, seed and distribute framework
+- [Case studies and resources](https://www.driptoseed.com/resources): illustrative write-ups of Drip's approach by creator niche
+- [FAQ](https://www.driptoseed.com/faq): answers about the services, working with Drip and the editor program
+
+## Work with Drip
+
+- [Apply as a creator](https://www.driptoseed.com/apply/creator)
+- [Apply as a video editor](https://www.driptoseed.com/apply/editor)
+- [Contact](https://www.driptoseed.com/contact): driptoseed@gmail.com
+
+## Optional
+
+- [Privacy policy](https://www.driptoseed.com/privacy)
+- [Terms and conditions](https://www.driptoseed.com/terms)
+- [Sitemap](https://www.driptoseed.com/sitemap.xml)

@@ -62,7 +62,7 @@ const StoryCardItem = ({
 
       {/* inactive corner blob */}
       <img
-        src="/about/story_blob.png"
+        src="/media/about/story-blob-v1.webp"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
@@ -71,14 +71,14 @@ const StoryCardItem = ({
 
       {/* active side glows */}
       <img
-        src="/about/story_blob_fix_left.png"
+        src="/media/about/story-blob-left-v1.webp"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
         style={{ opacity: isActive ? 1 : 0 }}
       />
       <img
-        src="/about/story_blob_fix_right.png"
+        src="/media/about/story-blob-right-v1.webp"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
@@ -115,7 +115,7 @@ const StoryCardItem = ({
             className="absolute inset-0 transition-opacity duration-500"
             style={{
               opacity: isActive ? 0 : 1,
-              backgroundImage: "url(/general_assets/about_story_mockup.png)",
+              backgroundImage: "url(/media/about/story-mockup-small-v1.webp)",
               backgroundSize: "cover",
               backgroundPosition: "center top",
               backgroundRepeat: "no-repeat",
@@ -126,7 +126,7 @@ const StoryCardItem = ({
             style={{
               opacity: isActive ? 1 : 0,
               backgroundImage:
-                "url(/general_assets/about_story_mockup_large.png)",
+                "url(/media/about/story-mockup-v1.webp)",
               backgroundSize: "cover",
               backgroundPosition: "center top",
               backgroundRepeat: "no-repeat",
@@ -162,7 +162,7 @@ const MobileStoryCard = ({ card }: { card: StoryCard }) => (
       <div
         className="mt-4 h-[220px] w-full sm:h-[300px]"
         style={{
-          backgroundImage: "url(/general_assets/about_story_mockup_large.png)",
+          backgroundImage: "url(/media/about/story-mockup-v1.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",

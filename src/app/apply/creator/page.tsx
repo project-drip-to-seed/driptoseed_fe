@@ -1,16 +1,12 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import ApplyForm from "@/components/portal/apply-form";
 import PageBand, { PortalDown } from "@/components/portal/page-band";
+import PageSchema from "@/components/shared/page-schema";
+import { metadataFor } from "@/lib/page-seo";
 import { getMeta, getSession } from "@/lib/portal/server";
 import type { Meta, Session } from "@/lib/portal/types";
 
-export const metadata: Metadata = {
-  title: "Apply as a Creator",
-  description:
-    "Apply to grow with Drip. We clip your long-form videos, place them across 300+ partner pages and communities, and show you exactly how they perform.",
-  alternates: { canonical: "/apply/creator" },
-};
+export const metadata = metadataFor("applyCreator");
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +22,7 @@ export default async function ApplyCreatorPage() {
 
   return (
     <main className="relative bg-white">
+      <PageSchema page="applyCreator" />
       <PageBand
         title="Apply as a Creator"
         description="Brand, influencer, or anyone with a video: tell us about you and your channels. We review every application, and once you're in, your videos become clips that our editors post on their own channels."

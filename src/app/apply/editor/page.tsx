@@ -1,18 +1,14 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import ApplyForm from "@/components/portal/apply-form";
 import PageBand, { PortalDown } from "@/components/portal/page-band";
 import { Card } from "@/components/portal/ui";
+import PageSchema from "@/components/shared/page-schema";
+import { metadataFor } from "@/lib/page-seo";
 import { compactNumber, formatNumber } from "@/lib/portal/format";
 import { getMeta, getSession } from "@/lib/portal/server";
 import type { Meta, Session } from "@/lib/portal/types";
 
-export const metadata: Metadata = {
-  title: "Apply as an Editor",
-  description:
-    "Turn your editing skills into real earnings. Work remotely on real creator content and get paid per clip that performs.",
-  alternates: { canonical: "/apply/editor" },
-};
+export const metadata = metadataFor("applyEditor");
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +26,7 @@ export default async function ApplyEditorPage() {
 
   return (
     <main className="relative bg-white">
+      <PageSchema page="applyEditor" />
       <PageBand
         title="Apply as an Editor"
         description="No pitching clients. Edit real creators' videos, post the clips on your own channels, and get paid when they perform."

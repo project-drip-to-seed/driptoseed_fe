@@ -74,7 +74,7 @@ const ResourcesCaseStudies = () => {
                 <img
                   alt=""
                   className="block h-full w-full object-contain object-bottom"
-                  src="/resources_assets/case_study_card.png"
+                  src="/media/case-study-card-v1.webp"
                 />
               </div>
 

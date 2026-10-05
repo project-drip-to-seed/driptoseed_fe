@@ -6,9 +6,11 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // Signed-in areas and the API proxy have nothing worth indexing.
-      disallow: ["/dashboard", "/login", "/api/"],
+      // The signed-in areas and the API proxy have nothing worth indexing. (/login is NOT blocked here: it carries a
+      // noindex tag, and a search engine can only obey that tag if it is allowed to read the page.)
+      disallow: ["/dashboard", "/api/"],
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }

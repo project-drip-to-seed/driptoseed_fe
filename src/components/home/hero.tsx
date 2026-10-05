@@ -64,13 +64,25 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* Product mockup */}
+      {/* Product mockup: the shared dashboard picture (67 KB, also used further down the site), cropped and given
+          its shadow with CSS. It used to be a 2 MB SVG with a 2400x2400 PNG inside it, and it is the biggest thing
+          on the first screen, so it is also the one the browser should fetch first. */}
       <div className="relative mt-10 w-full px-5 sm:px-8 md:px-12 lg:absolute lg:bottom-0 lg:right-[76px] lg:mt-0 lg:w-[615px] lg:h-[575px] lg:px-0">
-        <img
-          alt="Drip dashboard product preview"
-          src="/general_assets/hero_section_image.svg"
-          className="w-full h-auto lg:h-full"
-        />
+        <div className="relative aspect-[615/575] w-full lg:h-full">
+          <div className="absolute left-[7.154%] top-0 h-[93.043%] w-[92.195%] [filter:drop-shadow(-20px_24px_12px_rgba(0,0,0,0.25))]">
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                alt="Drip creator growth dashboard preview"
+                src="/media/dashboard-mockup-v1.webp"
+                width={1200}
+                height={1200}
+                fetchPriority="high"
+                decoding="async"
+                className="absolute left-[-11.71%] top-[-13.61%] h-[129.59%] w-[122.2%] max-w-none"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
