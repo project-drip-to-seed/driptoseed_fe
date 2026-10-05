@@ -62,7 +62,9 @@ const BackedByData = () => {
           <div className="rotate-[-6.55deg]">
             <img
               alt="Growth tracking dashboard preview"
-              src="/general_assets/dashboard_mockup.png"
+              src="/media/dashboard-mockup-v1.webp"
+              loading="lazy"
+              decoding="async"
               className="w-[520px] max-w-none rounded-2xl shadow-[-20px_24px_24px_0px_rgba(0,0,0,0.25)]"
             />
           </div>

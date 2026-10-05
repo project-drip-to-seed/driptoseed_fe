@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
+import { jsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import CaseStudyHeader from "@/components/case-study/header";
 import CaseStudyMeetCreator from "@/components/case-study/meet-creator";
@@ -75,7 +76,7 @@ const CaseStudyDetailPage = async ({
     <main className="relative">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(articleJsonLd) }}
       />
       <CaseStudyHeader
         title={study.title}

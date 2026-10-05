@@ -10,7 +10,16 @@ import ChannelList from "./channel-list";
 import { Card, ExternalLink, Pill, StatusBadge } from "./ui";
 
 /** Approve / reject an application, with a note the applicant will see. */
-export function ReviewPanel({ applicationId, currentStatus }: { applicationId: string; currentStatus: string }) {
+export function ReviewPanel({
+  applicationId,
+  currentStatus,
+  version,
+}: {
+  applicationId: string;
+  currentStatus: string;
+  /** The version of the application on screen: if it changes before the click, the review is refused. */
+  version: number;
+}) {
   const router = useRouter();
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState<"approve" | "reject" | null>(null);
@@ -24,12 +33,13 @@ export function ReviewPanel({ applicationId, currentStatus }: { applicationId: s
     }
     setBusy(decision);
     try {
-      await api(`/admin/applications/${applicationId}/review`, { method: "POST", body: { decision, note } });
+      await api(`/admin/applications/${applicationId}/review`, { method: "POST", body: { decision, note, version } });
       setNote("");
       setMessage({ tone: "success", text: decision === "approve" ? "Application approved." : "Application rejected." });
       router.refresh();
     } catch (e) {
       setMessage({ tone: "error", text: e instanceof ApiError ? e.message : "Something went wrong." });
+      if (e instanceof ApiError && e.status === 409) router.refresh(); // show what it looks like now
     } finally {
       setBusy(null);
     }
@@ -111,8 +121,10 @@ export function ClipReviewCard({
     return run("views", () => api(`/admin/clips/${clip.id}`, { method: "PATCH", body: { views: viewsNumber } }), "Views updated.");
   };
 
-  const setPaid = (paid: boolean) =>
-    run("paid", () => api(`/admin/clips/${clip.id}`, { method: "PATCH", body: { paid } }), paid ? "Marked as paid." : "Marked as unpaid.");
+  const setPaid = (paid: boolean) => {
+    if (!paid && !window.confirm("Mark this clip as unpaid? Use this only to correct a mistake. It is recorded in the payment history.")) return;
+    return run("paid", () => api(`/admin/clips/${clip.id}`, { method: "PATCH", body: { paid } }), paid ? "Marked as paid." : "Marked as unpaid.");
+  };
 
   return (
     <Card className="flex flex-col gap-4">
@@ -207,7 +219,18 @@ export function ClipReviewCard({
   );
 }
 
-export function MarkPaidButton({ editorId, amount, name }: { editorId: string; amount: number; name: string }) {
+export function MarkPaidButton({
+  editorId,
+  amount,
+  name,
+  clipIds,
+}: {
+  editorId: string;
+  amount: number;
+  name: string;
+  /** The clips this amount is for: only these are recorded as paid. */
+  clipIds: string[];
+}) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -217,11 +240,12 @@ export function MarkPaidButton({ editorId, amount, name }: { editorId: string; a
     setLoading(true);
     setError("");
     try {
-      await api(`/admin/payouts/${editorId}/mark-paid`, { method: "POST" });
+      await api(`/admin/payouts/${editorId}/mark-paid`, { method: "POST", body: { clip_ids: clipIds } });
       router.refresh();
     } catch (e) {
       setError(e instanceof ApiError ? e.message : "Something went wrong.");
       setLoading(false);
+      if (e instanceof ApiError && e.status === 409) router.refresh(); // the list changed: show what is due now
     }
   }
 

@@ -19,6 +19,7 @@ export default function AccountForms({
 
   const [name, setName] = useState(fullName);
   const [tel, setTel] = useState(phone);
+  const [profilePassword, setProfilePassword] = useState("");
   const [profileMsg, setProfileMsg] = useState<{ tone: "error" | "success"; text: string } | null>(null);
   const [profileErrors, setProfileErrors] = useState<Record<string, string>>({});
   const [savingProfile, setSavingProfile] = useState(false);
@@ -35,7 +36,11 @@ export default function AccountForms({
     setProfileErrors({});
     setSavingProfile(true);
     try {
-      await api("/auth/profile", { method: "PATCH", body: { full_name: name, phone: tel } });
+      await api("/auth/profile", {
+        method: "PATCH",
+        body: { full_name: name, phone: tel, current_password: profilePassword },
+      });
+      setProfilePassword("");
       setProfileMsg({ tone: "success", text: "Profile updated." });
       router.refresh();
     } catch (e) {
@@ -83,8 +88,22 @@ export default function AccountForms({
           <Field label="Phone" htmlFor="acc-phone" error={profileErrors.phone}>
             <TextInput id="acc-phone" type="tel" value={tel} onChange={setTel} invalid={!!profileErrors.phone} />
           </Field>
+          <Field
+            label="Current password"
+            htmlFor="acc-profile-password"
+            hint="Needed to change your name or phone number."
+            error={profileErrors.current_password}
+          >
+            <PasswordInput
+              id="acc-profile-password"
+              autoComplete="current-password"
+              value={profilePassword}
+              onChange={setProfilePassword}
+              invalid={!!profileErrors.current_password}
+            />
+          </Field>
           <div>
-            <SubmitButton loading={savingProfile} loadingText="Saving…">
+            <SubmitButton loading={savingProfile} loadingText="Saving…" disabled={!profilePassword}>
               Save profile
             </SubmitButton>
           </div>

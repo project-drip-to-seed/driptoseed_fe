@@ -5,6 +5,7 @@ import { ReviewPanel } from "@/components/portal/admin-forms";
 import ApplicationDetails, { ApplicationHistory, ChannelsToCheck } from "@/components/portal/application-details";
 import { Card, DefinitionRow, StatusBadge } from "@/components/portal/ui";
 import { formatDate } from "@/lib/portal/format";
+import { safeMailto } from "@/lib/safe-url";
 import { getMeta, NotFoundError, portalGet, requireRole } from "@/lib/portal/server";
 import type { Application } from "@/lib/portal/types";
 
@@ -44,9 +45,13 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
             <h2 className="mb-2 font-kugile text-[20px] text-black">Applicant</h2>
             <dl>
               <DefinitionRow label="Email">
-                <a href={`mailto:${applicant?.email}`} className="text-[#780AC1] underline">
-                  {applicant?.email}
-                </a>
+                {safeMailto(applicant?.email) ? (
+                  <a href={safeMailto(applicant?.email) ?? undefined} className="text-[#780AC1] underline">
+                    {applicant?.email}
+                  </a>
+                ) : (
+                  applicant?.email
+                )}
               </DefinitionRow>
               <DefinitionRow label="Phone">{applicant?.phone || "—"}</DefinitionRow>
               <DefinitionRow label="Applied">{formatDate(application.created_at)}</DefinitionRow>
@@ -62,7 +67,7 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
         </div>
 
         <div className="flex flex-col gap-6">
-          <ReviewPanel applicationId={application.id} currentStatus={application.status} />
+          <ReviewPanel applicationId={application.id} currentStatus={application.status} version={application.version} />
           <Card>
             <h2 className="mb-4 font-kugile text-[20px] text-black">Timeline</h2>
             <ApplicationHistory application={application} />

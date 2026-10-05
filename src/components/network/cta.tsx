@@ -14,7 +14,9 @@ const CtaMockup = ({
           <img
             alt=""
             className="absolute h-[129.59%] left-[-11.71%] max-w-none top-[-13.61%] w-[122.2%]"
-            src="/general_assets/dashboard_mockup.png"
+            src="/media/dashboard-mockup-v1.webp"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

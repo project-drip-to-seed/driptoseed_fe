@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ApplicationBanner from "@/components/portal/application-banner";
-import ApplicationDetails, { ApplicationHistory } from "@/components/portal/application-details";
+import ApplicationDetails, { ApplicationHistory, VerificationCode } from "@/components/portal/application-details";
 import ApplyForm from "@/components/portal/apply-form";
 import { Card, PageHeader, StatusBadge } from "@/components/portal/ui";
 import { formatDate } from "@/lib/portal/format";
@@ -30,6 +30,7 @@ export default async function ApplicationPage() {
       />
 
       <ApplicationBanner application={application} />
+      {application.status !== "approved" && <VerificationCode application={application} audience="applicant" />}
 
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <Card>

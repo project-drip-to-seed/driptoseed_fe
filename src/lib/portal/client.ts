@@ -1,6 +1,8 @@
 // Browser-side API client. Talks to /api/portal/* (proxied to the portal API by
 // next.config.ts), so the httpOnly session cookie is attached automatically.
 
+import { isSafeApiPath } from "@/lib/safe-url";
+
 export class ApiError extends Error {
   status: number;
   /** Field-level messages keyed by field path, e.g. "email" or "socials". */
@@ -38,6 +40,7 @@ export async function api<T = unknown>(
   path: string,
   options: { method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"; body?: unknown } = {},
 ): Promise<T> {
+  if (!isSafeApiPath(path)) throw new ApiError("Request failed.", 404);
   let response: Response;
   try {
     response = await fetch(`/api/portal${path}`, {

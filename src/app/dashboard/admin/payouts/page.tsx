@@ -56,7 +56,7 @@ export default async function AdminPayoutsPage() {
                   <td className={tableClasses.td}>{row.clips}</td>
                   <td className={`${tableClasses.td} font-medium text-[#146C3A]`}>{inr(row.amount)}</td>
                   <td className={tableClasses.td}>
-                    <MarkPaidButton editorId={row.editor_id} amount={row.amount} name={row.editor_name} />
+                    <MarkPaidButton editorId={row.editor_id} amount={row.amount} name={row.editor_name} clipIds={row.clip_ids} />
                   </td>
                 </tr>
               ))}

@@ -37,6 +37,10 @@ export interface Application {
   data: Record<string, unknown>;
   review: ReviewInfo | null;
   history: HistoryEntry[];
+  /** Changes whenever the application does. A review quotes it, so it applies to exactly what the admin read. */
+  version: number;
+  /** The applicant puts this in the bio/description of each channel to show the channel is really theirs. */
+  verification_code: string | null;
   created_at: string | null;
   updated_at: string | null;
   applicant?: {
@@ -139,6 +143,9 @@ export interface Clip {
   paid: boolean;
   paid_at: string | null;
   created_at: string | null;
+  /** Admin only: who recorded the payment, and the trail of payments and reversals. */
+  paid_by?: string | null;
+  payment_log?: { action: "paid" | "unpaid"; at: string; by: string; amount: number | null }[];
   channel_check?: ChannelCheck | null;
   /** The editor confirmed the video is on their own approved channel. */
   own_channel?: boolean;
@@ -201,6 +208,8 @@ export interface PayoutRow {
   editor_name: string;
   editor_email: string;
   clips: number;
+  /** The clips this amount is for. Sent back to mark-paid so only these are recorded as paid. */
+  clip_ids: string[];
   amount: number;
 }
 

@@ -64,7 +64,9 @@ export default function EditorNetwork() {
 
       <img
         alt="Creator growth dashboard"
-        src="/general_assets/dashboard_mockup.png"
+        src="/media/dashboard-mockup-v1.webp"
+        loading="lazy"
+        decoding="async"
         className="absolute left-[737px] top-[84px] hidden h-[718px] w-[752px] max-w-none object-contain lg:block"
       />
     </section>

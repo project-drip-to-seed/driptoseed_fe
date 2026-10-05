@@ -1,5 +1,6 @@
 import type { CreatorProfile, Option } from "@/lib/portal/types";
 import { labelOf } from "@/lib/portal/format";
+import { safeHref } from "@/lib/safe-url";
 
 const CHANNELS: { key: string; label: string }[] = [
   { key: "instagram", label: "Instagram" },
@@ -22,7 +23,10 @@ export default function CreatorChannels({
 }) {
   if (!profile) return null;
   // The API only stores http(s) links; this keeps a bad value from ever becoming a clickable link.
-  const links = CHANNELS.filter(({ key }) => /^https?:\/\//i.test(profile.socials[key] ?? ""));
+  const links = CHANNELS.flatMap(({ key, label }) => {
+    const href = safeHref(profile.socials[key]);
+    return href ? [{ key, label, href }] : [];
+  });
   if (links.length === 0) return null;
 
   return (
@@ -37,10 +41,10 @@ export default function CreatorChannels({
         )}
       </p>
       <ul className="flex flex-wrap gap-2">
-        {links.map(({ key, label }) => (
+        {links.map(({ key, label, href }) => (
           <li key={key}>
             <a
-              href={profile.socials[key]}
+              href={href}
               target="_blank"
               rel="noopener noreferrer nofollow"
               aria-label={`${label} channel (opens in a new tab)`}

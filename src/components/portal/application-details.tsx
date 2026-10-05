@@ -38,7 +38,26 @@ export function ChannelsToCheck({ application }: { application: Application }) {
         </p>
       </div>
       <ChannelList socials={socialsOf(application)} emptyText="No channels were listed (an older application). Ask for them before approving." />
+      <VerificationCode application={application} audience="admin" />
     </Card>
+  );
+}
+
+/** The code that proves a channel is really the applicant's: they put it in the channel's bio or description. */
+export function VerificationCode({ application, audience }: { application: Application; audience: "admin" | "applicant" }) {
+  if (!application.verification_code) return null;
+  return (
+    <div className="flex flex-col gap-1 rounded-2xl border border-dashed border-[#780AC1]/50 bg-white p-3">
+      <span className="text-[12px] font-medium uppercase tracking-[0.05em] text-[#686868]">Verification code</span>
+      <code className="w-fit select-all rounded-lg bg-[#EED7FF66] px-2.5 py-1 font-mono text-[15px] tracking-[0.08em] text-black">
+        {application.verification_code}
+      </code>
+      <p className="text-[13px] leading-[1.6] text-[#404040]">
+        {audience === "admin"
+          ? "Look for this exact code in the bio or description of each channel above. If it isn't there, the applicant may not own the channel."
+          : "Add this code to the bio or description of each channel you listed. The Drip team looks for it to confirm the channels are yours. You can remove it after you're approved."}
+      </p>
+    </div>
   );
 }
 

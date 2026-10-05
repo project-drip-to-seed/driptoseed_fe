@@ -6,7 +6,7 @@ const ResourcesHero = () => {
           <img
             alt=""
             className="block max-w-none size-full"
-            src="/general_assets/hero_bg_ellipse_left.svg"
+            src="/media/bg/ellipse-left-v1.webp"
           />
         </div>
       </div>
@@ -15,7 +15,7 @@ const ResourcesHero = () => {
           <img
             alt=""
             className="block max-w-none size-full"
-            src="/general_assets/hero_bg_ellipse_right.svg"
+            src="/media/bg/ellipse-right-v1.webp"
           />
         </div>
       </div>
@@ -24,7 +24,7 @@ const ResourcesHero = () => {
           <img
             alt=""
             className="block max-w-none size-full"
-            src="/general_assets/hero_bg_ellipse_bottom.svg"
+            src="/media/bg/ellipse-bottom-v1.webp"
           />
         </div>
       </div>

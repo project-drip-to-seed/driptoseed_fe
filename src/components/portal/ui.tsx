@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { safeHref } from "@/lib/safe-url";
 
 export const inputClasses =
   "w-full rounded-xl border border-[#D59EFB] bg-white px-4 py-3 text-[15px] leading-[1.4] text-black outline-none transition placeholder:text-[#9A9A9A] focus:border-[#780AC1] focus:ring-2 focus:ring-[#780AC1]/15 disabled:opacity-60";
@@ -134,11 +135,14 @@ export function LinkButton({
   );
 }
 
-/** User-supplied links: open in a new tab, never leak the referrer or opener. */
+/** User-supplied links: only http(s), open in a new tab, never leak the referrer or opener. */
 export function ExternalLink({ href, children }: { href: string; children?: ReactNode }) {
+  const safe = safeHref(href);
+  // Anything that isn't a plain http(s) link (javascript:, data:, ...) is shown as text, never made clickable.
+  if (!safe) return <span className="break-all text-[#404040]">{children ?? href}</span>;
   return (
     <a
-      href={href}
+      href={safe}
       target="_blank"
       rel="noopener noreferrer nofollow"
       className="break-all text-[#780AC1] underline decoration-[#D59EFB] underline-offset-2 hover:decoration-[#780AC1]"

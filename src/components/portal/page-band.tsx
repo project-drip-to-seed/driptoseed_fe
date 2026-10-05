@@ -17,12 +17,12 @@ export default function PageBand({
     <section className="relative w-full overflow-hidden bg-[#F2E7F9] pb-28 pt-28 sm:pt-32 lg:pb-32">
       <div className="absolute left-[-234px] top-[-243px] size-[400px] sm:size-[600px] lg:size-[851px]">
         <div className="absolute inset-[-71.68%]">
-          <img alt="" aria-hidden="true" className="block size-full max-w-none" src="/general_assets/hero_bg_ellipse_left.svg" />
+          <img alt="" aria-hidden="true" className="block size-full max-w-none" src="/media/bg/ellipse-left-v1.webp" />
         </div>
       </div>
       <div className="absolute right-[-387px] top-[-525px] size-[500px] sm:size-[760px] lg:size-[1080px]">
         <div className="absolute inset-[-70.37%]">
-          <img alt="" aria-hidden="true" className="block size-full max-w-none" src="/general_assets/hero_bg_ellipse_right.svg" />
+          <img alt="" aria-hidden="true" className="block size-full max-w-none" src="/media/bg/ellipse-right-v1.webp" />
         </div>
       </div>
       <div className="relative z-10 mx-auto flex w-[900px] max-w-[calc(100%-40px)] flex-col items-center gap-3 text-center text-white">

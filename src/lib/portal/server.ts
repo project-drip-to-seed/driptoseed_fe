@@ -1,11 +1,10 @@
 // Server-side helpers (server components / route handlers only).
 // They call the portal API directly and forward the visitor's session cookie.
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { API_BASE, apiHeaders, isPortalPath, SESSION_COOKIE, visitorIp } from "./backend";
 import type { Meta, Role, Session } from "./types";
-
-const API_BASE = `${process.env.PORTAL_API_URL ?? "http://127.0.0.1:8001"}/api/v1`;
 
 export class PortalUnavailableError extends Error {
   constructor() {
@@ -15,11 +14,16 @@ export class PortalUnavailableError extends Error {
 }
 
 async function request(path: string, init?: RequestInit): Promise<Response> {
-  const cookieHeader = (await cookies()).toString();
+  // Ids from the address bar end up in these paths: refuse anything that would reach a different endpoint.
+  if (!isPortalPath(path)) throw new NotFoundError();
+  // Only the session cookie goes to the API (not whatever else the browser holds for this site, such as analytics
+  // ids), plus the proof that this call comes from the website and which visitor it is on behalf of.
+  const session = (await cookies()).get(SESSION_COOKIE)?.value;
+  const visitor = visitorIp(await headers());
   try {
     return await fetch(`${API_BASE}${path}`, {
       ...init,
-      headers: { ...(cookieHeader ? { cookie: cookieHeader } : {}), ...(init?.headers ?? {}) },
+      headers: { ...apiHeaders({ session, visitor }), ...(init?.headers ?? {}) },
       cache: "no-store",
     });
   } catch {
